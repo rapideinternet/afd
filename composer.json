@@ -1,0 +1,12 @@
+{
+    "name": "zeefsoftware/skp-client",
+    "description": "A library to send and recieve messages via the SKP protocol",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tim Mein",
+            "email": "mebusmein@gmail.com"
+        }
+    ],
+    "require": {}
+}
