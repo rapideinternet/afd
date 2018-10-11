@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mebus
- * Date: 27-9-18
- * Time: 12:33
- */
 
-namespace SKPClient;
+namespace SIVI\ADN;
 
 class SKP
 {

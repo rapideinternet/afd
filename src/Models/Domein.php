@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mebus
- * Date: 27-9-18
- * Time: 15:00
- */
 
-namespace SKPClient\Models;
+namespace SIVI\ADN\Models;
 
 
 class Domein

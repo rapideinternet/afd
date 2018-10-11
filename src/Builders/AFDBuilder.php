@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mebus
- * Date: 27-9-18
- * Time: 14:45
- */
 
-namespace SKPClient\Builders;
+namespace SIVI\ADN\Builders;
 
 
 class AFDBuilder
