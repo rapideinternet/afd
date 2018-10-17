@@ -3,6 +3,7 @@
 namespace SIVI\ADN\Models;
 
 use SIVI\ADN\Enums\EntityTypes;
+use SIVI\ADN\Enums\XSDAttributes;
 use SIVI\ADN\Models\Interfaces\Validatable;
 
 class Entity implements Validatable
@@ -27,17 +28,20 @@ class Entity implements Validatable
      */
     protected $explanation;
 
-    const MAX_OCURS = 'maxOcurs';
-    const MIN_OCURS = 'minOcurs';
-
     /**
      * Should be implemented in the lower classes
      *
      * @var array
      */
     protected $allowedAttributeTypes = [
-        EntityTypes::CONTRACT_PAKKET => [self::MIN_OCURS => 0, self::MAX_OCURS => 1],
-        EntityTypes::CONTRACT_POLISONDERDEEL => [self::MIN_OCURS => 0, self::MAX_OCURS => 1],
+        EntityTypes::CONTRACT_PAKKET => [
+            XSDAttributes::MIN_OCURS => 0,
+            XSDAttributes::MAX_OCURS => 1
+        ],
+        EntityTypes::CONTRACT_POLISONDERDEEL => [
+            XSDAttributes::MIN_OCURS => 0,
+            XSDAttributes::MAX_OCURS => 1
+        ],
     ];
 
     public function __construct($label, array $attributes)
