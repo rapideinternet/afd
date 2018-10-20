@@ -1,6 +1,6 @@
 <?php
 
-namespace SIVI\ADN\Builders;
+namespace SIVI\AFD\Builders;
 
 
 class AFDBuilder

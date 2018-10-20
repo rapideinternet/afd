@@ -1,6 +1,6 @@
 <?php
 
-namespace SIVI\ADN\Enums;
+namespace SIVI\AFD\Enums;
 
 use MyCLabs\Enum\Enum;
 

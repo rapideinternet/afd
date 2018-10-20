@@ -1,13 +1,10 @@
 <?php
 
-namespace SIVI\ADN\Models\Codes;
+namespace SIVI\AFD\Models\Codes;
 
-use SIVI\ADN\Models\Interfaces\Validates;
+use SIVI\AFD\Models\Interfaces\Validates;
 
-class Code implements Validates
+abstract class Code implements Validates
 {
-    public function validateValue($value)
-    {
-        // TODO: Implement validateValue() method.
-    }
+    abstract function format($value);
 }

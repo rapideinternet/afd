@@ -1,6 +1,6 @@
 <?php
 
-namespace SIVI\ADN;
+namespace SIVI\AFD;
 
 class SKP
 {

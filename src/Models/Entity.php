@@ -1,10 +1,10 @@
 <?php
 
-namespace SIVI\ADN\Models;
+namespace SIVI\AFD\Models;
 
-use SIVI\ADN\Enums\EntityTypes;
-use SIVI\ADN\Enums\XSDAttributes;
-use SIVI\ADN\Models\Interfaces\Validatable;
+use SIVI\AFD\Enums\EntityTypes;
+use SIVI\AFD\Enums\XSDAttributes;
+use SIVI\AFD\Models\Interfaces\Validatable;
 
 class Entity implements Validatable
 {
@@ -14,7 +14,7 @@ class Entity implements Validatable
     protected $label;
 
     /**
-     * @var Attribute[]
+     * @var array
      */
     protected $attributes = [];
 
@@ -36,11 +36,11 @@ class Entity implements Validatable
     protected $allowedAttributeTypes = [
         EntityTypes::CONTRACT_PAKKET => [
             XSDAttributes::MIN_OCURS => 0,
-            XSDAttributes::MAX_OCURS => 1
+            XSDAttributes::MAX_OCURS => 1,
         ],
         EntityTypes::CONTRACT_POLISONDERDEEL => [
             XSDAttributes::MIN_OCURS => 0,
-            XSDAttributes::MAX_OCURS => 1
+            XSDAttributes::MAX_OCURS => 1,
         ],
     ];
 
@@ -50,7 +50,7 @@ class Entity implements Validatable
         $this->label = $label;
     }
 
-    public function validate()
+    public function validate(): bool
     {
         $valid = [];
 
@@ -61,5 +61,13 @@ class Entity implements Validatable
         }
 
         return (bool)array_product($valid);
+    }
+
+    /**
+     * @param $label
+     */
+    public function hasAttribute($label): bool
+    {
+
     }
 }

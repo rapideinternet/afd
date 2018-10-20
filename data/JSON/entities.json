@@ -1,0 +1,2626 @@
+[
+  {
+    "Label": "RI",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "ACCEPTATIEVRAGEN",
+    "Toelichting": "Acceptatievragen zijn vragen die in het kader van het sluiten van een contract éénmalig aan de potentiele contractant gesteld dienen te worden. Deze vragen zijn na het sluiten van het contra"
+  },
+  {
+    "Label": "XA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "ADRES",
+    "Toelichting": "Een aanduiding van een locatie die een persoon kan bezoeken danwel die een postdienst heeft onderkend. (Bron: BBR)"
+  },
+  {
+    "Label": "AJ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "AF-/BIJSCHRIJVING",
+    "Toelichting": "Gegevens over afschrijving of bijschrijving op bijvoorbeeld een spaarrekening."
+  },
+  {
+    "Label": "CN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "AFSPRAAK",
+    "Toelichting": "Overeenkomst met betrekking tot de gemaakte afspraken rondom afhandeling van een letselschade."
+  },
+  {
+    "Label": "AM",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "AGENDERING",
+    "Toelichting": "Agenderings gegevens."
+  },
+  {
+    "Label": "AW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "ARBEIDSVOORWAARDEN",
+    "Toelichting": "Secundaire arbeidsvoorwaarden die tussen een werkgever en een werknemer tot stand zijn gekomen."
+  },
+  {
+    "Label": "EH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "BEDRIJFSEENHEID",
+    "Toelichting": "Gegevens over een bedrijfseenheid binnen een bedrijf of organisatie zoals een vestiging of dependance."
+  },
+  {
+    "Label": "AL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "BERICHT ALGEMEEN",
+    "Toelichting": "Algemene gegevens over het bericht."
+  },
+  {
+    "Label": "IK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "BEROEP/INKOMEN PERSONEN",
+    "Toelichting": "Beroeps- en Inkomensgegevens van een natuurlijk persoon. Inkomen kan ook uit andere bronnen dan een beroep komen."
+  },
+  {
+    "Label": "BY",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "BIJLAGE",
+    "Toelichting": "Begeleidende gegevens over een aan het bericht toegevoegde (elektronische) bijlage. Een bijlage kan een document zijn, maar ook een foto of bijvoorbeeld een spreadsheet etc."
+  },
+  {
+    "Label": "BO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "BOEKING ONDERDEEL",
+    "Toelichting": "Gegevens over een te incasseren premie of correctie daarop, als gevolg van een vervallen betaaltermijn, prolongatie, nieuw contract of mutatie."
+  },
+  {
+    "Label": "BC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "BOEKING PAKKET",
+    "Toelichting": "Gegevens over een te incasseren premie of correctie daarop, als gevolg van een vervallen betaaltermijn, prolongatie, nieuw contract of mutatie."
+  },
+  {
+    "Label": "BD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "BTW GEGEVENS FACTUUR",
+    "Toelichting": "Btw gegevens met betrekking tot een factuur."
+  },
+  {
+    "Label": "BJ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "BTW GEGEVENS FACTUURREGEL",
+    "Toelichting": "Btw gegevens per factuurregel."
+  },
+  {
+    "Label": "XS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CLAIM TOEGEPASTE DEKKING",
+    "Toelichting": "Identificatie van de dekking waarop wordt geclaimd."
+  },
+  {
+    "Label": "CL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CLAUSULE",
+    "Toelichting": "Gegevens over een clausule die opgenomen wordt bij een contract zoals bijvoorbeeld een polis."
+  },
+  {
+    "Label": "CM",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "COMMUNICATIE",
+    "Toelichting": "Gegevens over de communicatie die heeft plaatsgevonden."
+  },
+  {
+    "Label": "CW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "COMMUNICATIEPROFIEL",
+    "Toelichting": "Gegevens over de wijze waarop de maatschappij of bijvoorbeeld schadebehandelaar communiceert met de klant."
+  },
+  {
+    "Label": "EL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CONTRACT (ELDERS)(AF)LOPEND",
+    "Toelichting": "Te gebruiken als informatie voor de Maatschappij terzake (elders) (af)lopende contracten. Niet te gebruiken voor de opzegging."
+  },
+  {
+    "Label": "DP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CONTRACT ACCOUNT/CONTO/DEPOT",
+    "Toelichting": "Een Account/Conto is een registratie van sommen geld, bedoeld voor het doen van betalingen en ontvangsten. Voorbeelden zijn: Depotrekening, Spaarrekening, Beleggingsrekening."
+  },
+  {
+    "Label": "AI",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CONTRACT ARBEID",
+    "Toelichting": "Individueel arbeidscontract tussen werkgever en werknemer."
+  },
+  {
+    "Label": "HP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CONTRACT HYPOTHEEK",
+    "Toelichting": "De Hypotheek is een bundeling van deelcontracten als lening(en) en polissen rondom het sluiten van de hypotheek."
+  },
+  {
+    "Label": "LC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CONTRACT LEASE",
+    "Toelichting": "Een leasecontract legt de overeenkomst tussen het leasebedrijf en de gebruiker vast."
+  },
+  {
+    "Label": "LD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CONTRACT LENING(DEEL)",
+    "Toelichting": "Een leningdeel kan zijn een individuele lening zoals een doorlopend krediet of een PL, maar kan ook een deellening zijn van een Hypotheek."
+  },
+  {
+    "Label": "PK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CONTRACT PAKKET",
+    "Toelichting": "Hoofdonderdeel van een samengesteld verzekeringscontract; d.w.z. dat één contract kan bestaan uit meerdere onderdelen die elk zelfstandig geadministreerd worden, met een eigen identificatie."
+  },
+  {
+    "Label": "PP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CONTRACT POLIS/ONDERDEEL",
+    "Toelichting": "Een Polis/Onderdeel contract is een verzekeringsovereenkomst waarop een risico verzekerd wordt."
+  },
+  {
+    "Label": "RC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CONTRACT RAAMCONTRACT",
+    "Toelichting": "Een raamcontract wordt ook wel aangeduid als moedercontract, mantelcontract, collectief contract of begunstigingscontract. Vaak zijn in een raamcontract een aantal overkoepelende afspraken g"
+  },
+  {
+    "Label": "CH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "CONTRACTREGEL",
+    "Toelichting": "Gegevens over een vastgelegde afspraak of regeling binnen bijvoorbeeld een raamcontract of collectief contract."
+  },
+  {
+    "Label": "DA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING AANSPRAKELIJKHEID",
+    "Toelichting": ""
+  },
+  {
+    "Label": "AQ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ACCESSOIRES",
+    "Toelichting": "Accessoires van voer-, vaartuigen en aanhangers."
+  },
+  {
+    "Label": "AY",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING AGRARISCH RISICO",
+    "Toelichting": "Dekking voor levende have, gewassen enz."
+  },
+  {
+    "Label": "AN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ANNULERING",
+    "Toelichting": ""
+  },
+  {
+    "Label": "AO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ARBEIDSONGESCHIKTHEID",
+    "Toelichting": "Dekking Arbeidsongeschiktheid."
+  },
+  {
+    "Label": "AZ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ANTENNES/ZONWERING/TUIN",
+    "Toelichting": "Dekkingsgegevens tbv antennes-, zonwering- en tuinschade."
+  },
+  {
+    "Label": "AU",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING AUDIO/VISUEEL/COMPUTER",
+    "Toelichting": "Dekking t.b.v. Audio/Visueel/Computer"
+  },
+  {
+    "Label": "BR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BAGAGE",
+    "Toelichting": "Dekking gegevens t.b.v. bagageschade."
+  },
+  {
+    "Label": "BZ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BASIS ZORG",
+    "Toelichting": ""
+  },
+  {
+    "Label": "BH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BEDRIJFSSCHADE",
+    "Toelichting": "Gederfde winst/omzet na een bedrijfsstilstand door gedekte schade."
+  },
+  {
+    "Label": "BK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BETAALD KLUSSEN",
+    "Toelichting": "Dekking t.b.v. Betaald Klussen"
+  },
+  {
+    "Label": "IL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BIJ LEVEN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "DO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BIJ OVERLIJDEN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "DZ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BIJZONDERE BEZITTINGEN",
+    "Toelichting": "Dekking t.b.v. Bijzondere Bezittingen"
+  },
+  {
+    "Label": "SB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BIJZONDERE SPORTEN",
+    "Toelichting": "Dekking t.b.v. Bijzondere Sporten"
+  },
+  {
+    "Label": "BI",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BUITENSHUIS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "DG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING B/M NOCLAIM GARANTIE",
+    "Toelichting": "Dekking tegen terugval in B/M Noclaim na een schade."
+  },
+  {
+    "Label": "DF",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING CAMERA APPARATUUR",
+    "Toelichting": "Dekking t.b.v. Camera Apparatuur"
+  },
+  {
+    "Label": "DC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING CAR",
+    "Toelichting": "Dekking Construction All Risk (CAR)"
+  },
+  {
+    "Label": "AH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING CASCO AANHANGER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "CD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING CASCO CARAVAN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "CG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING CASCO UITBREIDING",
+    "Toelichting": "Dekkingsgegevens inzake cascodekking uitbreiding zoals vrije keuze herstelbedrijf."
+  },
+  {
+    "Label": "PV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING CASCO VAARTUIG",
+    "Toelichting": ""
+  },
+  {
+    "Label": "CA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING CASCO VOERTUIGEN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "PD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING COMPUTER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "DD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING DIERENOPPAS",
+    "Toelichting": "Dekking t.b.v. Dierenoppas"
+  },
+  {
+    "Label": "NG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING EIGEN GEBREK/UITVAL",
+    "Toelichting": "Dekking t.b.v. Eigen gebrek/Uitval"
+  },
+  {
+    "Label": "EC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ELEKTRONICA",
+    "Toelichting": ""
+  },
+  {
+    "Label": "TD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING EVENEMENT",
+    "Toelichting": ""
+  },
+  {
+    "Label": "KS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING EXTRA KOSTEN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "EU",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING EXTRA UITKERING",
+    "Toelichting": "Dekkingsgegevens inzake extra uitkering zoals 10% aanvullende dekking bij opstal."
+  },
+  {
+    "Label": "GA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING GARANTIE",
+    "Toelichting": "Dekkingsgegevens inzake waardegarantie zoals afkoopwaarde-, nieuwwaarde- en aankoopwaardegarantie etc."
+  },
+  {
+    "Label": "GD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING GELD",
+    "Toelichting": ""
+  },
+  {
+    "Label": "GP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING GLAS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "HS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING HAGELSCHADE/STORMSCHADE",
+    "Toelichting": "Dekking t.b.v. Hagel- en Stormschade"
+  },
+  {
+    "Label": "HB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING HERSTARTKOSTEN BEDRIJF",
+    "Toelichting": ""
+  },
+  {
+    "Label": "DH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING HUISEIGENAAR",
+    "Toelichting": "Dekking t.b.v. Huiseigenaar"
+  },
+  {
+    "Label": "HU",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING HUURDERSBELANG",
+    "Toelichting": "Dekking t.b.v. Huurdersbelang"
+  },
+  {
+    "Label": "HD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING HUURDERVING",
+    "Toelichting": ""
+  },
+  {
+    "Label": "IP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING INBOEDEL",
+    "Toelichting": ""
+  },
+  {
+    "Label": "IV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING INVENTARIS/GOEDEREN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "DJ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING JAGERSRISICO",
+    "Toelichting": "Dekking t.b.v. Jagersrisico"
+  },
+  {
+    "Label": "DK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING KINDEROPPAS",
+    "Toelichting": "Dekking t.b.v. Kinderoppas"
+  },
+  {
+    "Label": "KB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING KOSTBAARHEDEN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "KR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING KREDIETRISICO",
+    "Toelichting": ""
+  },
+  {
+    "Label": "KA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING KUNST / ANTIQUITEITEN",
+    "Toelichting": "Dekking t.b.v. Kunst / Antiquiteiten"
+  },
+  {
+    "Label": "DL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING LOONSOM",
+    "Toelichting": "Dekking t.b.v. loonsom bijvoorbeeld in geval van verzuim."
+  },
+  {
+    "Label": "LF",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING LUIFEL",
+    "Toelichting": "Dekking t.b.v. Luifel"
+  },
+  {
+    "Label": "LG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING LUXE GEBRUIKSVOORWERPEN",
+    "Toelichting": "Dekking t.b.v. Luxe Gebruiksvoorwerpen"
+  },
+  {
+    "Label": "LR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING LICHTRECLAME",
+    "Toelichting": "Dekking t.b.v. Lichtreclame"
+  },
+  {
+    "Label": "LS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING LIJFSIERADEN",
+    "Toelichting": "Dekking t.b.v. Lijfsieraden"
+  },
+  {
+    "Label": "MS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING MILIEU",
+    "Toelichting": ""
+  },
+  {
+    "Label": "MO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING MONTAGE",
+    "Toelichting": ""
+  },
+  {
+    "Label": "MI",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING MUZIEKINSTRUMENTEN",
+    "Toelichting": "Dekking t.b.v. Muziekinstrumenten"
+  },
+  {
+    "Label": "OD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ONGEVALLEN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "BW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING OP-/AANBOUW",
+    "Toelichting": "Dekking t.b.v. Op-/Aanbouw"
+  },
+  {
+    "Label": "OP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING OPSTAL",
+    "Toelichting": ""
+  },
+  {
+    "Label": "PH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING (INTERNATIONALE) (PECH) HULP",
+    "Toelichting": ""
+  },
+  {
+    "Label": "PO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING PERS.ONGEVALLEN",
+    "Toelichting": "De dekking Persoonlijke Ongevallen In-/Opzittenden dekt gezondheidsschade aan in-/opzittenden van voer- en vaartuigen."
+  },
+  {
+    "Label": "PL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING PREMIEVRIJSTELLING",
+    "Toelichting": ""
+  },
+  {
+    "Label": "WC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING RB CONSUMENT & WONEN",
+    "Toelichting": "Dekking t.b.v. Rechtsbijstand Consument & Wonen"
+  },
+  {
+    "Label": "FV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING RB FISCAAL & VERMOGEN",
+    "Toelichting": "Dekking t.b.v. Rechtsbijstand Fiscaal & Vermogen"
+  },
+  {
+    "Label": "IN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING RB INKOMEN",
+    "Toelichting": "Dekking t.b.v. Rechtsbijstand Inkomen"
+  },
+  {
+    "Label": "VK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING RB VERKEER",
+    "Toelichting": "Dekking t.b.v. Rechtsbijstand Verkeer"
+  },
+  {
+    "Label": "RP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING RECHTSBIJSTAND",
+    "Toelichting": ""
+  },
+  {
+    "Label": "RK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING RECONSTRUCTIEKOSTEN",
+    "Toelichting": "Herstel van beschadigde computerbestanden."
+  },
+  {
+    "Label": "RA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING REINTEGRATIE",
+    "Toelichting": ""
+  },
+  {
+    "Label": "DR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING REIS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "RD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING REIS UITBREIDING",
+    "Toelichting": "Dekkingsgegevens inzake bijvoorbeeld reisduurverlenging, uitbreiding dekkingsgebied etc."
+  },
+  {
+    "Label": "RL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING RENTE",
+    "Toelichting": ""
+  },
+  {
+    "Label": "SG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING SAMENGESTELDE REIS",
+    "Toelichting": "(Sub)Dekking t.b.v. Samengestelde Reis"
+  },
+  {
+    "Label": "SV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING SCHADE VERZ. IN-/OPZITTENDE",
+    "Toelichting": "De dekking Schade Verzekering In-/Opzittenden dekt risico's aan materiële zaken van in- en opzittenden van voertuigen."
+  },
+  {
+    "Label": "SU",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING SPORTUITRUSTING",
+    "Toelichting": "(Sub)Dekking t.b.v. Sportuitrusting"
+  },
+  {
+    "Label": "TR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING TRANSPORT",
+    "Toelichting": ""
+  },
+  {
+    "Label": "VR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING VERHUUR",
+    "Toelichting": "Dekking t.b.v. Verhuur"
+  },
+  {
+    "Label": "VV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING VERVANGEND VERVOER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "DV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING VERZAMELINGEN",
+    "Toelichting": "Dekking t.b.v. Verzamelingen (zoals postzegels, munten etc.)"
+  },
+  {
+    "Label": "DT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING VOORTENT",
+    "Toelichting": "Dekking t.b.v. Voortent"
+  },
+  {
+    "Label": "VD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING VSV",
+    "Toelichting": "De dekking Verkeerschade (-verzekering) dekt risico's aan zowel materiële zaken als gezondheidsschade voor de verzekerde verkeersdeelnemers."
+  },
+  {
+    "Label": "WA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING WETTELIJKE AANSPRAKELIJKHEID",
+    "Toelichting": ""
+  },
+  {
+    "Label": "WW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING WERKLOOSHEID",
+    "Toelichting": ""
+  },
+  {
+    "Label": "WS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING WINTERSPORTEN",
+    "Toelichting": "Dekking t.b.v. Wintersport"
+  },
+  {
+    "Label": "DW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ZAAKWAARNEMER",
+    "Toelichting": "Dekking t.b.v. Zaakwaarnemer"
+  },
+  {
+    "Label": "ZK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ZIEKTEKOSTEN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "XD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ALGEMEEN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "AD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING AANSPRAKELIJKHEID ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "EA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ARBEIDSONGESCHIKTHEID ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "BE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BEDRIJFSSCHADE ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "LE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BIJ LEVEN ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "DE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING BIJ OVERLIJDEN ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "CS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING CAR ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "PE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING CASCO VAARTUIG ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "CE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING COMPUTER ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "EE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ELEKTRONICA ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "GQ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING GELD ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "GE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING GLAS ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "IE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING INBOEDEL ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "IW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING INVENTARIS/GOEDEREN ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "EK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING KOSTBAARHEDEN ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "DN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING KREDIETRISICO ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "ME",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING MILIEU ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "EO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ONGEVALLEN ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "OE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING OPSTAL ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "RE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING RECHTSBIJSTAND ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "ER",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING REIS ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "TL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING TRANSPORT ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "ZE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DEKKING ZIEKTEKOSTEN ELDERS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "MD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DOCUMENT GEGEVENS",
+    "Toelichting": "(Meta) gegevens van een ingevuld document, bijvoorbeeld Schade Aangifte Formulier (SAF)"
+  },
+  {
+    "Label": "DS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "DOSSIER",
+    "Toelichting": "Algemene en identificerende gegevens met betrekking tot een elektronisch dossier."
+  },
+  {
+    "Label": "EG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "EXPERTISE GEGEVENS",
+    "Toelichting": "Gegevens over een expertise. Onderzoek naar de omvang van de schade."
+  },
+  {
+    "Label": "AE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "(EXTRA) AFLOSSING",
+    "Toelichting": "(Extra) aflossing betreft de aflossing op een lening of hypotheek."
+  },
+  {
+    "Label": "FC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "FACTUUR",
+    "Toelichting": "Algemene gegevens van een factuur, bijvoorbeeld schadefactuur."
+  },
+  {
+    "Label": "FR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "FACTUURREGEL",
+    "Toelichting": "Gegevens van een factuurregel bij een factuur, bijvoorbeeld schadefactuur."
+  },
+  {
+    "Label": "FT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "FINANCIELE INFORMATIE",
+    "Toelichting": "Gegevens over een geadministreerde financiele transactie."
+  },
+  {
+    "Label": "FO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "FONDS",
+    "Toelichting": "Fondsen zijn aggregaties van beleggingen die bij de beurs genoteerd zijn."
+  },
+  {
+    "Label": "FM",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "FOUTMELDING",
+    "Toelichting": ""
+  },
+  {
+    "Label": "GG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "GEGEVENSSET",
+    "Toelichting": "Een of meerdere sets polisgegevens behorend bij een en dezelfde sleutel."
+  },
+  {
+    "Label": "GV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "GEZONDHEID",
+    "Toelichting": ""
+  },
+  {
+    "Label": "IG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "IDENTIFICERENDE GEGEVENS",
+    "Toelichting": "Identificerende gegevens voor het koppelen van de inhoud van het bericht aan de gegevens van het ontvangende systeem."
+  },
+  {
+    "Label": "IM",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "INCASSO MACHTIGING",
+    "Toelichting": "Gegevens over de incasso machtiging."
+  },
+  {
+    "Label": "KC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "KOSTENCOMPONENT",
+    "Toelichting": "Gegevens over de gemaakte kosten of te maken kosten om een schadezaak te behandelen of de schade te herstellen."
+  },
+  {
+    "Label": "KV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "KOSTENVERREKENING",
+    "Toelichting": "Bedoeld voor toekomstig of historisch kostenschema, bevat ook totaalvelden."
+  },
+  {
+    "Label": "LN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "LOON PERIODE",
+    "Toelichting": "Informatie over een loon periode (bestede of gewerkte uren etc.)"
+  },
+  {
+    "Label": "NT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "NOTITIE",
+    "Toelichting": "De unieke identificatie van een entiteit."
+  },
+  {
+    "Label": "MY",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "MAATSCHAPPIJ SPECIFIEKE GEGEVENS",
+    "Toelichting": "Maatschappij specifieke gegevens ten behoeve van bijvoorbeeld acceptatiesystemen."
+  },
+  {
+    "Label": "MG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "MEDICIJNGEBRUIK",
+    "Toelichting": "Gegevens over het medicijn gebruik door bijvoorbeeld een verzekerde."
+  },
+  {
+    "Label": "AA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT AANHANGWAGEN/BOOTTRAILER",
+    "Toelichting": "Een aanhangwagen is een voertuig zonder eigen voortbeweging op wielen, bedoeld om getrokken te worden door een motorrijtuig. Niet zijnde een aanhanger bedoeld voor verblijf van personen."
+  },
+  {
+    "Label": "XO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT ALGEMEEN",
+    "Toelichting": "Algemene object entiteit om een beperkte set algemene gegevens van alle soorten objecten te kunnen communiceren."
+  },
+  {
+    "Label": "MA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT MACHINE",
+    "Toelichting": "Door kracht aangedreven goederen gebruikt in een zakelijke omgeving niet aard en nagelvast en niet zijnde een motorrijtuig."
+  },
+  {
+    "Label": "LT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT AGRARISCHE PRODUKT",
+    "Toelichting": "Land- en tuinbouw produkten."
+  },
+  {
+    "Label": "BB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT BIJGEBOUW",
+    "Toelichting": "Een bijgebouw is een bouwsel die kadestraal gezien behoort bij een opstal, niet bedoeld voor menselijke bezetting."
+  },
+  {
+    "Label": "OZ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT OVERIG ZAKELIJK",
+    "Toelichting": "Zakelijke risico-objecten niet separaat gedefinieerd."
+  },
+  {
+    "Label": "BF",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT BROMFIETS/RIJWIEL",
+    "Toelichting": "Onder Bromfiets/rijwiel worden alle voertuigen bedoeld niet zijnde een motorrijwiel danwel motorvoertuig."
+  },
+  {
+    "Label": "CR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT CARAVAN",
+    "Toelichting": "Een caravan is een aanhanger zodanig ingericht dat een nachtelijk verblijf van natuurlijke personen mogelijk is."
+  },
+  {
+    "Label": "CP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT COMPUTER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "LH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT DIER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "HE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT ELEKTRONICA APPARATUUR",
+    "Toelichting": "Door elektriciteit aangedreven roerende goederen gebruikt in een zakelijke omgeving binnen een opstal en niet nagelvast met de opstal verbonden."
+  },
+  {
+    "Label": "GI",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT GARAGE",
+    "Toelichting": "Een garagebedrijf."
+  },
+  {
+    "Label": "GF",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT GELD/CHEQUES/WAARDEPAPIEREN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "GS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT GEVAARLIJKE STOF",
+    "Toelichting": "Beschrijving van een stof die een risico vormt bij opslag of transport voor bijvoorbeeld brand of ontploffing."
+  },
+  {
+    "Label": "GL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT GLAS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "GR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT GOEDEREN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "IB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT INBOEDEL",
+    "Toelichting": ""
+  },
+  {
+    "Label": "IT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT INVENTARIS",
+    "Toelichting": "Roerende goederen gebruikt in een zakelijke omgeving binnen een opstal niet zijnde door elektriciteit aangedreven of aard en nagelvast met de opstal verbonden."
+  },
+  {
+    "Label": "GO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT KLUIS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "KH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT KOSTBAARHEID",
+    "Toelichting": ""
+  },
+  {
+    "Label": "MU",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT MILIEURISICO",
+    "Toelichting": ""
+  },
+  {
+    "Label": "OB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT MOTORRIJTUIG",
+    "Toelichting": ""
+  },
+  {
+    "Label": "BA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT OPSTAL",
+    "Toelichting": "Gebouwen bedoeld voor menselijke bezetting."
+  },
+  {
+    "Label": "OS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT OVERIG SCHADE",
+    "Toelichting": "Gegevens over overig schade object."
+  },
+  {
+    "Label": "RS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT REIS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "SC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT SERVICE",
+    "Toelichting": ""
+  },
+  {
+    "Label": "SW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT SOFTWARE",
+    "Toelichting": ""
+  },
+  {
+    "Label": "OT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT EVENEMENT",
+    "Toelichting": "Een evenement is een tijdelijke gebeurtenis waarbij (grote) aantallen mensen verwacht worden."
+  },
+  {
+    "Label": "PT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT TRANSPORT",
+    "Toelichting": "Informatie over de produkten die door een bedrijf worden gefabriceerd, geleverd, opgeleverd of vervoerd."
+  },
+  {
+    "Label": "PG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT VAARTUIG",
+    "Toelichting": ""
+  },
+  {
+    "Label": "MH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT VAARTUIGMOTOR",
+    "Toelichting": ""
+  },
+  {
+    "Label": "VF",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT VLIEGTUIG",
+    "Toelichting": "Gegevens over een vliegtuig of vlieger. Bijvoorbeeld ook een kabelvlieger."
+  },
+  {
+    "Label": "VB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT VOLGBOOT",
+    "Toelichting": "Een volgboot is een vaartuig bedoeld om vervoerd te worden door een ander/groter vaartuig en bedoeld voor recreatieve doeleinden vanuit het vaartuig danwel ontsnappingsvaartuig in geval van"
+  },
+  {
+    "Label": "WP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OBJECT WAGENPARK",
+    "Toelichting": ""
+  },
+  {
+    "Label": "OO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "ONDERDEEL",
+    "Toelichting": "Onderdelen waaruit objecten zijn opgebouwd."
+  },
+  {
+    "Label": "OV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "ONTVANGST BETALING",
+    "Toelichting": "Gegevens over de ontvangst van een betaling."
+  },
+  {
+    "Label": "OC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OPDRACHT",
+    "Toelichting": "Algemene gegevens over een opdracht tot bijvoorbeeld inspectie, taxatie of herstel van schade."
+  },
+  {
+    "Label": "OK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OPGEBOUWD KAPITAAL",
+    "Toelichting": "Gegevens over het totaal opgebouwd kapitaal uit bijvoorbeeld beleggingen in fondsen."
+  },
+  {
+    "Label": "ON",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OPTIE/ACCESSOIRE",
+    "Toelichting": "Opties zijn extra's die als meeruitvoering op een object af fabriek geleverd kunnen worden, deze zijn BPM plichtig. Accessoires zijn extra's die na aflevering aan de klant gemonteerd kunnen"
+  },
+  {
+    "Label": "OU",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "OUTPUT",
+    "Toelichting": "Gegevens over de manier waarop en de vorm waarin de maatschappij de output van bijvoorbeeld de polis administratie richting de klant verstrekt."
+  },
+  {
+    "Label": "XP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ",
+    "Toelichting": "Gegevens over een persoon of organisatie."
+  },
+  {
+    "Label": "BP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ (BEDRIJFS) PENSIOENFONDS",
+    "Toelichting": "Een rechtspersoon met de primaire functie om pensioengelden te beheren en uit te keren."
+  },
+  {
+    "Label": "HA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ (HUIS) ARTS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "BS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ (REGELMATIG) BESTUURDER",
+    "Toelichting": "Een natuurlijk persoon die een voer- of vaartuig bestuurd."
+  },
+  {
+    "Label": "HO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ AANDEELHOUDER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "AG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ AANGIFTE INSTANTIE",
+    "Toelichting": "Een rechtspersoon waar aangifte is gedaan van een misdaad."
+  },
+  {
+    "Label": "AK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ AANSPRAKELIJKE VERZEKERAAR",
+    "Toelichting": ""
+  },
+  {
+    "Label": "BU",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ACCOUNTBETALER",
+    "Toelichting": "De rentebetaler van een contract van het type Account/Depot/Rekening."
+  },
+  {
+    "Label": "AF",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ADMINISTRATIE",
+    "Toelichting": "Een rechtspersoon die de boekhouding voert."
+  },
+  {
+    "Label": "AV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ADVOCAAT",
+    "Toelichting": ""
+  },
+  {
+    "Label": "AS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ASSURADEUR",
+    "Toelichting": "Een rechtspersoon die een verzekeringsbedrijf uit mag voeren, niet zijnde een intermediair."
+  },
+  {
+    "Label": "FI",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ BANK/FINANCIERINGSMAATSCHAPPY",
+    "Toelichting": "Een rechtspersoon die een bancaire instantie is (primair/secundair) volgens de aanstellingsregels van de Nederlandse Bank."
+  },
+  {
+    "Label": "BV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ BEDRIJFSVERENIGING",
+    "Toelichting": "Een rechtspersoon (vereniging) die zorg draagt voor het uitvoeren van de sociale verzekeringswetten binnen een bedrijfstak (ook wel UVI of UWV genoemd)."
+  },
+  {
+    "Label": "BG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ BEGUNSTIGDE",
+    "Toelichting": "Een begunstigde is een persoon die aangemerkt wordt als ontvanger van een uitkering van een levensverzekering."
+  },
+  {
+    "Label": "BN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ BELANGENBEHARTIGER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "OR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ BEROEPSORGANISATIE",
+    "Toelichting": "Een rechtspersoon (vaak vereniging) van werknemers die in hetzelfde vak werkzaam zijn, met als doel de behartiging van de belangen van het vak en de verdediging van de sociale en economische"
+  },
+  {
+    "Label": "FB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ BEWINDVOERDER",
+    "Toelichting": "Een persoon die het bewind voert over een persoon die onder bewind voering staat."
+  },
+  {
+    "Label": "FE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ BOND/FEDERATIE/ORGAAN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "BL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ BORGSTELLER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "MR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ CLAIMSMANAGER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "KP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ CONTACTPERSOON",
+    "Toelichting": "Een natuurlijk persoon waarmee binnen een rechtspersoon contact mee opgenomen kan worden voor nadere inlichtingen."
+  },
+  {
+    "Label": "CT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ CONTROLERENDE INSTANTIE",
+    "Toelichting": "Een rechtspersoon die controlerende taken uitvoert."
+  },
+  {
+    "Label": "CU",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ CREDITEUR",
+    "Toelichting": "De partij die een vordering heeft."
+  },
+  {
+    "Label": "CB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ CURATOR",
+    "Toelichting": "De curator is de wettelijke vertegenwoordiger van de curandus (degene die onder curatele gesteld is), treedt voor hem op en behartigt de financiele belangen van de curandus."
+  },
+  {
+    "Label": "DY",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ DEALER",
+    "Toelichting": "Een dealer is een bedrijf dat de distributiefunctie vervult."
+  },
+  {
+    "Label": "DB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ DEBITEUR",
+    "Toelichting": "De partij die geld verschuldigd is."
+  },
+  {
+    "Label": "DI",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ DIPLOMAHOUDER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "EB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ EIGENAAR BEDRIJF",
+    "Toelichting": ""
+  },
+  {
+    "Label": "EI",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ EIGENAAR OBJECT",
+    "Toelichting": ""
+  },
+  {
+    "Label": "FA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ FABRIKANT/MAKER/BOUWER VE OBJ",
+    "Toelichting": ""
+  },
+  {
+    "Label": "FG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ FRANCHISEGEVER",
+    "Toelichting": "Gegevens van een franchisegever."
+  },
+  {
+    "Label": "GB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ GEBRUIKER POLISKLUIS",
+    "Toelichting": "Gebruiker poliskluis."
+  },
+  {
+    "Label": "GT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ GETUIGE",
+    "Toelichting": "Een natuurlijk persoon die verslag kan doen van een evenement dat van belang is voor derden."
+  },
+  {
+    "Label": "HC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ HOLDING",
+    "Toelichting": ""
+  },
+  {
+    "Label": "HR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ HUURDER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "HG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ HYPOTHEEKGEVER",
+    "Toelichting": "Een persoon die geldt leent en daarvoor een onroerend goed in onderpand geeft."
+  },
+  {
+    "Label": "HN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ HYPOTHEEKNEMER",
+    "Toelichting": "Een rechtspersoon die geld onder hypothecair verband uitleent."
+  },
+  {
+    "Label": "JG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ JAGER",
+    "Toelichting": "Een natuurlijk persoon die op dieren jaagt."
+  },
+  {
+    "Label": "LI",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ KENTEKENBEWIJSHOUDER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "KN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ KIND",
+    "Toelichting": "Een natuurlijk persoon die binnen de wettelijke kaders aangemerkt wordt als handelingsonbekwaam en niet ouder is dan 18 jaar."
+  },
+  {
+    "Label": "LP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ LEASE/FINANCIER/VERHUURDER",
+    "Toelichting": "Een rechtspersoon met als primaire bedrijfsactiviteit het ter beschikking stellen van gebruiksgoederen tegen een (vaste) vergoeding."
+  },
+  {
+    "Label": "BT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ LENINGBETALER",
+    "Toelichting": "De contractant van een contract van het type Lening(deel)."
+  },
+  {
+    "Label": "LZ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ LESSEE",
+    "Toelichting": "De lessee is de contractant van de leasemaatschappij (welke de lessor is). De regelmatige bestuurder is vaak een medewerker van de lessee."
+  },
+  {
+    "Label": "LV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ LEVERANCIER",
+    "Toelichting": "Een rechtspersoon die een roerend goed heeft geleverd."
+  },
+  {
+    "Label": "ML",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ MAATSCHAPSLID",
+    "Toelichting": "Een natuurlijk persoon die lid is van de rechtspersoon 'Maatschap'."
+  },
+  {
+    "Label": "MK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ MAKELAAR",
+    "Toelichting": "Een rechtspersoon (bemiddelaar) bij de handel in roerende en onroerende zaken."
+  },
+  {
+    "Label": "NB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ NABESTAANDE",
+    "Toelichting": ""
+  },
+  {
+    "Label": "MC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ MERKENCLUB",
+    "Toelichting": "Een rechtspersoon waarin eigenaren van voer- of vaartuigen zich verenigen."
+  },
+  {
+    "Label": "NO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ NOTARIS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "OM",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ OMBOUWBEDRIJF",
+    "Toelichting": "Een rechtspersoon met als primaire activiteit het ombouwen van voer- en vaartuigen naar specifieke gebruiksfuncties."
+  },
+  {
+    "Label": "OH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ONDERHOUDSBEDRIJF",
+    "Toelichting": "Een rechtspersoon met als primaire activiteit het uitvoeren van onderhoudswerkzaamheden aan (on)roerende zaken."
+  },
+  {
+    "Label": "MT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ONDERTEKENAAR",
+    "Toelichting": ""
+  },
+  {
+    "Label": "OW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ONDERWIJSINSTELLING",
+    "Toelichting": "Een rechtspersoon die door de lokale overheid is erkend als zijnde een scholingsinstituut van natuurlijke personen."
+  },
+  {
+    "Label": "RV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ONTVANGER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "OY",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ OPDRACHTGEVER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "PA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ PANDNEMER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "PF",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ PENSIOENUITVOERDER",
+    "Toelichting": "Pensioenfonds of verzekeringsmaatschappij die pensioenen van werknemers beheert."
+  },
+  {
+    "Label": "PB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ PREMIEBETALER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "PW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ PREMIESCHULDIGE",
+    "Toelichting": ""
+  },
+  {
+    "Label": "PU",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ PUBLIEKSTREKKER",
+    "Toelichting": "Een rechtspersoon die activiteiten uitoefent waar grote hoeveelheden mensen op afkomen."
+  },
+  {
+    "Label": "RH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ RAAMCONTRACTHOUDER",
+    "Toelichting": "De contractant van een contract van het type raamcontract."
+  },
+  {
+    "Label": "RB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ RECHTSBIJSTANDSVERZEKERAAR",
+    "Toelichting": ""
+  },
+  {
+    "Label": "RF",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ REKENINGHOUDER",
+    "Toelichting": "De contractant van een contract van het type Account/Depot/Rekening."
+  },
+  {
+    "Label": "HK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ SCHADEHERSTEL KETEN",
+    "Toelichting": ""
+  },
+  {
+    "Label": "RT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ SCHADEHERSTELLER",
+    "Toelichting": "Een rechtspersoon met als primaire activiteit het uitvoeren van reparaties aan roerende zaken."
+  },
+  {
+    "Label": "EX",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ SCHADE-EXPERT",
+    "Toelichting": ""
+  },
+  {
+    "Label": "SP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ SAMENWONENDE PARTNER",
+    "Toelichting": "Een natuurlijk persoon."
+  },
+  {
+    "Label": "SM",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ SCHADEMELDER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "VO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ SCHADE VEROORZAKER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "PX",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ SCHULDEISER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "ST",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ SERVICEORGANISATIE",
+    "Toelichting": "Gegevens van de partij die een bepaalde service verleent in bijvoorbeeld het schade-afhandelings proces."
+  },
+  {
+    "Label": "SL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ SLACHTOFFER/BENADEELDE",
+    "Toelichting": ""
+  },
+  {
+    "Label": "SR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ STAMRECHTHOUDER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "SA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ SUBAGENT",
+    "Toelichting": ""
+  },
+  {
+    "Label": "TA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ TANDARTS",
+    "Toelichting": ""
+  },
+  {
+    "Label": "TX",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ TAXATEUR",
+    "Toelichting": ""
+  },
+  {
+    "Label": "TY",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ TEGENPARTIJ",
+    "Toelichting": ""
+  },
+  {
+    "Label": "TS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ TRANSPORTEUR",
+    "Toelichting": ""
+  },
+  {
+    "Label": "TP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ TUSSENPERSOON",
+    "Toelichting": ""
+  },
+  {
+    "Label": "VN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ PANDGEVER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "UV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ UITVOERDER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "AR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ UITVOERINGSINSTANTIE",
+    "Toelichting": "Uitvoeringsinstantie tbv werknemers, zoals bijvoorbeeld UWV"
+  },
+  {
+    "Label": "VP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ VERZEKERINGNEMER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "VG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ VERZORGER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "VL",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ VOLMACHTGEVER",
+    "Toelichting": "Informatie over de rechtspersoon die over de bevoegdheid beschikt om als volmachtverstrekkende verzekeraar een volmacht aan een gevolmachtigde agent te verstrekken."
+  },
+  {
+    "Label": "VE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ VOLMACHTNEMER",
+    "Toelichting": "Informatie over de betrokken gevolmachtigde agent, ook wel Volmachtnemer genoemd."
+  },
+  {
+    "Label": "WG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ WERKGEVER",
+    "Toelichting": "Een rechtspersoon met natuurlijke personen onder arbeidscontract."
+  },
+  {
+    "Label": "WN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ WERKNEMER",
+    "Toelichting": "Een natuurlijke persoon met een arbeidscontract."
+  },
+  {
+    "Label": "WV",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ WETTELIJKE VERTEGENWOORDIGER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "ZW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ZAAKWAARNEMER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "ZO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ZAKELIJKE OMGEVING",
+    "Toelichting": ""
+  },
+  {
+    "Label": "SN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ZENDER",
+    "Toelichting": ""
+  },
+  {
+    "Label": "ZH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PARTIJ ZIEKENHUIS",
+    "Toelichting": "Een rechtspersoon met een vergunning van overheidswege om medische handelingen te verrichten."
+  },
+  {
+    "Label": "MP",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "POOLAANDEEL",
+    "Toelichting": "Informatie over het pool aandeel van een verzekeraar in een bepaald contract."
+  },
+  {
+    "Label": "AB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PRINT",
+    "Toelichting": "Gegevens met betrekking tot het afdrukken van de begeleidende documenten."
+  },
+  {
+    "Label": "MX",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "REKENBOX GEGEVENS",
+    "Toelichting": "Gegevens die van belang zijn voor het aanroepen van een rekenbox."
+  },
+  {
+    "Label": "RN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "REKENINGNUMMER GEGEVENS",
+    "Toelichting": "Gegevens van een rekeningnummer."
+  },
+  {
+    "Label": "OA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PROCES OPDRACHT",
+    "Toelichting": ""
+  },
+  {
+    "Label": "PS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "PROVISIESYSTEEM",
+    "Toelichting": "Bedoeld voor toekomstig of historisch provisieschema, bevat ook totaalvelden."
+  },
+  {
+    "Label": "CC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "SCHADE CALCULATIE GEGEVENS",
+    "Toelichting": "Gegevens die toegepast moeten worden om de kosten van de schade te berekenen."
+  },
+  {
+    "Label": "SD",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "SCHADE DOSSIER",
+    "Toelichting": "Het schadedossier dat opgemaakt wordt bij een gemeld schade incident."
+  },
+  {
+    "Label": "SO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "SCHADE HISTORIE",
+    "Toelichting": "Het schadeverleden van een partij of object."
+  },
+  {
+    "Label": "IC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "SCHADE INCIDENT",
+    "Toelichting": "De gebeurtenis die geleid heeft tot het indienen van een claim."
+  },
+  {
+    "Label": "DM",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "SCHADE / VERLIES",
+    "Toelichting": "De schade aan object of persoon."
+  },
+  {
+    "Label": "IR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "SCHADEGEGEVENS PARTIJ",
+    "Toelichting": "Gegevens over de omstandigheden ten tijde van het incident."
+  },
+  {
+    "Label": "VH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "SCHADEVERHAAL",
+    "Toelichting": "Gegevens over de mate van aansprakelijkheid en de afwikkeling daarvan."
+  },
+  {
+    "Label": "SK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "SLEUTEL",
+    "Toelichting": "Unieke identificerende kenmerken voor de uit te wisselen set polisgegevens."
+  },
+  {
+    "Label": "SE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "SPAARDEEL",
+    "Toelichting": "Spaardeel binnen een (bank) spaarrekening."
+  },
+  {
+    "Label": "XM",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "STATUS MELDING",
+    "Toelichting": "De bij een bepaalde status van bijvoorbeeld een aanvraag of mutatie behorende melding."
+  },
+  {
+    "Label": "PR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "STORTING / INLEG",
+    "Toelichting": "Storting / inleg kan zijn: premie, koopsom, storting op eigen rekening of beleggingsfonds. Bedoeld voor toekomstig of historisch premieschema, bevat ook totaalvelden."
+  },
+  {
+    "Label": "SH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "SYSTEEMHUIS SPECIFIEKE GEGEVENS",
+    "Toelichting": "Systeemhuis specifieke gegevens"
+  },
+  {
+    "Label": "PN",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "TAAK",
+    "Toelichting": "Werkzaamheden die op een object plaats kunnen vinden."
+  },
+  {
+    "Label": "XQ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "TABEL",
+    "Toelichting": "Algemene gegevens van een tabel of staffel."
+  },
+  {
+    "Label": "XR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "TABEL REGEL",
+    "Toelichting": "Tabelregel binnen een tabel."
+  },
+  {
+    "Label": "XG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "TRANSACTIE PROCES",
+    "Toelichting": "Gegevens over een bij bijvoorbeeld aanvraag of mutatie behorende status."
+  },
+  {
+    "Label": "AC",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "UITGAVEN VAN EEN PARTIJ",
+    "Toelichting": "Gegevens over de uitgaven van een partij."
+  },
+  {
+    "Label": "UK",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "UITKERING",
+    "Toelichting": "Gegevens over een daadwerkelijk uitkering bijvoorbeeld na expiratie van een levenpolis of na schadeafwikkeling."
+  },
+  {
+    "Label": "UR",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "URL",
+    "Toelichting": "Unieke Internet Locatie. Uniek adres dat verwijst naar een locatie op het internet."
+  },
+  {
+    "Label": "VA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "VALIDITEITSVERKLARING",
+    "Toelichting": "Validiteitsverklaring."
+  },
+  {
+    "Label": "DX",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "VERLOOPSCHEMA",
+    "Toelichting": "Gegevens over tijdsverloopschema."
+  },
+  {
+    "Label": "VI",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "VERTROUWELIJKE INFORMATIE",
+    "Toelichting": "Vertrouwelijke informatie."
+  },
+  {
+    "Label": "OG",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "(VERZEKERD) BEDRIJF",
+    "Toelichting": "Gegevens over een (verzekerd) bedrijf of organisatie."
+  },
+  {
+    "Label": "VZ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "VERZEKERD PERSOON",
+    "Toelichting": "Een natuurlijk persoon die verzekerd is op een verzekeringsovereenkomst."
+  },
+  {
+    "Label": "VT",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "VOORTGANG",
+    "Toelichting": "Gegevens over de voortgang van bijvoorbeeld de behandeling van een aanvraag of behandeling van een schade claim."
+  },
+  {
+    "Label": "VW",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "VOORWAARDE",
+    "Toelichting": "De gegevens van een voorwaarde, bijvoorbeeld polisvoorwaarde."
+  },
+  {
+    "Label": "IQ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "VRAGEN SCHADE-INCIDENT",
+    "Toelichting": ""
+  },
+  {
+    "Label": "QS",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "VRAGENLIJST",
+    "Toelichting": "Een vragenlijst bevat een serie tekstuele vragen met antwoorden daarop van degene die gevraagd wordt de vragenlijst in te vullen."
+  },
+  {
+    "Label": "QA",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "VRAAG EN ANTWOORD",
+    "Toelichting": "Bevat een vraag in de vorm van vrije tekst en bevat het antwoord op de vraag in de vorm van vrije tekst."
+  },
+  {
+    "Label": "TE",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "VRIJE TEKST",
+    "Toelichting": "Vrije tekst om een nadere toelichting te geven op het bericht. Niet te gebruiken voor informatie die reeds in het bericht aanwezig is of niet ter zake doende opmerkingen."
+  },
+  {
+    "Label": "WO",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "WAARDEOPBOUW",
+    "Toelichting": "Gegevens over de waarde en rendement op zeker moment van bijvoorbeeld een levensverzekering, een beleggingsverzekering, een spaarrekening of lijfrenteverzekering."
+  },
+  {
+    "Label": "WM",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "WAARDE-, PREVENTIEMETER",
+    "Toelichting": "Gegevens die uitgevraagd worden door middel van een waardemeter of preventiemeter."
+  },
+  {
+    "Label": "WB",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "WANBETALING",
+    "Toelichting": "Gegevens over betalingsachterstand en wanbetaling."
+  },
+  {
+    "Label": "WH",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "WERKZAAMHEDEN",
+    "Toelichting": "Gegevens over de werkzaamheden van een bedrijf of organisatie."
+  },
+  {
+    "Label": "WQ",
+    "Formaat": "",
+    "Code": "",
+    "Codelijst": "",
+    "Omschrijving": "WIJZIGING SOORT",
+    "Toelichting": "Gegevens over de wijziging soort. Dient voor het kenbaar maken van toegestane wijziging soorten en voor het kenbaar maken van gecommuniceerde wijzigingen."
+  }
+]

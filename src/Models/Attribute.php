@@ -1,13 +1,13 @@
 <?php
 
-namespace SIVI\ADN\Models;
+namespace SIVI\AFD\Models;
 
-use SIVI\ADN\Models\Codes\Code;
-use SIVI\ADN\Models\CodesList\CodeList;
-use SIVI\ADN\Models\Domain\Domain;
-use SIVI\ADN\Models\Formats\Format;
-use SIVI\ADN\Models\Interfaces\Validatable;
-use SIVI\ADN\Models\Interfaces\Validates;
+use SIVI\AFD\Models\Codes\Code;
+use SIVI\AFD\Models\CodesList\CodeList;
+use SIVI\AFD\Models\Domain\Domain;
+use SIVI\AFD\Models\Formats\Format;
+use SIVI\AFD\Models\Interfaces\Validatable;
+use SIVI\AFD\Models\Interfaces\Validates;
 
 class Attribute implements Validatable
 {
@@ -65,7 +65,7 @@ class Attribute implements Validatable
     /**
      * @return bool
      */
-    public function validate()
+    public function validate(): bool
     {
         $valid = [];
 

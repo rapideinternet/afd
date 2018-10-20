@@ -1,0 +1,2828 @@
+[
+  {
+    "Lijst": "ADNAAG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Adressering"
+  },
+  {
+    "Lijst": "ADNAAN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aanhef"
+  },
+  {
+    "Lijst": "ADNABD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Arbodienst"
+  },
+  {
+    "Lijst": "ADNABS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aard bedrijf specificatie"
+  },
+  {
+    "Lijst": "ADNACT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bedrijfsactiviteiten"
+  },
+  {
+    "Lijst": "ADNADR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Adressoort"
+  },
+  {
+    "Lijst": "ADNADT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aanvang diensttijd"
+  },
+  {
+    "Lijst": "ADNADV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort presentatie advies"
+  },
+  {
+    "Lijst": "ADNAFM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Datacatalogus versie"
+  },
+  {
+    "Lijst": "ADNAFN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort afnemer"
+  },
+  {
+    "Lijst": "ADNAFS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Afsluitwijze onroerend goed"
+  },
+  {
+    "Lijst": "ADNAFT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Wijze van afsluiten"
+  },
+  {
+    "Lijst": "ADNAFW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Afwerking"
+  },
+  {
+    "Lijst": "ADNAKS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aanvangskorting soort"
+  },
+  {
+    "Lijst": "ADNANM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aanmaning"
+  },
+  {
+    "Lijst": "ADNAOC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "AO-criterium"
+  },
+  {
+    "Lijst": "ADNARB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Arbopakket"
+  },
+  {
+    "Lijst": "ADNARM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Afrekenmoment"
+  },
+  {
+    "Lijst": "ADNARR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Arrangement soort"
+  },
+  {
+    "Lijst": "ADNARS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aard van de reis"
+  },
+  {
+    "Lijst": "ADNASP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aanduiding spaarregeling"
+  },
+  {
+    "Lijst": "ADNAST",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Currentstatus"
+  },
+  {
+    "Lijst": "ADNATR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Attractiviteit"
+  },
+  {
+    "Lijst": "ADNAVL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aard vaste lasten"
+  },
+  {
+    "Lijst": "ADNBAR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Beoordelingssysteem arbeidsongeschiktheid"
+  },
+  {
+    "Lijst": "ADNBAV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Behandeling aanvraagformulier"
+  },
+  {
+    "Lijst": "ADNBBB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Beroeps/Bedrijfsorganisatie of Bond"
+  },
+  {
+    "Lijst": "ADNBBO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Materialen"
+  },
+  {
+    "Lijst": "ADNBDA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bouwmateriaal dak"
+  },
+  {
+    "Lijst": "ADNBDT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bedrijfstak"
+  },
+  {
+    "Lijst": "ADNBEG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Relatie partij/partij"
+  },
+  {
+    "Lijst": "ADNBEI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Rol bedrijfseigenaar"
+  },
+  {
+    "Lijst": "ADNBER",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Berekeningswijze"
+  },
+  {
+    "Lijst": "ADNBES",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bestemming"
+  },
+  {
+    "Lijst": "ADNBET",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Wie incasseert"
+  },
+  {
+    "Lijst": "ADNBEV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Beveiligingssoort object"
+  },
+  {
+    "Lijst": "ADNBFD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Beroep en functie aanduiding"
+  },
+  {
+    "Lijst": "ADNBGP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Begunstigings positie"
+  },
+  {
+    "Lijst": "ADNBHW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Behandelingswijze"
+  },
+  {
+    "Lijst": "ADNBIV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Begunstigingsoorzaak"
+  },
+  {
+    "Lijst": "ADNBJS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Basis jaarrente"
+  },
+  {
+    "Lijst": "ADNBKS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Boekingssoort"
+  },
+  {
+    "Lijst": "ADNBLG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort belang"
+  },
+  {
+    "Lijst": "ADNBLV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Beleggingseenheden"
+  },
+  {
+    "Lijst": "ADNBMU",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bouwaard"
+  },
+  {
+    "Lijst": "ADNBMV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "B/M/Noclaim verklaring"
+  },
+  {
+    "Lijst": "ADNBOO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gebruik vaartuig"
+  },
+  {
+    "Lijst": "ADNBOX",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Fiscale spelregels"
+  },
+  {
+    "Lijst": "ADNBPG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort (vrij) beroep"
+  },
+  {
+    "Lijst": "ADNBPM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bedrag in/ex BPM"
+  },
+  {
+    "Lijst": "ADNBRA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "ADN branchecode"
+  },
+  {
+    "Lijst": "ADNBRS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Brandstof"
+  },
+  {
+    "Lijst": "ADNBRZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Beroepcode zelfstandige"
+  },
+  {
+    "Lijst": "ADNBSC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bedrijfssector"
+  },
+  {
+    "Lijst": "ADNBSR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort bedrijfsspaarregeling"
+  },
+  {
+    "Lijst": "ADNBST",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Bedrijfssoort, VM specifiek"
+  },
+  {
+    "Lijst": "ADNBTK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Betrokkene"
+  },
+  {
+    "Lijst": "ADNBTW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "BTW aanduiding"
+  },
+  {
+    "Lijst": "ADNBUI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Basis voor uitkering"
+  },
+  {
+    "Lijst": "ADNBUR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Burgerlijke staat"
+  },
+  {
+    "Lijst": "ADNBVL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bouwaard (verdiepings)vloeren"
+  },
+  {
+    "Lijst": "ADNBVW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Branchevoorwaarden"
+  },
+  {
+    "Lijst": "ADNBVZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Beeindiging verzekering code"
+  },
+  {
+    "Lijst": "ADNBWM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bouwmateriaal"
+  },
+  {
+    "Lijst": "ADNBYC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bijlage specificatie code"
+  },
+  {
+    "Lijst": "ADNBYL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort bijlage"
+  },
+  {
+    "Lijst": "ADNCAA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Categorie aansprakelijkheid"
+  },
+  {
+    "Lijst": "ADNCAR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gebruik caravan"
+  },
+  {
+    "Lijst": "ADNCAW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Advieswerk categorie"
+  },
+  {
+    "Lijst": "ADNCHG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aanpassing"
+  },
+  {
+    "Lijst": "ADNCLB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Categorie landbouwbedrijf"
+  },
+  {
+    "Lijst": "ADNCLC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Clausule categorie"
+  },
+  {
+    "Lijst": "ADNCLW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Categorie werk-/en landbouwwerktuig"
+  },
+  {
+    "Lijst": "ADNCMB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Categorie medisch bedrijf"
+  },
+  {
+    "Lijst": "ADNCNS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Constructiemateriaal"
+  },
+  {
+    "Lijst": "ADNCOM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gebruik computer"
+  },
+  {
+    "Lijst": "ADNCRS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Creditscore uitkomst code"
+  },
+  {
+    "Lijst": "ADNCVB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Combinaties"
+  },
+  {
+    "Lijst": "ADNCVE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Categorie vereniging"
+  },
+  {
+    "Lijst": "ADNCWE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Eindleeftijd constructie"
+  },
+  {
+    "Lijst": "ADNDAK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Constructiewijze dak"
+  },
+  {
+    "Lijst": "ADNDAL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Dataleverancier"
+  },
+  {
+    "Lijst": "ADNDBR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bedragen"
+  },
+  {
+    "Lijst": "ADNDEK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "ADN Dekkingscode"
+  },
+  {
+    "Lijst": "ADNDGC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Duur, gecodeerd"
+  },
+  {
+    "Lijst": "ADNDGD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Dagdeel"
+  },
+  {
+    "Lijst": "ADNDIE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Diersoort"
+  },
+  {
+    "Lijst": "ADNDKG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gebied"
+  },
+  {
+    "Lijst": "ADNDLN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort deelname"
+  },
+  {
+    "Lijst": "ADNDNI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Deelnemers indicatie"
+  },
+  {
+    "Lijst": "ADNDOE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Doel"
+  },
+  {
+    "Lijst": "ADNDOV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Dekking onbetaald verlof"
+  },
+  {
+    "Lijst": "ADNDPS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Dekkingspercentage schema"
+  },
+  {
+    "Lijst": "ADNDRS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Reisdoel"
+  },
+  {
+    "Lijst": "ADNDSL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Doel sluiten contract"
+  },
+  {
+    "Lijst": "ADNDSP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Dossier type code"
+  },
+  {
+    "Lijst": "ADNDST",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Dekkingsstaffel code"
+  },
+  {
+    "Lijst": "ADNDVA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Datum vanaf"
+  },
+  {
+    "Lijst": "ADNDWM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Tijdseenheid"
+  },
+  {
+    "Lijst": "ADNEAA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Evenement aansprakelijkheid"
+  },
+  {
+    "Lijst": "ADNEAP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Elektrische apparatuur"
+  },
+  {
+    "Lijst": "ADNEHA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "EHBO-toepassing"
+  },
+  {
+    "Lijst": "ADNENH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Eenheden"
+  },
+  {
+    "Lijst": "ADNENT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Entiteitscode"
+  },
+  {
+    "Lijst": "ADNERD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type eigenrisicodrager"
+  },
+  {
+    "Lijst": "ADNESK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Enkelvoudig of samengesteld stijgend kapitaal"
+  },
+  {
+    "Lijst": "ADNEXA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Expertise aanvraag"
+  },
+  {
+    "Lijst": "ADNEXP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort expertise"
+  },
+  {
+    "Lijst": "ADNFAC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Factuursoort"
+  },
+  {
+    "Lijst": "ADNFCT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Factor"
+  },
+  {
+    "Lijst": "ADNFCV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Fiscale vorm"
+  },
+  {
+    "Lijst": "ADNFIN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Betalingswijze"
+  },
+  {
+    "Lijst": "ADNFNC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Functie"
+  },
+  {
+    "Lijst": "ADNFON",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Fonds"
+  },
+  {
+    "Lijst": "ADNFRA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Franchise bepaling"
+  },
+  {
+    "Lijst": "ADNFRG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Fiscaal regime"
+  },
+  {
+    "Lijst": "ADNFRI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort aanpassen franchise"
+  },
+  {
+    "Lijst": "ADNFRQ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Frequentie"
+  },
+  {
+    "Lijst": "ADNFSC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Fiscale staffel"
+  },
+  {
+    "Lijst": "ADNFSR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Fiscale spelregels"
+  },
+  {
+    "Lijst": "ADNFST",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Factuur status"
+  },
+  {
+    "Lijst": "ADNFTM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort foutmelding code"
+  },
+  {
+    "Lijst": "ADNFUN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Berichtfunctie"
+  },
+  {
+    "Lijst": "ADNGAB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gasfles aan boord"
+  },
+  {
+    "Lijst": "ADNGAF",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gezamenlijk/afzonderlijk"
+  },
+  {
+    "Lijst": "ADNGAO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Categorie arbeidsongeschiktheid"
+  },
+  {
+    "Lijst": "ADNGES",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Geslacht/rechtspersoon"
+  },
+  {
+    "Lijst": "ADNGEZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gezinssamenstelling"
+  },
+  {
+    "Lijst": "ADNGKH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gebruik"
+  },
+  {
+    "Lijst": "ADNGLS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort object glas"
+  },
+  {
+    "Lijst": "ADNGPS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "GPS notatietype"
+  },
+  {
+    "Lijst": "ADNGRK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gebruik rekeningnummer"
+  },
+  {
+    "Lijst": "ADNGRO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Groeiplaats"
+  },
+  {
+    "Lijst": "ADNGRP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Grondslag"
+  },
+  {
+    "Lijst": "ADNGSL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Geschiloplossing"
+  },
+  {
+    "Lijst": "ADNGTO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Garantie tegen onderverzekering"
+  },
+  {
+    "Lijst": "ADNGVB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Geldvervoerbedrijf"
+  },
+  {
+    "Lijst": "ADNGVL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Schade gevolgen"
+  },
+  {
+    "Lijst": "ADNGWT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gebruik werktuig"
+  },
+  {
+    "Lijst": "ADNHCK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Hoofdcategorie kostbaarheden"
+  },
+  {
+    "Lijst": "ADNHDG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Hoedanigheid schadeveroorzaker"
+  },
+  {
+    "Lijst": "ADNHEB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Herkomst bedrag"
+  },
+  {
+    "Lijst": "ADNHEV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Hoofdevenement"
+  },
+  {
+    "Lijst": "ADNHIB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Herkomst incassobedrag"
+  },
+  {
+    "Lijst": "ADNHKO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Herkomst koopsom"
+  },
+  {
+    "Lijst": "ADNHLP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Hulpplan"
+  },
+  {
+    "Lijst": "ADNHOE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Hoedanigheid bewoning"
+  },
+  {
+    "Lijst": "ADNHOV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort huurovereenkomst"
+  },
+  {
+    "Lijst": "ADNHRB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Vaststelling herbouwwaarde"
+  },
+  {
+    "Lijst": "ADNHSM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Herkomst schademelding"
+  },
+  {
+    "Lijst": "ADNHTM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Houten muren"
+  },
+  {
+    "Lijst": "ADNHWM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort object woning herbouwwaardemeter"
+  },
+  {
+    "Lijst": "ADNHYP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Hypotheekvorm"
+  },
+  {
+    "Lijst": "ADNHYS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Maatschappijspecifieke aflossingsvorm"
+  },
+  {
+    "Lijst": "ADNICT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort incident"
+  },
+  {
+    "Lijst": "ADNIDD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Identificatiedocument"
+  },
+  {
+    "Lijst": "ADNIEB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bedrag in/ex BTW"
+  },
+  {
+    "Lijst": "ADNINC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Incassowijze"
+  },
+  {
+    "Lijst": "ADNINR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "RDW Inrichtingscode"
+  },
+  {
+    "Lijst": "ADNIVL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort onder invloed"
+  },
+  {
+    "Lijst": "ADNJLB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Jaarloon bepaling"
+  },
+  {
+    "Lijst": "ADNJNO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bevestiging"
+  },
+  {
+    "Lijst": "ADNJRB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Jaarruimte bepaling"
+  },
+  {
+    "Lijst": "ADNKAM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aard kampeerauto"
+  },
+  {
+    "Lijst": "ADNKBH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort object kostbaarheden"
+  },
+  {
+    "Lijst": "ADNKEU",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Conclusie keuringsrapport"
+  },
+  {
+    "Lijst": "ADNKLS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Klasse"
+  },
+  {
+    "Lijst": "ADNKRG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort verrekeningswijze"
+  },
+  {
+    "Lijst": "ADNKST",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Kostensoort"
+  },
+  {
+    "Lijst": "ADNKSV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort kostenverrekening"
+  },
+  {
+    "Lijst": "ADNLAA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort laadruimte"
+  },
+  {
+    "Lijst": "ADNLBT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort landbouw/werktuig"
+  },
+  {
+    "Lijst": "ADNLEA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Eigendomsverhouding"
+  },
+  {
+    "Lijst": "ADNLET",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aard letsel"
+  },
+  {
+    "Lijst": "ADNLGP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Ligplaats omgeving"
+  },
+  {
+    "Lijst": "ADNLHC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Inhouding loonheffing instantie"
+  },
+  {
+    "Lijst": "ADNLIG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Ligklasse"
+  },
+  {
+    "Lijst": "ADNLNK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Loonklasse"
+  },
+  {
+    "Lijst": "ADNLOG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Logische eenheid"
+  },
+  {
+    "Lijst": "ADNLOO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Arbeidscontract medewerker"
+  },
+  {
+    "Lijst": "ADNLPT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Looptijd indicatie"
+  },
+  {
+    "Lijst": "ADNLSE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Leasesoorten"
+  },
+  {
+    "Lijst": "ADNLTG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Land- en Tuinbouwgewassen"
+  },
+  {
+    "Lijst": "ADNLTR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Loontrede"
+  },
+  {
+    "Lijst": "ADNLVW",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Soort leveringsvoorwaarden"
+  },
+  {
+    "Lijst": "ADNLYF",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Lijfrenteclausule"
+  },
+  {
+    "Lijst": "ADNMAX",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort maximering"
+  },
+  {
+    "Lijst": "ADNMCD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Dekkingscode maatschappij"
+  },
+  {
+    "Lijst": "ADNMCH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Machines"
+  },
+  {
+    "Lijst": "ADNMIN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Incassowijze TP-Klant"
+  },
+  {
+    "Lijst": "ADNMOT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gebruik voertuig"
+  },
+  {
+    "Lijst": "ADNMPZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Moment van opzegging"
+  },
+  {
+    "Lijst": "ADNMRY",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort motorrijbewijs"
+  },
+  {
+    "Lijst": "ADNMSP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Productcode maatschappij specifiek"
+  },
+  {
+    "Lijst": "ADNMSR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Maatschappij spec. risicoklasse"
+  },
+  {
+    "Lijst": "ADNMTG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Montage"
+  },
+  {
+    "Lijst": "ADNMTL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort mantel"
+  },
+  {
+    "Lijst": "ADNMTS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort motor vaartuig"
+  },
+  {
+    "Lijst": "ADNMUT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Mutatiereden"
+  },
+  {
+    "Lijst": "ADNMVT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Meeverzekeren tandarts"
+  },
+  {
+    "Lijst": "ADNMXS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort maximum salaris"
+  },
+  {
+    "Lijst": "ADNNGB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Nevengebruik"
+  },
+  {
+    "Lijst": "ADNNSL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort neerslag"
+  },
+  {
+    "Lijst": "ADNNSP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Aansprakelijke partij"
+  },
+  {
+    "Lijst": "ADNOBJ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort object code"
+  },
+  {
+    "Lijst": "ADNODC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Uitkeringscriterium"
+  },
+  {
+    "Lijst": "ADNOFI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Overige financiele instelling"
+  },
+  {
+    "Lijst": "ADNOGR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort ondergrond"
+  },
+  {
+    "Lijst": "ADNOMZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Omzet categorie"
+  },
+  {
+    "Lijst": "ADNONC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type onderhoudscontract"
+  },
+  {
+    "Lijst": "ADNOND",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Onderdeel"
+  },
+  {
+    "Lijst": "ADNOOR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Oorsprong"
+  },
+  {
+    "Lijst": "ADNOPB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort opbouw"
+  },
+  {
+    "Lijst": "ADNOPD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Oplaad mogelijkheid"
+  },
+  {
+    "Lijst": "ADNOPL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Onderwijsniveau"
+  },
+  {
+    "Lijst": "ADNOPS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Opslag methode"
+  },
+  {
+    "Lijst": "ADNOPV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Status opstalverzekering"
+  },
+  {
+    "Lijst": "ADNORB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Reden ontzegging rijbewijs"
+  },
+  {
+    "Lijst": "ADNORG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type organisatie"
+  },
+  {
+    "Lijst": "ADNORI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Origine"
+  },
+  {
+    "Lijst": "ADNOSP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort opslagplaats"
+  },
+  {
+    "Lijst": "ADNOST",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort object opstal"
+  },
+  {
+    "Lijst": "ADNOTP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Systeemomgeving"
+  },
+  {
+    "Lijst": "ADNOUS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort output"
+  },
+  {
+    "Lijst": "ADNOUT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Outputvorm"
+  },
+  {
+    "Lijst": "ADNOVB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Omschrijving verzekerd bedrag"
+  },
+  {
+    "Lijst": "ADNOVK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort overeenkomst"
+  },
+  {
+    "Lijst": "ADNOVS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "OVS"
+  },
+  {
+    "Lijst": "ADNPBB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Pensioenbasisbedrag"
+  },
+  {
+    "Lijst": "ADNPBT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Premiebetaler"
+  },
+  {
+    "Lijst": "ADNPCL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Productclassificatie"
+  },
+  {
+    "Lijst": "ADNPER",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Zorgverlening aan code"
+  },
+  {
+    "Lijst": "ADNPFK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Reden doorgeven contract"
+  },
+  {
+    "Lijst": "ADNPFT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Part-time / Full-time"
+  },
+  {
+    "Lijst": "ADNPLK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Plek aanduiding"
+  },
+  {
+    "Lijst": "ADNPLT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Opbergplaats, code"
+  },
+  {
+    "Lijst": "ADNPMD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Ingangsmaand aanduiding pensioen"
+  },
+  {
+    "Lijst": "ADNPOS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Positie"
+  },
+  {
+    "Lijst": "ADNPRE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Premiekorting bij hogere uitkeringsdrempel"
+  },
+  {
+    "Lijst": "ADNPRF",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Risicoprofiel"
+  },
+  {
+    "Lijst": "ADNPRI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Prioriteit"
+  },
+  {
+    "Lijst": "ADNPRO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Proces aanduiding"
+  },
+  {
+    "Lijst": "ADNPRS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Productsoort"
+  },
+  {
+    "Lijst": "ADNPRV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Preventie vaststelling"
+  },
+  {
+    "Lijst": "ADNPSR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort pensioenregeling"
+  },
+  {
+    "Lijst": "ADNPSS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Pensioen systeem"
+  },
+  {
+    "Lijst": "ADNPST",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Premiestaffel"
+  },
+  {
+    "Lijst": "ADNPTB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Terugbetalen premie"
+  },
+  {
+    "Lijst": "ADNPUI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Polis uitreiking"
+  },
+  {
+    "Lijst": "ADNRAP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort rapport"
+  },
+  {
+    "Lijst": "ADNRAT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Rating"
+  },
+  {
+    "Lijst": "ADNRBH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Regio Rijbewijs Behaald"
+  },
+  {
+    "Lijst": "ADNRBV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Uitvoerende rechtsbijstandverzekeraar"
+  },
+  {
+    "Lijst": "ADNRCI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Reden contract ter informatie"
+  },
+  {
+    "Lijst": "ADNRCS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Raamcontract, soort"
+  },
+  {
+    "Lijst": "ADNRDN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Reden voor expertise"
+  },
+  {
+    "Lijst": "ADNRED",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Reden"
+  },
+  {
+    "Lijst": "ADNREG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Regelsturing"
+  },
+  {
+    "Lijst": "ADNRES",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Resultaat acceptatieproces"
+  },
+  {
+    "Lijst": "ADNRFB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Risico-inschatting"
+  },
+  {
+    "Lijst": "ADNRFF",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Referer"
+  },
+  {
+    "Lijst": "ADNRGS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort register"
+  },
+  {
+    "Lijst": "ADNRHC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Ruit herstel"
+  },
+  {
+    "Lijst": "ADNRIC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Reden inspectie"
+  },
+  {
+    "Lijst": "ADNRKA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Toerekening"
+  },
+  {
+    "Lijst": "ADNRKT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Keten"
+  },
+  {
+    "Lijst": "ADNRLC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Ruit locatie"
+  },
+  {
+    "Lijst": "ADNRLH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Rechts/links"
+  },
+  {
+    "Lijst": "ADNROL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Rol"
+  },
+  {
+    "Lijst": "ADNROY",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Royementsreden"
+  },
+  {
+    "Lijst": "ADNRSI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Restschuld indicatie"
+  },
+  {
+    "Lijst": "ADNRST",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Restitutievorm"
+  },
+  {
+    "Lijst": "ADNRTD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Rieten dak constructie"
+  },
+  {
+    "Lijst": "ADNRTG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Rijbeweging"
+  },
+  {
+    "Lijst": "ADNRTM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort retourmelding code"
+  },
+  {
+    "Lijst": "ADNRVB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Rechtsvorm bedrijf"
+  },
+  {
+    "Lijst": "ADNRVK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Royementsverklaring"
+  },
+  {
+    "Lijst": "ADNSAB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort af-/bijschrijving"
+  },
+  {
+    "Lijst": "ADNSAD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Status adres code"
+  },
+  {
+    "Lijst": "ADNSAH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort aanhangwagen"
+  },
+  {
+    "Lijst": "ADNSAM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Samenwerkingsverband"
+  },
+  {
+    "Lijst": "ADNSAO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort arbeidsongeschiktheid"
+  },
+  {
+    "Lijst": "ADNSAR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort arts"
+  },
+  {
+    "Lijst": "ADNSBA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Status achterstand"
+  },
+  {
+    "Lijst": "ADNSBB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Sluit aan bij"
+  },
+  {
+    "Lijst": "ADNSBD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Status bedrag"
+  },
+  {
+    "Lijst": "ADNSBE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort gebouw"
+  },
+  {
+    "Lijst": "ADNSBF",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort bromfiets/rijwiel"
+  },
+  {
+    "Lijst": "ADNSBL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort beloning"
+  },
+  {
+    "Lijst": "ADNSBM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Zakelijk gebruik woning"
+  },
+  {
+    "Lijst": "ADNSBO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort vaartuig"
+  },
+  {
+    "Lijst": "ADNSBW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort werknemersbijdrage"
+  },
+  {
+    "Lijst": "ADNSCC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort contact"
+  },
+  {
+    "Lijst": "ADNSCO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort computer"
+  },
+  {
+    "Lijst": "ADNSCR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Selectie criteria"
+  },
+  {
+    "Lijst": "ADNSCT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort certificaat"
+  },
+  {
+    "Lijst": "ADNSCW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Sector werkzaamheden"
+  },
+  {
+    "Lijst": "ADNSDA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort dak voertuig"
+  },
+  {
+    "Lijst": "ADNSDK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Dekkingspercentage soort"
+  },
+  {
+    "Lijst": "ADNSDN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort deelnemers"
+  },
+  {
+    "Lijst": "ADNSDP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Contosoort"
+  },
+  {
+    "Lijst": "ADNSDT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Rentebedenktijd"
+  },
+  {
+    "Lijst": "ADNSEC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "ADN sectorcode"
+  },
+  {
+    "Lijst": "ADNSEH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort bedrijfseenheid"
+  },
+  {
+    "Lijst": "ADNSEV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Subevenement"
+  },
+  {
+    "Lijst": "ADNSFS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Schadeformulier ondertekening"
+  },
+  {
+    "Lijst": "ADNSGM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Segment"
+  },
+  {
+    "Lijst": "ADNSGR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort eigen risico"
+  },
+  {
+    "Lijst": "ADNSGT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gebeurtenis"
+  },
+  {
+    "Lijst": "ADNSGV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort groep verzekerd"
+  },
+  {
+    "Lijst": "ADNSGZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gezondheidsverklaring"
+  },
+  {
+    "Lijst": "ADNSHH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort huishouden"
+  },
+  {
+    "Lijst": "ADNSIC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort inspectie"
+  },
+  {
+    "Lijst": "ADNSIV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort informatieverstrekking"
+  },
+  {
+    "Lijst": "ADNSKE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort kenteken"
+  },
+  {
+    "Lijst": "ADNSKP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort contactpersoon"
+  },
+  {
+    "Lijst": "ADNSKR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort kruising"
+  },
+  {
+    "Lijst": "ADNSKS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort koopsom"
+  },
+  {
+    "Lijst": "ADNSLC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Locatie"
+  },
+  {
+    "Lijst": "ADNSLO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Slotuitkering"
+  },
+  {
+    "Lijst": "ADNSLU",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Kwaliteit"
+  },
+  {
+    "Lijst": "ADNSMK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort makelaar"
+  },
+  {
+    "Lijst": "ADNSMO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Uitvoering motorfiets"
+  },
+  {
+    "Lijst": "ADNSNT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort notaris"
+  },
+  {
+    "Lijst": "ADNSOC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort object caravan"
+  },
+  {
+    "Lijst": "ADNSOD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort opdracht"
+  },
+  {
+    "Lijst": "ADNSOF",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort offerte"
+  },
+  {
+    "Lijst": "ADNSOI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort ondergrondse installaties"
+  },
+  {
+    "Lijst": "ADNSOM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort object motorrijtuig"
+  },
+  {
+    "Lijst": "ADNSON",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort ontslag"
+  },
+  {
+    "Lijst": "ADNSOP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Salarisopbouw"
+  },
+  {
+    "Lijst": "ADNSOY",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort opdrachtgever"
+  },
+  {
+    "Lijst": "ADNSOZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "ADN Schadeoorzaak"
+  },
+  {
+    "Lijst": "ADNSPD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort spaardeel"
+  },
+  {
+    "Lijst": "ADNSPG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gradatie"
+  },
+  {
+    "Lijst": "ADNSPK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Plaats van de schade"
+  },
+  {
+    "Lijst": "ADNSPP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Stijging partner pensioen"
+  },
+  {
+    "Lijst": "ADNSPR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort premie"
+  },
+  {
+    "Lijst": "ADNSRA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Renteafspraak"
+  },
+  {
+    "Lijst": "ADNSRD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort rieten dak"
+  },
+  {
+    "Lijst": "ADNSRF",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort fiscaliteit code"
+  },
+  {
+    "Lijst": "ADNSRI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Stootrichting"
+  },
+  {
+    "Lijst": "ADNSRK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort rekeningnummer"
+  },
+  {
+    "Lijst": "ADNSRL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort relatie"
+  },
+  {
+    "Lijst": "ADNSRP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Particulier of zakelijk"
+  },
+  {
+    "Lijst": "ADNSSL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort sloten"
+  },
+  {
+    "Lijst": "ADNSSO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort schade object"
+  },
+  {
+    "Lijst": "ADNSSU",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort sociale uitkering code"
+  },
+  {
+    "Lijst": "ADNSTA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Voldoet aan eisen"
+  },
+  {
+    "Lijst": "ADNSTB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Bouwstatus"
+  },
+  {
+    "Lijst": "ADNSTD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Status datum"
+  },
+  {
+    "Lijst": "ADNSTG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Status gegevens"
+  },
+  {
+    "Lijst": "ADNSTL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Stalling"
+  },
+  {
+    "Lijst": "ADNSTN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Moment"
+  },
+  {
+    "Lijst": "ADNSTR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort transport"
+  },
+  {
+    "Lijst": "ADNSTS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Status"
+  },
+  {
+    "Lijst": "ADNSUK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort uitkering"
+  },
+  {
+    "Lijst": "ADNSUV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort uitvoerder"
+  },
+  {
+    "Lijst": "ADNSVB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort verblijfsvergunning code"
+  },
+  {
+    "Lijst": "ADNSVE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort Vereniging van Eigenaren"
+  },
+  {
+    "Lijst": "ADNSVL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort verlichting"
+  },
+  {
+    "Lijst": "ADNSVO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort schadeveroorzaker"
+  },
+  {
+    "Lijst": "ADNSVT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Status voortgang"
+  },
+  {
+    "Lijst": "ADNSVV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort voertuigvolgsysteem code"
+  },
+  {
+    "Lijst": "ADNSVW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort verwarming"
+  },
+  {
+    "Lijst": "ADNSXP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Status expertise"
+  },
+  {
+    "Lijst": "ADNSZV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort ziektekostenverzekering"
+  },
+  {
+    "Lijst": "ADNTAB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort tabel code"
+  },
+  {
+    "Lijst": "ADNTAP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type aansprakelijkheid"
+  },
+  {
+    "Lijst": "ADNTAR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Tariefsoort"
+  },
+  {
+    "Lijst": "ADNTAX",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort taxatie"
+  },
+  {
+    "Lijst": "ADNTDM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Transport deelmarkten"
+  },
+  {
+    "Lijst": "ADNTDN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Totaliseringniveau"
+  },
+  {
+    "Lijst": "ADNTIC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type incasso machtiging"
+  },
+  {
+    "Lijst": "ADNTIT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Titulatuur"
+  },
+  {
+    "Lijst": "ADNTKC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type kozijnconstructie"
+  },
+  {
+    "Lijst": "ADNTLS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type leegstand"
+  },
+  {
+    "Lijst": "ADNTNS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Tenaamstelling"
+  },
+  {
+    "Lijst": "ADNTPE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type bedrijfspand"
+  },
+  {
+    "Lijst": "ADNTPS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type schade"
+  },
+  {
+    "Lijst": "ADNTRA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Transmissiesoort"
+  },
+  {
+    "Lijst": "ADNTRN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort transactie"
+  },
+  {
+    "Lijst": "ADNTSB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "TNO/SCM beveiligingsklasse"
+  },
+  {
+    "Lijst": "ADNTSK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Taak"
+  },
+  {
+    "Lijst": "ADNTTI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Toegang tot informatie"
+  },
+  {
+    "Lijst": "ADNTVO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type schadeveroorzaker"
+  },
+  {
+    "Lijst": "ADNTVW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type voorwaarden"
+  },
+  {
+    "Lijst": "ADNTVZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type verzekering"
+  },
+  {
+    "Lijst": "ADNTXP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type expertise"
+  },
+  {
+    "Lijst": "ADNTYP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type woning"
+  },
+  {
+    "Lijst": "ADNUBD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Uitbetaling door"
+  },
+  {
+    "Lijst": "ADNUIT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Basis schadevergoeding code"
+  },
+  {
+    "Lijst": "ADNUKA",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Uitkering aan"
+  },
+  {
+    "Lijst": "ADNUKR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Uitkering aan"
+  },
+  {
+    "Lijst": "ADNUMR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Carrosserie"
+  },
+  {
+    "Lijst": "ADNUTK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Uitkering"
+  },
+  {
+    "Lijst": "ADNUTZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort uitzicht"
+  },
+  {
+    "Lijst": "ADNUVW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Uitvoer werkzaamheden"
+  },
+  {
+    "Lijst": "ADNVAW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Maatschappij specifieke arbeidsvoorwaarden"
+  },
+  {
+    "Lijst": "ADNVBG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort verzekerde bedrag"
+  },
+  {
+    "Lijst": "ADNVBL",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Verblijfsobject"
+  },
+  {
+    "Lijst": "ADNVBW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Wijze van voortbewegen"
+  },
+  {
+    "Lijst": "ADNVDN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Verkeersdeelname"
+  },
+  {
+    "Lijst": "ADNVDT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Verdelingstype"
+  },
+  {
+    "Lijst": "ADNVEI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Veiligheidsopties"
+  },
+  {
+    "Lijst": "ADNVER",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Versienummer"
+  },
+  {
+    "Lijst": "ADNVEZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort verzekering, code"
+  },
+  {
+    "Lijst": "ADNVIC",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Voorwaarde identificatie"
+  },
+  {
+    "Lijst": "ADNVIE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Viewcode"
+  },
+  {
+    "Lijst": "ADNVLS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort vragenlijst code"
+  },
+  {
+    "Lijst": "ADNVOB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Verzekerd soort object"
+  },
+  {
+    "Lijst": "ADNVRC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Verwerkingscode entiteit"
+  },
+  {
+    "Lijst": "ADNVRH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Verhuur woning"
+  },
+  {
+    "Lijst": "ADNVRM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Vorm"
+  },
+  {
+    "Lijst": "ADNVRU",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Vorm uitkering"
+  },
+  {
+    "Lijst": "ADNVRW",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort voorwaarde"
+  },
+  {
+    "Lijst": "ADNVRZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Verzekeringsvorm"
+  },
+  {
+    "Lijst": "ADNVSJ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Verklaring schadevrije jaren"
+  },
+  {
+    "Lijst": "ADNVUI",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Voormalige uitvoeringsinstantie"
+  },
+  {
+    "Lijst": "ADNVVZ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort vervoerde zaken"
+  },
+  {
+    "Lijst": "ADNVWN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Verwonding aan"
+  },
+  {
+    "Lijst": "ADNVZB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort verzekerde som"
+  },
+  {
+    "Lijst": "ADNVZJ",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Verzekerde jaren"
+  },
+  {
+    "Lijst": "ADNWAD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort wielaandrijving"
+  },
+  {
+    "Lijst": "ADNWBB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Winstvorm berekening basis"
+  },
+  {
+    "Lijst": "ADNWCE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort winkelcentrum"
+  },
+  {
+    "Lijst": "ADNWEG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort weg"
+  },
+  {
+    "Lijst": "ADNWGB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort werkgeversbijdrage"
+  },
+  {
+    "Lijst": "ADNWGS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Waarderingsgrondslag"
+  },
+  {
+    "Lijst": "ADNWIN",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Winstvorm maatschappij"
+  },
+  {
+    "Lijst": "ADNWLC",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Weglocatie"
+  },
+  {
+    "Lijst": "ADNWNB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Soort winstinbouw"
+  },
+  {
+    "Lijst": "ADNWOG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Woonomgeving"
+  },
+  {
+    "Lijst": "ADNWON",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Gebruik woning"
+  },
+  {
+    "Lijst": "ADNWPS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Wijze van polissplitsing"
+  },
+  {
+    "Lijst": "ADNWUT",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Wijze van uitbetaling"
+  },
+  {
+    "Lijst": "ADNWVG",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Woonvergunning"
+  },
+  {
+    "Lijst": "ADNWVV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Wijze van verzenden"
+  },
+  {
+    "Lijst": "ADNWWB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Watson Wyatt bevolking"
+  },
+  {
+    "Lijst": "ADNWWP",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Watson Wyatt provincie"
+  },
+  {
+    "Lijst": "ADNWWR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Watson Wyatt risico-indeling"
+  },
+  {
+    "Lijst": "ADNWZH",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Werkzaamheden"
+  },
+  {
+    "Lijst": "ADNWZM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Wijzigingsmethode"
+  },
+  {
+    "Lijst": "ADNWZS",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Wijziging soort"
+  },
+  {
+    "Lijst": "ADNZGR",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Zakelijke groepering"
+  },
+  {
+    "Lijst": "ADNZOB",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Zakelijke objecten"
+  },
+  {
+    "Lijst": "ADNZWD",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Zwaard plaatsing"
+  },
+  {
+    "Lijst": "CBSBER",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "CBS-beroepenclassificatie"
+  },
+  {
+    "Lijst": "CCVBEV",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "CCV Beveiligingsmaatregelen"
+  },
+  {
+    "Lijst": "CISSOZ",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Schade oorzaak"
+  },
+  {
+    "Lijst": "EEGVRP",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Soort verpakking"
+  },
+  {
+    "Lijst": "EMFGRP",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Finergy groep"
+  },
+  {
+    "Lijst": "EMFTYP",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Finergy type"
+  },
+  {
+    "Lijst": "EVEEVE",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Evenementen"
+  },
+  {
+    "Lijst": "HDNPRT",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Type printer"
+  },
+  {
+    "Lijst": "HDNSPP",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Soort stukken per post"
+  },
+  {
+    "Lijst": "HDNWRT",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Wijze retourneren"
+  },
+  {
+    "Lijst": "ISOLAN",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "ISO landencodetabel (ISO 3166)"
+  },
+  {
+    "Lijst": "ISOTAA",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Taalcode ISO 639-1"
+  },
+  {
+    "Lijst": "ISOVAL",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "ISO valutacodetabel (ISO 4217)"
+  },
+  {
+    "Lijst": "KLBKLB",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Keurmerk Leegstand Beheer"
+  },
+  {
+    "Lijst": "NCPBOK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "BORG Beveiligingsklasse"
+  },
+  {
+    "Lijst": "NENBRA",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Euro brandklasse"
+  },
+  {
+    "Lijst": "PORMAA",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "POR Maatschappijaanduiding"
+  },
+  {
+    "Lijst": "PORPRO",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Provisiecode"
+  },
+  {
+    "Lijst": "PORRCA",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "POR Rekeningcourant crediteur aanduiding"
+  },
+  {
+    "Lijst": "SWIBIC",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "SWIFT Bank Identifier"
+  },
+  {
+    "Lijst": "TBBTBM",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "TBBS klassen"
+  },
+  {
+    "Lijst": "THK",
+    "Code": "",
+    "E": "",
+    "Omschrijving": "Type herstelketen"
+  },
+  {
+    "Lijst": "TXKKMK",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "TX-Keurmerk"
+  },
+  {
+    "Lijst": "UNAGSC",
+    "Code": "",
+    "E": "J",
+    "Omschrijving": "Gevaarlijke stof identificatie"
+  }
+]

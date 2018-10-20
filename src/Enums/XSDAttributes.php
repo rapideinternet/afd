@@ -1,7 +1,7 @@
 <?php
 
 
-namespace SIVI\ADN\Enums;
+namespace SIVI\AFD\Enums;
 
 
 class XSDAttributes

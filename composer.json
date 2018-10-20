@@ -1,27 +1,27 @@
 {
-    "name": "sivi/adn",
-    "description": "A library to interpret the ADN standard",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Tim Mein",
-            "email": "mebusmein@gmail.com"
-        },
-        {
-            "name": "Peter Mein",
-            "email": "petermein@gmail.com"
-        }
-    ],
-    "require": {
-        "myclabs/php-enum": "^1.6"
+  "name": "sivi/afd",
+  "description": "A library to interpret the ADN standard",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tim Mein",
+      "email": "mebusmein@gmail.com"
     },
-    "autoload": {
-        "psr-4": {
-            "SIVI\\ADN\\": "src"
-        }
-    },
-    "require-dev": {
-        "goetas-webservices/xsd2php": "^0.3.3"
+    {
+      "name": "Peter Mein",
+      "email": "petermein@gmail.com"
     }
+  ],
+  "require": {
+    "myclabs/php-enum": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "SIVI\\AFD\\": "src"
+    }
+  },
+  "require-dev": {
+    "goetas-webservices/xsd2php": "^0.3.3"
+  }
 }

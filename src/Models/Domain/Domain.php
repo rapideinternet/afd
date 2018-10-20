@@ -1,8 +1,8 @@
 <?php
 
-namespace SIVI\ADN\Models\Domain;
+namespace SIVI\AFD\Models\Domain;
 
-use SIVI\ADN\Models\Interfaces\Validates;
+use SIVI\AFD\Models\Interfaces\Validates;
 
 class Domain implements Validates
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace SIVI\ADN\Models;
+namespace SIVI\AFD\Models;
 
 
-use SIVI\ADN\Models\Interfaces\Validatable;
+use SIVI\AFD\Models\Interfaces\Validatable;
 
 class Message implements Validatable
 {
@@ -22,9 +22,9 @@ class Message implements Validatable
     }
 
     /**
-     * @return array|bool
+     * @return bool
      */
-    public function validate()
+    public function validate(): bool
     {
         $valid = [];
 
@@ -35,5 +35,10 @@ class Message implements Validatable
         }
 
         return (bool)array_product($valid);
+    }
+
+    public function isPackage()
+    {
+
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace SIVI\ADN\Repositories\Contracts;
+namespace SIVI\AFD\Repositories\Contracts;
 
 
 interface EntiteitRepository

@@ -1,6 +1,6 @@
 <?php
 
-namespace SIVI\ADN\Models\Interfaces;
+namespace SIVI\AFD\Models\Interfaces;
 
 interface Validates
 {

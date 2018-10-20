@@ -1,11 +1,11 @@
 <?php
 
-namespace SIVI\ADN\Models\Interfaces;
+namespace SIVI\AFD\Models\Interfaces;
 
 interface Validatable
 {
     /**
-     * @return array
+     * @return bool
      */
-    public function validate();
+    public function validate(): bool;
 }
