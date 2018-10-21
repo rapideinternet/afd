@@ -87,6 +87,7 @@ class Entity implements Validatable
     {
         if ($this->hasAttribute(AttributeTypes::VOLGNUM)) {
             $attribute = array_first($this->attributes[AttributeTypes::VOLGNUM]);
+
             if ($attribute instanceof Attribute) {
                 return $attribute->getValue();
             }

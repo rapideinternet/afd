@@ -115,8 +115,17 @@ class CodeList implements Validates
 
     public function getValue($key)
     {
-        if (isset($this->values[$key]) || isset($this->values[(int)$key])) {
-            return $this->values[$key] ?? $this->values[(int)$key];
+        if (isset($this->values[$key])) {
+            return $this->values[$key];
         }
+    }
+
+    public function process($value)
+    {
+        if (ctype_digit($value)) {
+            return (int)$value;
+        }
+
+        return $value;
     }
 }

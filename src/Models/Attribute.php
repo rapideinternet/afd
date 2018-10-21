@@ -133,13 +133,13 @@ class Attribute implements Validatable
     /**
      * @return string
      */
-    public function getValue(): string
+    public function getValue()
     {
         return $this->value;
     }
 
     /**
-     * @param string $value
+     * @param mixed $value
      * @return Attribute
      */
     public function setValue($value): Attribute
@@ -152,6 +152,10 @@ class Attribute implements Validatable
 
         if ($this->code) {
             $value = $this->code->process($value);
+        }
+
+        if ($this->codeList) {
+            $value = $this->codeList->process($value);
         }
 
         $this->value = $value;
