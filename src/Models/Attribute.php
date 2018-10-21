@@ -57,9 +57,7 @@ class Attribute implements Validatable
      */
     public function __construct($value)
     {
-        $this->label = $value;
         $this->value = $value;
-        $this->format = new Format();
     }
 
     /**
@@ -86,5 +84,149 @@ class Attribute implements Validatable
         }
 
         return (bool)array_product($valid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getLabel(): string
+    {
+        return $this->label;
+    }
+
+    /**
+     * @param string $label
+     * @return Attribute
+     */
+    public function setLabel(string $label): Attribute
+    {
+        $this->label = $label;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param string $value
+     * @return Attribute
+     */
+    public function setValue(string $value): Attribute
+    {
+        $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * @return Domain
+     */
+    public function getDomain(): Domain
+    {
+        return $this->domain;
+    }
+
+    /**
+     * @param Domain $domain
+     * @return Attribute
+     */
+    public function setDomain(Domain $domain): Attribute
+    {
+        $this->domain = $domain;
+        return $this;
+    }
+
+    /**
+     * @return Format
+     */
+    public function getFormat(): Format
+    {
+        return $this->format;
+    }
+
+    /**
+     * @param Format $format
+     * @return Attribute
+     */
+    public function setFormat(Format $format): Attribute
+    {
+        $this->format = $format;
+        return $this;
+    }
+
+    /**
+     * @return Code
+     */
+    public function getCode(): Code
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param Code $code
+     * @return Attribute
+     */
+    public function setCode(Code $code): Attribute
+    {
+        $this->code = $code;
+        return $this;
+    }
+
+    /**
+     * @return CodeList
+     */
+    public function getCodeList(): CodeList
+    {
+        return $this->codeList;
+    }
+
+    /**
+     * @param CodeList $codeList
+     * @return Attribute
+     */
+    public function setCodeList(CodeList $codeList): Attribute
+    {
+        $this->codeList = $codeList;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     * @return Attribute
+     */
+    public function setDescription(string $description): Attribute
+    {
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExplanation(): string
+    {
+        return $this->explanation;
+    }
+
+    /**
+     * @param string $explanation
+     * @return Attribute
+     */
+    public function setExplanation(string $explanation): Attribute
+    {
+        $this->explanation = $explanation;
+        return $this;
     }
 }
