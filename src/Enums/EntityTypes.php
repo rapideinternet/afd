@@ -6,6 +6,7 @@ use MyCLabs\Enum\Enum;
 
 class EntityTypes extends Enum
 {
-    const CONTRACT_POLISONDERDEEL = 'pk';
-    const CONTRACT_PAKKET = 'pp';
+    const BIJLAGE = 'BY';
+    const CONTRACT_POLISONDERDEEL = 'PK';
+    const CONTRACT_PAKKET = 'PP';
 }

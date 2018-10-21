@@ -2,21 +2,28 @@
 
 namespace SIVI\AFD\Models\Codes;
 
+use SIVI\AFD\Enums\Codes;
+
 class CurrencyCode extends Code
 {
+    protected static $code = Codes::CURRENCY;
+
+    protected $description = 'Bedrag met maximaal n decimalen';
 
     protected $delimiter;
 
     protected $length;
+
+    public static $variableLength = true;
 
     /**
      * CurrencyCode constructor.
      * @param $length
      * @param string $delimiter
      */
-    protected function __construct($length, $delimiter = '.')
+    public function __construct($code, $delimiter = '.')
     {
-        $this->length = $length;
+        $this->length = (int)substr($code, 1);
         $this->delimiter = $delimiter;
     }
 
@@ -29,8 +36,13 @@ class CurrencyCode extends Code
         return true;
     }
 
-    function format($value)
+    public function format($value)
     {
         // TODO: Implement format() method.
+    }
+
+    public function process($value)
+    {
+        return (double)$value;
     }
 }

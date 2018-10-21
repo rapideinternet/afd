@@ -31,7 +31,7 @@ class Format implements Validates
     public function __construct($format)
     {
         $this->type = $this->determineType($format);
-        $this->fixedLength = $this->determineMaxLength($format);
+        $this->maxLength = $this->determineMaxLength($format);
         $this->value = $this->determineValue($format);
     }
 
@@ -69,19 +69,24 @@ class Format implements Validates
         if ($this->type == self::ALPHA_NUMERIC) {
             if ($this->maxLength) {
                 return ctype_alpha($value) && strlen($value) < $this->maxLength;
-            } else {
-                return ctype_alpha($value) && strlen($value) == $this->maxLength;
             }
+
+            return ctype_alpha($value) && strlen($value) == $this->maxLength;
         }
 
         if ($this->type == self::NUMERIC) {
             if ($this->maxLength) {
                 return is_numeric($value) && strlen($value) < $this->maxLength;
-            } else {
-                return is_numeric($value) && strlen($value) == $this->maxLength;
             }
+
+            return is_numeric($value) && strlen($value) == $this->maxLength;
         }
 
         return false;
+    }
+
+    public function process($value)
+    {
+        return $this->type == self::NUMERIC ? (int)$value : $value;
     }
 }

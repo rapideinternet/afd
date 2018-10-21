@@ -27,6 +27,15 @@ class CodeList implements Validates
      */
     protected $values = [];
 
+    /**
+     * CodeList constructor.
+     * @param $label
+     */
+    public function __construct($label)
+    {
+        $this->label = $label;
+    }
+
     public function validateValue($value)
     {
         return isset($this->values[$value]);
@@ -102,5 +111,12 @@ class CodeList implements Validates
     {
         $this->values = $values;
         return $this;
+    }
+
+    public function getValue($key)
+    {
+        if (isset($this->values[$key]) || isset($this->values[(int)$key])) {
+            return $this->values[$key] ?? $this->values[(int)$key];
+        }
     }
 }

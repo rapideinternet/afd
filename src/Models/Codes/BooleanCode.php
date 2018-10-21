@@ -2,15 +2,42 @@
 
 namespace SIVI\AFD\Models\Codes;
 
+use SIVI\AFD\Enums\Codes;
+
 class BooleanCode extends Code
 {
+    protected static $code = Codes::BOOL;
+
+    protected $description = 'Logische waarde J of N';
+
     public function validateValue($value)
     {
         return is_bool($value);
     }
 
-    function format($value)
+    public function format($value)
     {
-        // TODO: Implement format() method.
+        if ($value === true) {
+            return 'J';
+        }
+
+        if ($value === false) {
+            return 'N';
+        }
+
+        return '';
+    }
+
+    public function process($value)
+    {
+        if ($value === 'J') {
+            return true;
+        }
+
+        if ($value === 'N') {
+            return false;
+        }
+
+        return null;
     }
 }

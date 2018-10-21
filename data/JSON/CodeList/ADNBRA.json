@@ -1,485 +1,485 @@
 [
-  {
-    "Lijst": "ADNBRA",
-    "Code": 10,
-    "E": "",
-    "Omschrijving": "Ongevallen en ziekte",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 11,
-    "E": "",
-    "Omschrijving": "Ongevallen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 12,
-    "E": "",
-    "Omschrijving": "Ziektekosten",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 13,
-    "E": "",
-    "Omschrijving": "Arbeidsongeschiktheid",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 14,
-    "E": "",
-    "Omschrijving": "Ongevallen-inzittenden",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 15,
-    "E": "",
-    "Omschrijving": "Ziekteverzuim",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 16,
-    "E": "",
-    "Omschrijving": "Levende have",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 17,
-    "E": "",
-    "Omschrijving": "Werknemersverzekeringen WIA/WGA",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 20,
-    "E": "",
-    "Omschrijving": "Motorrijtuigen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 21,
-    "E": "",
-    "Omschrijving": "Auto",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 22,
-    "E": "",
-    "Omschrijving": "Caravan",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 23,
-    "E": "",
-    "Omschrijving": "Bromfiets",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 24,
-    "E": "",
-    "Omschrijving": "Rijwiel",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 25,
-    "E": "",
-    "Omschrijving": "Motor/scooter",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 26,
-    "E": "",
-    "Omschrijving": "Garage",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 27,
-    "E": "",
-    "Omschrijving": "Aanhanger",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 30,
-    "E": "",
-    "Omschrijving": "Scheepvaart en transport",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 31,
-    "E": "",
-    "Omschrijving": "Transport goederen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 32,
-    "E": "",
-    "Omschrijving": "Transport casco (schepen,pleziervrt.,woonschepen)",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 33,
-    "E": "",
-    "Omschrijving": "Internationaal beroepsgoederenvervoer",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 34,
-    "E": "",
-    "Omschrijving": "Car/montage",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 35,
-    "E": "",
-    "Omschrijving": "Werk- en landbouw",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 36,
-    "E": "",
-    "Omschrijving": "Technische verzekeringen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 37,
-    "E": "",
-    "Omschrijving": "Pleziervaartuigen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 38,
-    "E": "",
-    "Omschrijving": "Vrachtwagen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 40,
-    "E": "",
-    "Omschrijving": "Luchtvaart",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 50,
-    "E": "",
-    "Omschrijving": "Brand",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 51,
-    "E": "",
-    "Omschrijving": "Opstal/inboedel",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 52,
-    "E": "",
-    "Omschrijving": "Glas",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 53,
-    "E": "",
-    "Omschrijving": "Kostbaarheden",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 54,
-    "E": "",
-    "Omschrijving": "(Huis)Elektronica",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 55,
-    "E": "",
-    "Omschrijving": "Opstal",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 56,
-    "E": "",
-    "Omschrijving": "Inboedel",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 60,
-    "E": "",
-    "Omschrijving": "Aansprakelijkheid",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 61,
-    "E": "",
-    "Omschrijving": "Gewone aansprakelijkheid",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 62,
-    "E": "",
-    "Omschrijving": "Vervoerdersaansprakelijkheid",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 63,
-    "E": "",
-    "Omschrijving": "Beroepsaansprakelijkheid",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 64,
-    "E": "",
-    "Omschrijving": "Aansprakelijkheid medische instellingen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 65,
-    "E": "",
-    "Omschrijving": "Bedrijfsaansprakelijkheid w.o. milieu",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 70,
-    "E": "",
-    "Omschrijving": "Krediet en borgtocht",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 80,
-    "E": "",
-    "Omschrijving": "Diverse geldelijke verliezen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 81,
-    "E": "",
-    "Omschrijving": "Evenementen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 82,
-    "E": "",
-    "Omschrijving": "Garantieverlenging",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 83,
-    "E": "",
-    "Omschrijving": "Data en software",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 84,
-    "E": "",
-    "Omschrijving": "Gewassen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 85,
-    "E": "",
-    "Omschrijving": "Fabrieksgarantie",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 86,
-    "E": "",
-    "Omschrijving": "Aankoop",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 90,
-    "E": "",
-    "Omschrijving": "Rechtsbijstand",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 91,
-    "E": "",
-    "Omschrijving": "Verkeersrechtsbijstand",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 92,
-    "E": "",
-    "Omschrijving": "Particuliere rechtsbijstand",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 93,
-    "E": "",
-    "Omschrijving": "Bedrijfsrechtsbijstand",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 100,
-    "E": "",
-    "Omschrijving": "Leven",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 101,
-    "E": "",
-    "Omschrijving": "Levensverzekeringen/spaar",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 102,
-    "E": "",
-    "Omschrijving": "Levensverzekeringen/risico",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 103,
-    "E": "",
-    "Omschrijving": "Levensverzekeringen/gemengd",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 104,
-    "E": "",
-    "Omschrijving": "Levenhypotheek",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 105,
-    "E": "",
-    "Omschrijving": "Levensverzekering/lijfrente",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 106,
-    "E": "",
-    "Omschrijving": "Levensverzekering/begrafenis en crematie",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 107,
-    "E": "",
-    "Omschrijving": "Pensioenverzekeringen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 108,
-    "E": "",
-    "Omschrijving": "Premiepensioenvorderingen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 600,
-    "E": "",
-    "Omschrijving": "Buitenland, reizen",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 601,
-    "E": "",
-    "Omschrijving": "Reis en annuleringsverzekeringen, excursies",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 602,
-    "E": "",
-    "Omschrijving": "Buitenland (alle risicoverz. voor het buitenl.)",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 610,
-    "E": "",
-    "Omschrijving": "Recreatieve activiteiten",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 700,
-    "E": "",
-    "Omschrijving": "Hypotheken",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 990,
-    "E": "",
-    "Omschrijving": "Pakket",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 991,
-    "E": "",
-    "Omschrijving": "Rubriekenpolis",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 992,
-    "E": "",
-    "Omschrijving": "Servicecontract",
-    "FIELD5": ""
-  },
-  {
-    "Lijst": "ADNBRA",
-    "Code": 999,
-    "E": "",
-    "Omschrijving": "Overig",
-    "FIELD5": ""
-  }
+    {
+        "Lijst": "ADNBRA",
+        "Code": 10,
+        "E": "",
+        "Omschrijving": "Ongevallen en ziekte",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 11,
+        "E": "",
+        "Omschrijving": "Ongevallen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 12,
+        "E": "",
+        "Omschrijving": "Ziektekosten",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 13,
+        "E": "",
+        "Omschrijving": "Arbeidsongeschiktheid",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 14,
+        "E": "",
+        "Omschrijving": "Ongevallen-inzittenden",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 15,
+        "E": "",
+        "Omschrijving": "Ziekteverzuim",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 16,
+        "E": "",
+        "Omschrijving": "Levende have",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 17,
+        "E": "",
+        "Omschrijving": "Werknemersverzekeringen WIA/WGA",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 20,
+        "E": "",
+        "Omschrijving": "Motorrijtuigen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 21,
+        "E": "",
+        "Omschrijving": "Auto",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 22,
+        "E": "",
+        "Omschrijving": "Caravan",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 23,
+        "E": "",
+        "Omschrijving": "Bromfiets",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 24,
+        "E": "",
+        "Omschrijving": "Rijwiel",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 25,
+        "E": "",
+        "Omschrijving": "Motor/scooter",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 26,
+        "E": "",
+        "Omschrijving": "Garage",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 27,
+        "E": "",
+        "Omschrijving": "Aanhanger",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 30,
+        "E": "",
+        "Omschrijving": "Scheepvaart en transport",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 31,
+        "E": "",
+        "Omschrijving": "Transport goederen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 32,
+        "E": "",
+        "Omschrijving": "Transport casco (schepen,pleziervrt.,woonschepen)",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 33,
+        "E": "",
+        "Omschrijving": "Internationaal beroepsgoederenvervoer",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 34,
+        "E": "",
+        "Omschrijving": "Car/montage",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 35,
+        "E": "",
+        "Omschrijving": "Werk- en landbouw",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 36,
+        "E": "",
+        "Omschrijving": "Technische verzekeringen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 37,
+        "E": "",
+        "Omschrijving": "Pleziervaartuigen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 38,
+        "E": "",
+        "Omschrijving": "Vrachtwagen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 40,
+        "E": "",
+        "Omschrijving": "Luchtvaart",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 50,
+        "E": "",
+        "Omschrijving": "Brand",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 51,
+        "E": "",
+        "Omschrijving": "Opstal/inboedel",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 52,
+        "E": "",
+        "Omschrijving": "Glas",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 53,
+        "E": "",
+        "Omschrijving": "Kostbaarheden",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 54,
+        "E": "",
+        "Omschrijving": "(Huis)Elektronica",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 55,
+        "E": "",
+        "Omschrijving": "Opstal",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 56,
+        "E": "",
+        "Omschrijving": "Inboedel",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 60,
+        "E": "",
+        "Omschrijving": "Aansprakelijkheid",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 61,
+        "E": "",
+        "Omschrijving": "Gewone aansprakelijkheid",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 62,
+        "E": "",
+        "Omschrijving": "Vervoerdersaansprakelijkheid",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 63,
+        "E": "",
+        "Omschrijving": "Beroepsaansprakelijkheid",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 64,
+        "E": "",
+        "Omschrijving": "Aansprakelijkheid medische instellingen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 65,
+        "E": "",
+        "Omschrijving": "Bedrijfsaansprakelijkheid w.o. milieu",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 70,
+        "E": "",
+        "Omschrijving": "Krediet en borgtocht",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 80,
+        "E": "",
+        "Omschrijving": "Diverse geldelijke verliezen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 81,
+        "E": "",
+        "Omschrijving": "Evenementen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 82,
+        "E": "",
+        "Omschrijving": "Garantieverlenging",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 83,
+        "E": "",
+        "Omschrijving": "Data en software",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 84,
+        "E": "",
+        "Omschrijving": "Gewassen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 85,
+        "E": "",
+        "Omschrijving": "Fabrieksgarantie",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 86,
+        "E": "",
+        "Omschrijving": "Aankoop",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 90,
+        "E": "",
+        "Omschrijving": "Rechtsbijstand",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 91,
+        "E": "",
+        "Omschrijving": "Verkeersrechtsbijstand",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 92,
+        "E": "",
+        "Omschrijving": "Particuliere rechtsbijstand",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 93,
+        "E": "",
+        "Omschrijving": "Bedrijfsrechtsbijstand",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 100,
+        "E": "",
+        "Omschrijving": "Leven",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 101,
+        "E": "",
+        "Omschrijving": "Levensverzekeringen/spaar",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 102,
+        "E": "",
+        "Omschrijving": "Levensverzekeringen/risico",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 103,
+        "E": "",
+        "Omschrijving": "Levensverzekeringen/gemengd",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 104,
+        "E": "",
+        "Omschrijving": "Levenhypotheek",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 105,
+        "E": "",
+        "Omschrijving": "Levensverzekering/lijfrente",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 106,
+        "E": "",
+        "Omschrijving": "Levensverzekering/begrafenis en crematie",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 107,
+        "E": "",
+        "Omschrijving": "Pensioenverzekeringen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 108,
+        "E": "",
+        "Omschrijving": "Premiepensioenvorderingen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 600,
+        "E": "",
+        "Omschrijving": "Buitenland, reizen",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 601,
+        "E": "",
+        "Omschrijving": "Reis en annuleringsverzekeringen, excursies",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 602,
+        "E": "",
+        "Omschrijving": "Buitenland (alle risicoverz. voor het buitenl.)",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 610,
+        "E": "",
+        "Omschrijving": "Recreatieve activiteiten",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 700,
+        "E": "",
+        "Omschrijving": "Hypotheken",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 990,
+        "E": "",
+        "Omschrijving": "Pakket",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 991,
+        "E": "",
+        "Omschrijving": "Rubriekenpolis",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 992,
+        "E": "",
+        "Omschrijving": "Servicecontract",
+        "FIELD5": ""
+    },
+    {
+        "Lijst": "ADNBRA",
+        "Code": 999,
+        "E": "",
+        "Omschrijving": "Overig",
+        "FIELD5": ""
+    }
 ]

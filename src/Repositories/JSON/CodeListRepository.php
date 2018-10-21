@@ -2,27 +2,29 @@
 
 namespace SIVI\AFD\Repositories\JSON;
 
-use SIVI\AFD\Builders\Models\CodeListBuilder;
 use SIVI\AFD\Exceptions\FileNotFoundException;
 use SIVI\AFD\Models\CodesList\CodeList;
 
 class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRepository
 {
     /**
-     * @var null
+     * @var string
      */
-    private $file;
-    private $valuePath;
+    protected $file;
+    /**
+     * @var string
+     */
+    protected $valuePath;
 
     /**
      * AttributeRepository constructor.
      * @param null $file
      * @param $valuePath
      */
-    public function __construct($file, $valuePath)
+    public function __construct($file = null, $valuePath = null)
     {
-        $this->file = $file;
-        $this->valuePath = $valuePath;
+        $this->file = $file ?? __DIR__ . '/../../../data/JSON/codeList.json';
+        $this->valuePath = $valuePath ?? __DIR__ . '/../../../data/JSON/CodeList';
     }
 
     /**
@@ -32,19 +34,49 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
      */
     public function findByLabel($label): CodeList
     {
-        //Get the data form the codelist json
-        $label = 'ADNBRA';
-        $description = 'ADN branchecode';
-        $external = false;
+        $codeList = new CodeList($label);
 
-        //Get the values from the values file
-        $values = $this->getValues($label);
+        $data = $this->getObjectData($label);
+        $this->mapDataToObject($codeList, $data);
 
-        //Build
-        $builder = new CodeListBuilder($label, $values, $description, $external);
+        return $codeList;
+    }
 
-        //Return the model
-        return $builder->build();
+    /**
+     * @return array
+     * @throws FileNotFoundException
+     */
+    protected function getObjectData($key)
+    {
+
+        if (file_exists($this->file)) {
+            $json = json_decode(file_get_contents($this->file), true);
+
+            //TODO optimize n-problem
+            foreach ($json as $item) {
+                if (isset($item['Label']) && $item['Label'] == $key) {
+                    return $item;
+                }
+            }
+        } else {
+            throw new FileNotFoundException(sprintf('Could not find codeList.json file'));
+        }
+    }
+
+    /**
+     * @param CodeList $codeList
+     * @param array $data
+     * @return CodeList
+     */
+    protected function mapDataToObject(CodeList $codeList, $data): CodeList
+    {
+        if (isset($data['Omschrijving'])) {
+            $codeList->setDescription($data['Omschrijving']);
+        }
+
+        $codeList->setValues($this->getValues($codeList->getLabel()));
+
+        return $codeList;
     }
 
     /**
@@ -56,6 +88,7 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
         $path = sprintf('%s/%s.json', $this->valuePath, $label);
 
         if (!file_exists($path)) {
+            return [];
             throw new FileNotFoundException(sprintf('Could not find json file for label %s', $label));
         }
 
@@ -64,7 +97,7 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
         //Format values
         $map = [];
         foreach ($values as $item) {
-            $map[$item['Lijst']] = $item['Omschrijving'];
+            $map[$item['Code']] = $item['Omschrijving'];
         }
 
         return $map;

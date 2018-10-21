@@ -2,20 +2,28 @@
 
 namespace SIVI\AFD\Models\Codes;
 
+use SIVI\AFD\Enums\Codes;
+
 class PercentageCode extends Code
 {
+    protected static $code = Codes::PERCENTAGE;
+
+    protected $description = 'Percentage met maximaal n decimalen';
+
     protected $delimiter;
 
     protected $length;
+
+    public static $variableLength = true;
 
     /**
      * CurrencyCode constructor.
      * @param $length
      * @param string $delimiter
      */
-    protected function __construct($length, $delimiter = '.')
+    public function __construct($code, $delimiter = '.')
     {
-        $this->length = $length;
+        $this->length = (int)substr($code, 1);
         $this->delimiter = $delimiter;
     }
 
@@ -31,5 +39,10 @@ class PercentageCode extends Code
     function format($value)
     {
         // TODO: Implement format() method.
+    }
+
+    public function process($value)
+    {
+        return (double)$value;
     }
 }

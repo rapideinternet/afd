@@ -4,7 +4,7 @@ namespace SIVI\AFD\Models\Codes;
 
 use DateTime;
 
-abstract class DateCode extends Code
+class DateCode extends Code
 {
     protected $format;
 
@@ -20,9 +20,14 @@ abstract class DateCode extends Code
         $this->validateDateFormat($this->format, $value);
     }
 
-    function format($value)
+    public function format($value)
     {
         $d = DateTime::createFromFormat($this->format, $value);
         return $d->format($this->format);
+    }
+
+    public function process($value)
+    {
+        return DateTime::createFromFormat($this->format, $value);
     }
 }

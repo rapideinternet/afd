@@ -16,10 +16,19 @@ class Attribute implements Validatable
      */
     protected $label;
 
+    protected $typeLabel;
+
+    protected static $type;
+
+    /**
+     * @var mixed
+     */
+    protected $value;
+
     /**
      * @var string
      */
-    protected $value;
+    protected $rawValue;
 
     /**
      * @var Domain
@@ -51,13 +60,29 @@ class Attribute implements Validatable
      */
     protected $explanation;
 
+    protected static $typeMap = [];
+
     /**
      * Attribute constructor.
      * @param $value
      */
-    public function __construct($value)
+    public function __construct($label)
     {
-        $this->value = $value;
+        $this->setLabel($label);
+    }
+
+    /**
+     * @return array
+     */
+    public static function typeMap()
+    {
+        $map = [];
+
+        foreach (self::$typeMap as $class) {
+            $map[$class::$type] = $class;
+        }
+
+        return $map;
     }
 
     /**
@@ -101,6 +126,7 @@ class Attribute implements Validatable
     public function setLabel(string $label): Attribute
     {
         $this->label = $label;
+        $this->typeLabel = substr($label, 3);
         return $this;
     }
 
@@ -116,9 +142,20 @@ class Attribute implements Validatable
      * @param string $value
      * @return Attribute
      */
-    public function setValue(string $value): Attribute
+    public function setValue($value): Attribute
     {
+        $this->rawValue = $value;
+
+        if ($this->format) {
+            $value = $this->format->process($value);
+        }
+
+        if ($this->code) {
+            $value = $this->code->process($value);
+        }
+
         $this->value = $value;
+
         return $this;
     }
 
@@ -228,5 +265,23 @@ class Attribute implements Validatable
     {
         $this->explanation = $explanation;
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTypeLabel()
+    {
+        return $this->typeLabel;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCodeListDescription()
+    {
+        if ($this->codeList) {
+            return $this->codeList->getValue($this->getValue());
+        }
     }
 }
