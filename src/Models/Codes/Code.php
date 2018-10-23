@@ -3,9 +3,9 @@
 namespace SIVI\AFD\Models\Codes;
 
 use SIVI\AFD\Exceptions\NotImplementedException;
-use SIVI\AFD\Models\Interfaces\Validates;
+use SIVI\AFD\Models\Interfaces\ValueFormats;
 
-class Code implements Validates
+class Code implements ValueFormats
 {
     /**
      * Codes Enum
@@ -23,18 +23,20 @@ class Code implements Validates
      */
     public static $variableLength = false;
 
+    protected $rawCode;
+
     /**
      * @param $value
      * @throws NotImplementedException
      */
-    public function format($value)
+    public function formatValue($value)
     {
         throw new NotImplementedException('Invalid code configuration format not implemented');
     }
 
     public function __construct($code)
     {
-
+        $this->rawCode = $code;
     }
 
     public static $codeMap = [
@@ -77,7 +79,7 @@ class Code implements Validates
         throw new NotImplementedException('Invalid code configuration validateValue not implemented');
     }
 
-    public function process($value)
+    public function processValue($value)
     {
         return $value;
     }

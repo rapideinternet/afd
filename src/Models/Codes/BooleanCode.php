@@ -15,7 +15,7 @@ class BooleanCode extends Code
         return is_bool($value);
     }
 
-    public function format($value)
+    public function formatValue($value)
     {
         if ($value === true) {
             return 'J';
@@ -28,7 +28,7 @@ class BooleanCode extends Code
         return '';
     }
 
-    public function process($value)
+    public function processValue($value)
     {
         if ($value === 'J') {
             return true;

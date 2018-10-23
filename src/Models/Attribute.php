@@ -7,7 +7,7 @@ use SIVI\AFD\Models\CodesList\CodeList;
 use SIVI\AFD\Models\Domain\Domain;
 use SIVI\AFD\Models\Formats\Format;
 use SIVI\AFD\Models\Interfaces\Validatable;
-use SIVI\AFD\Models\Interfaces\Validates;
+use SIVI\AFD\Models\Interfaces\ValueFormats;
 
 class Attribute implements Validatable
 {
@@ -87,28 +87,29 @@ class Attribute implements Validatable
 
     /**
      * @return bool
+     * @throws \SIVI\AFD\Exceptions\NotImplementedException
      */
     public function validate(): bool
     {
         $valid = [];
 
-        if ($this->domain instanceof Validates) {
+        if ($this->domain instanceof ValueFormats) {
             $valid[] = $this->domain->validateValue($this->value);
         }
 
-        if ($this->format instanceof Validates) {
+        if ($this->format instanceof ValueFormats) {
             $valid[] = $this->format->validateValue($this->value);
         }
 
-        if ($this->code instanceof Validates) {
+        if ($this->code instanceof ValueFormats) {
             $valid[] = $this->code->validateValue($this->value);
         }
 
-        if ($this->codeList instanceof Validates) {
+        if ($this->codeList instanceof ValueFormats) {
             $valid[] = $this->codeList->validateValue($this->value);
         }
 
-        return (bool)array_product($valid);
+        return !empty($valid) && array_product($valid);
     }
 
     /**
@@ -126,7 +127,7 @@ class Attribute implements Validatable
     public function setLabel(string $label): Attribute
     {
         $this->label = $label;
-        $this->typeLabel = substr($label, 3);
+        $this->typeLabel = self::formatTypeLabel($label);
         return $this;
     }
 
@@ -139,6 +140,15 @@ class Attribute implements Validatable
     }
 
     /**
+     * @param $label
+     * @return bool|string
+     */
+    public static function formatTypeLabel($label)
+    {
+        return substr($label, 3);
+    }
+
+    /**
      * @param mixed $value
      * @return Attribute
      */
@@ -147,15 +157,15 @@ class Attribute implements Validatable
         $this->rawValue = $value;
 
         if ($this->format) {
-            $value = $this->format->process($value);
+            $value = $this->format->processValue($value);
         }
 
         if ($this->code) {
-            $value = $this->code->process($value);
+            $value = $this->code->processValue($value);
         }
 
         if ($this->codeList) {
-            $value = $this->codeList->process($value);
+            $value = $this->codeList->processValue($value);
         }
 
         $this->value = $value;
@@ -280,12 +290,14 @@ class Attribute implements Validatable
     }
 
     /**
-     * @return mixed
+     * @return mixed|null
      */
     public function getCodeListDescription()
     {
         if ($this->codeList) {
             return $this->codeList->getValue($this->getValue());
         }
+
+        return null;
     }
 }

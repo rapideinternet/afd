@@ -14,9 +14,4 @@ class AttachmentCode extends Code
     {
         return (bool)base64_decode($value, true);
     }
-
-    function format($value)
-    {
-        // TODO: Implement format() method.
-    }
 }

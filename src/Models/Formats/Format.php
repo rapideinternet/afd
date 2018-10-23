@@ -3,24 +3,33 @@
 namespace SIVI\AFD\Models\Formats;
 
 use SIVI\AFD\Exceptions\InvalidFormatException;
-use SIVI\AFD\Models\Interfaces\Validates;
+use SIVI\AFD\Models\Interfaces\ValueFormats;
 
-class Format implements Validates
+class Format implements ValueFormats
 {
-    const ALPHA_NUMERIC = 'AN';
-    const NUMERIC = 'N';
+    public const ALPHA_NUMERIC = 'AN';
+    public const NUMERIC = 'N';
 
-    const MAX_LENGTH_STRING = '..';
+    public const MAX_LENGTH_STRING = '..';
 
     /**
-     * @var
+     * @var string
      */
     protected $type;
 
+    /**
+     * @var bool
+     */
     protected $maxLength = false;
 
+    /**
+     * @var int
+     */
     protected $value;
 
+    /**
+     * @var string
+     */
     protected $rawFormat;
 
     /**
@@ -30,6 +39,7 @@ class Format implements Validates
      */
     public function __construct($format)
     {
+        $this->rawFormat = $format;
         $this->type = $this->determineType($format);
         $this->maxLength = $this->determineMaxLength($format);
         $this->value = $this->determineValue($format);
@@ -37,9 +47,10 @@ class Format implements Validates
 
     /**
      * @param $format
+     * @return string
      * @throws InvalidFormatException
      */
-    protected function determineType($format)
+    protected function determineType($format): string
     {
         if (substr(strtoupper($format), 0, 2) == self::ALPHA_NUMERIC) {
             return self::ALPHA_NUMERIC;
@@ -52,11 +63,19 @@ class Format implements Validates
         throw new InvalidFormatException(sprintf('Could not find format %s', $format));
     }
 
-    protected function determineMaxLength($format)
+    /**
+     * @param $format
+     * @return bool
+     */
+    protected function determineMaxLength($format): bool
     {
         return substr($format, $this->type == self::NUMERIC ? 1 : 2, 2) == self::MAX_LENGTH_STRING;
     }
 
+    /**
+     * @param $format
+     * @return int
+     */
     protected function determineValue($format): int
     {
         $offset = ($this->type == self::NUMERIC ? 1 : 2) + ($this->maxLength ? 2 : 0);
@@ -64,7 +83,11 @@ class Format implements Validates
         return (int)substr($format, $offset);
     }
 
-    public function validateValue($value)
+    /**
+     * @param $value
+     * @return bool
+     */
+    public function validateValue($value): bool
     {
         if ($this->type == self::ALPHA_NUMERIC) {
             if ($this->maxLength) {
@@ -85,8 +108,21 @@ class Format implements Validates
         return false;
     }
 
-    public function process($value)
+    /**
+     * @param $value
+     * @return int|mixed
+     */
+    public function processValue($value)
     {
         return $this->type == self::NUMERIC ? (int)$value : $value;
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function formatValue($value)
+    {
+        // TODO: Implement formatValue() method.
     }
 }

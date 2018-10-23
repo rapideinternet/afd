@@ -20,13 +20,13 @@ class DateCode extends Code
         $this->validateDateFormat($this->format, $value);
     }
 
-    public function format($value)
+    public function formatValue($value)
     {
         $d = DateTime::createFromFormat($this->format, $value);
         return $d->format($this->format);
     }
 
-    public function process($value)
+    public function processValue($value)
     {
         return DateTime::createFromFormat($this->format, $value);
     }

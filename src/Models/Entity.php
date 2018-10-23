@@ -3,10 +3,11 @@
 namespace SIVI\AFD\Models;
 
 use SIVI\AFD\Enums\AttributeTypes;
+use SIVI\AFD\Models\Contracts\Entity as EntityContract;
 use SIVI\AFD\Models\Entities\ByEntity;
 use SIVI\AFD\Models\Interfaces\Validatable;
 
-class Entity implements Validatable
+class Entity implements EntityContract, Validatable
 {
     /**
      * @var string
@@ -38,6 +39,9 @@ class Entity implements Validatable
      */
     protected $explanation;
 
+    /**
+     * @var array
+     */
     protected static $typeMap = [
         ByEntity::class
     ];
@@ -50,10 +54,24 @@ class Entity implements Validatable
     protected $allowedAttributeTypes = [
     ];
 
-    public function __construct($label, array $attributes = [])
-    {
+    /**
+     * Entity constructor.
+     * @param $label
+     * @param array $attributes
+     * @param array $subEntities
+     */
+    public function __construct(
+        $label,
+        array $attributes = [],
+        array $subEntities = [],
+        $description = null,
+        $explanation = null
+    ) {
+        $this->setLabel($label);
         $this->attributes = $attributes;
-        $this->label = $label;
+        $this->subEntities = $subEntities;
+        $this->description = $description;
+        $this->explanation = $explanation;
     }
 
     /**
@@ -64,12 +82,15 @@ class Entity implements Validatable
         $map = [];
 
         foreach (self::$typeMap as $class) {
-            $map[$class::$type] = $class;
+            $map[strtoupper($class::$type)] = $class;
         }
 
         return $map;
     }
 
+    /**
+     * @return bool
+     */
     public function validate(): bool
     {
         $valid = [];
@@ -80,9 +101,12 @@ class Entity implements Validatable
             }
         }
 
-        return (bool)array_product($valid);
+        return !empty($valid) && array_product($valid);
     }
 
+    /**
+     * @return null|string
+     */
     public function getOrderNumber()
     {
         if ($this->hasAttribute(AttributeTypes::VOLGNUM)) {
@@ -92,14 +116,17 @@ class Entity implements Validatable
                 return $attribute->getValue();
             }
         }
+
+        return null;
     }
 
     /**
      * @param $label
+     * @return bool
      */
     public function hasAttribute($label): bool
     {
-        return isset($this->attributes[$label]);
+        return isset($this->attributes[$label]) && count($this->attributes[$label]) > 0;
     }
 
     /**
@@ -117,7 +144,6 @@ class Entity implements Validatable
     public function setLabel(string $label): Entity
     {
         $this->label = $label;
-        $this->labelType = substr($label, 2);
         return $this;
     }
 
@@ -157,11 +183,17 @@ class Entity implements Validatable
         return $this;
     }
 
+    /**
+     * @param Attribute $attribute
+     */
     public function addAttribute(Attribute $attribute)
     {
         $this->attributes[$attribute->getTypeLabel()][] = $attribute;
     }
 
+    /**
+     * @param Entity $entity
+     */
     public function addSubEntity(Entity $entity)
     {
         $orderNumber = $entity->getOrderNumber();
@@ -171,5 +203,38 @@ class Entity implements Validatable
         } else {
             $this->subEntities[$entity->getLabel()][$orderNumber] = $entity;
         }
+    }
+
+    public static function matchEntity(EntityContract $message): bool
+    {
+        return false;
+    }
+
+    public function hasAttributeValue($label, $value)
+    {
+        if ($this->hasAttribute($label)) {
+            /** @var Attribute $attribute */
+            foreach ($this->attributes[$label] as $attribute) {
+                return $attribute->getValue() == $value;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAttributes(): array
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getSubEntities(): array
+    {
+        return $this->subEntities;
     }
 }

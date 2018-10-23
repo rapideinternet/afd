@@ -6,7 +6,7 @@ namespace SIVI\AFD\Parsers\Contracts;
 
 use SIVI\AFD\Models\Message;
 
-interface XMLParser
+interface XMLParser extends Parser
 {
-    public function parse($xmlString) : Message;
+    public function parse($xmlString): Message;
 }

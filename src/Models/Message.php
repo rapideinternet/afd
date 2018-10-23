@@ -3,28 +3,46 @@
 namespace SIVI\AFD\Models;
 
 
+use SIVI\AFD\Models\Contracts\Message as MessageContract;
 use SIVI\AFD\Models\Interfaces\Validatable;
+use SIVI\AFD\Models\Messages\BatchMessage;
 use SIVI\AFD\Models\Messages\ContractMessage;
 
-class Message implements Validatable
+class Message implements MessageContract, Validatable
 {
+    /**
+     * @var string
+     */
     protected $label;
 
+    /**
+     * @var string
+     */
     protected static $type;
 
     /**
-     * @var Entity
+     * @var array
      */
-    protected $entities;
+    protected $entities = [];
 
+    /**
+     * @var array
+     */
     protected $allowedEntities = [];
 
-    protected $subMessages;
+    /**
+     * @var array
+     */
+    protected $subMessages = [];
 
+    /**
+     * @var array
+     */
     protected $allowedSubMessages = [];
 
     protected static $typeMap = [
-        ContractMessage::class
+        ContractMessage::class,
+        BatchMessage::class
     ];
 
     /**
@@ -48,7 +66,7 @@ class Message implements Validatable
         $map = [];
 
         foreach (self::$typeMap as $class) {
-            $map[$class::$type] = $class;
+            $map[strtoupper($class::$type)] = $class;
         }
 
         return $map;
@@ -68,7 +86,7 @@ class Message implements Validatable
             }
         }
 
-        return (bool)array_product($valid);
+        return !empty($valid) && array_product($valid);
     }
 
     public function isPackage()
@@ -76,9 +94,9 @@ class Message implements Validatable
 
     }
 
-    public function addEntity(Entity $entity)
+    public function addEntity(Entity $entity, $orderNumber = null)
     {
-        $orderNumber = $entity->getOrderNumber();
+        $orderNumber = $orderNumber ?? $entity->getOrderNumber();
 
         if ($orderNumber === null) {
             $this->entities[$entity->getLabel()][] = $entity;
@@ -87,9 +105,13 @@ class Message implements Validatable
         }
     }
 
-    public function addSubmessage(Message $message)
+    public function addSubmessage(Message $message, $orderNumber = null)
     {
-        $this->subMessages[$message->getLabel()][] = $message;
+        if ($orderNumber === null) {
+            $this->subMessages[$message->getLabel()][] = $message;
+        } else {
+            $this->subMessages[$message->getLabel()][$orderNumber] = $message;
+        }
     }
 
     /**
@@ -98,5 +120,71 @@ class Message implements Validatable
     public function getLabel()
     {
         return $this->label;
+    }
+
+    /**
+     * @return array
+     */
+    public function getEntities(): array
+    {
+        return $this->entities;
+    }
+
+    /**
+     * @return array
+     */
+    public function getSubMessages(): array
+    {
+        return $this->subMessages;
+    }
+
+    public static function matchMessage(MessageContract $message): bool
+    {
+        //If a default message is matched this should return false at it wil
+        //trigger an override
+        return false;
+    }
+
+    public function hasEntity($label): bool
+    {
+        return isset($this->entities[$label]) && count($this->entities[$label]) > 0;
+    }
+
+    /**
+     * @param $label
+     * @param $entityLabel
+     * @param null $value
+     * @return bool
+     */
+    public function hasAttribute($label, $entityLabel, $value = null): bool
+    {
+        $result = [];
+
+        if ($this->hasEntity($entityLabel)) /** @var Entity $entity */ {
+            foreach ($this->entities[$entityLabel] as $entity) {
+                $result[] = $entity->hasAttribute($label);
+            }
+        }
+
+        return !empty($result) && array_product($result);
+    }
+
+    /**
+     * @param $label
+     * @param $entityLabel
+     * @param $value
+     * @return bool
+     */
+    public function hasAttributeValue($label, $entityLabel, $value): bool
+    {
+        $result = [];
+
+        if ($this->hasEntity($entityLabel)) /** @var Entity $entity */ {
+            foreach ($this->entities[$entityLabel] as $entity) {
+                $result[] = $entity->hasAttributeValue($label, $value);
+            }
+        }
+
+        return !empty($result) && array_product($result);
     }
 }

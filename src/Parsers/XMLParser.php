@@ -6,11 +6,12 @@ namespace SIVI\AFD\Parsers;
 
 use SIVI\AFD\Models\Entity;
 use SIVI\AFD\Models\Message;
+use SIVI\AFD\Parsers\Contracts\XMLParser as XMLParserContract;
 use SIVI\AFD\Repositories\Contracts\AttributeRepository;
 use SIVI\AFD\Repositories\Contracts\EntityRepository;
 use SIVI\AFD\Repositories\Contracts\MessageRepository;
 
-class XMLParser extends Parser implements \SIVI\AFD\Parsers\Contracts\XMLParser
+class XMLParser extends Parser implements XMLParserContract
 {
     /**
      * @var MessageRepository
@@ -39,6 +40,10 @@ class XMLParser extends Parser implements \SIVI\AFD\Parsers\Contracts\XMLParser
         $this->attributeRepository = $attributeRepository;
     }
 
+    /**
+     * @param $xmlString
+     * @return Message
+     */
     public function parse($xmlString): Message
     {
         $xml = simplexml_load_string($xmlString);
@@ -46,6 +51,11 @@ class XMLParser extends Parser implements \SIVI\AFD\Parsers\Contracts\XMLParser
         return $this->processMessage($xml->getName(), $xml);
     }
 
+    /**
+     * @param Message $message
+     * @param $key
+     * @param $node
+     */
     public function processNode(Message $message, $key, $node)
     {
         //Determine if it is an entity
@@ -72,6 +82,11 @@ class XMLParser extends Parser implements \SIVI\AFD\Parsers\Contracts\XMLParser
         return $message;
     }
 
+    /**
+     * @param $entityLabel
+     * @param $nodes
+     * @return Entity
+     */
     public function processEntity($entityLabel, $nodes): Entity
     {
         $entity = $this->entityRepository->getByLabel($entityLabel);
@@ -88,40 +103,38 @@ class XMLParser extends Parser implements \SIVI\AFD\Parsers\Contracts\XMLParser
         return $entity;
     }
 
+    /**
+     * @param $attributeLabel
+     * @param $value
+     * @return \SIVI\AFD\Models\Attribute
+     */
     protected function processAttribute($attributeLabel, $value)
     {
         return $this->attributeRepository->getByLabel($attributeLabel, $this->processValue($value));
     }
 
-    protected function processValue(\SimpleXMLElement $value)
-    {
-        $value = (array)$value;
-
-        if (count($value) == 1) {
-            return array_first($value);
-        }
-
-        if (count($value) > 1) {
-            return $value;
-        }
-
-        return null;
-    }
-
+    /**
+     * @param $key
+     * @return bool
+     */
     protected function isEntity($key)
     {
         //Is length 2
         if (strlen($key) == 2) {
-            //Is in list of possible entities
+            //TODO: Is in list of possible entities
 
 
             return true;
         }
     }
 
+    /**
+     * @param $key
+     * @return bool
+     */
     protected function isSubmessage($key)
     {
-        //Is in list of possible sub messages
+        //TODO: Is in list of possible sub messages
         return true;
     }
 

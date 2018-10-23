@@ -28,13 +28,19 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
     }
 
     /**
-     * @param $label
-     * @return CodeList
-     * @throws FileNotFoundException
+     * {@inheritDoc}
+     */
+    public function instantiateObject($label): CodeList
+    {
+        return new CodeList($label);
+    }
+
+    /**
+     * {@inheritDoc}
      */
     public function findByLabel($label): CodeList
     {
-        $codeList = new CodeList($label);
+        $codeList = $this->instantiateObject($label);
 
         $data = $this->getObjectData($label);
         $this->mapDataToObject($codeList, $data);
@@ -46,7 +52,7 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
      * @return array
      * @throws FileNotFoundException
      */
-    protected function getObjectData($key)
+    protected function getObjectData($key): array
     {
 
         if (file_exists($this->file)) {
@@ -61,12 +67,15 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
         } else {
             throw new FileNotFoundException(sprintf('Could not find codeList.json file'));
         }
+
+        return [];
     }
 
     /**
      * @param CodeList $codeList
-     * @param array $data
+     * @param $data
      * @return CodeList
+     * @throws FileNotFoundException
      */
     protected function mapDataToObject(CodeList $codeList, $data): CodeList
     {
@@ -81,11 +90,12 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
 
     /**
      * @param $label
+     * @return array
      * @throws FileNotFoundException
      */
     protected function getValues($label)
     {
-        $path = sprintf('%s/%s.json', $this->valuePath, $label);
+        $path = sprintf('%s/%s.json', $this->valuePath, strtoupper($label));
 
         if (!file_exists($path)) {
             return [];

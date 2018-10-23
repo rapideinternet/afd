@@ -14,9 +14,4 @@ class BankAccount97Code extends Code
     {
         return true; //TODO: use imap check library
     }
-
-    function format($value)
-    {
-        // TODO: Implement format() method.
-    }
 }

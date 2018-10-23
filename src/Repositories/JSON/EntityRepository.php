@@ -22,10 +22,9 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
 
     /**
      * @param $label
-     * @return CodeList
-     * @throws FileNotFoundException
+     * @return Entity
      */
-    public function getByLabel($label): Entity
+    public function instantiateObject($label): Entity
     {
         $class = Entity::typeMap()[strtoupper($label)] ?? null;
 
@@ -34,6 +33,18 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
         } else {
             $entity = new Entity($label);
         }
+
+        return $entity;
+    }
+
+    /**
+     * @param $label
+     * @return CodeList
+     * @throws FileNotFoundException
+     */
+    public function getByLabel($label): Entity
+    {
+        $entity = $this->instantiateObject($label);
 
         //Enrich entity with json data
         $data = $this->getObjectData($label);

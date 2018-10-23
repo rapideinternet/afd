@@ -7,11 +7,7 @@ use SIVI\AFD\Models\Message;
 
 class MessageRepository implements \SIVI\AFD\Repositories\Contracts\MessageRepository
 {
-    /**
-     * @param $code
-     * @return Code
-     */
-    public function getByLabel($label): Message
+    public function instantiateObject($label): Message
     {
         $class = Message::typeMap()[strtoupper($label)] ?? null;
 
@@ -20,5 +16,17 @@ class MessageRepository implements \SIVI\AFD\Repositories\Contracts\MessageRepos
         }
 
         return new Message($label);
+    }
+
+    /**
+     * @param $code
+     * @return Code
+     */
+    public function getByLabel($label): Message
+    {
+        //TODO: override message format for different senders
+        //TODO: implement a way to maintain your own overrides
+
+        return $this->instantiateObject($label);
     }
 }

@@ -6,5 +6,5 @@ use MyCLabs\Enum\Enum;
 
 class AttributeTypes extends Enum
 {
-    const VOLGNUM = 'VOLGNUM';
+    public const VOLGNUM = 'VOLGNUM';
 }

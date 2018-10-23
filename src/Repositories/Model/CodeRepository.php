@@ -2,6 +2,7 @@
 
 namespace SIVI\AFD\Repositories\Model;
 
+use SIVI\AFD\Exceptions\NotFoundException;
 use SIVI\AFD\Models\Codes\Code;
 
 class CodeRepository implements \SIVI\AFD\Repositories\Contracts\CodeRepository
@@ -25,8 +26,9 @@ class CodeRepository implements \SIVI\AFD\Repositories\Contracts\CodeRepository
     /**
      * @param $code
      * @return Code
+     * @throws NotFoundException
      */
-    public function findByCode($code): Code
+    public function instantiateObject($code): Code
     {
         $class = Code::codeMap()[strtoupper($code)]
             ?? Code::codeMap()[strtoupper($code[0])];
@@ -36,6 +38,18 @@ class CodeRepository implements \SIVI\AFD\Repositories\Contracts\CodeRepository
                 ? new $class($code, $this->delimiter)
                 : new $class($code);
         }
+
+        throw new NotFoundException();
+    }
+
+    /**
+     * @param $code
+     * @return Code
+     * @throws NotFoundException
+     */
+    public function findByCode($code): Code
+    {
+        return $this->instantiateObject($code);
     }
 
     /**

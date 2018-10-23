@@ -2,9 +2,9 @@
 
 namespace SIVI\AFD\Models\CodesList;
 
-use SIVI\AFD\Models\Interfaces\Validates;
+use SIVI\AFD\Models\Interfaces\ValueFormats;
 
-class CodeList implements Validates
+class CodeList implements ValueFormats
 {
     /**
      * Name of the list
@@ -113,19 +113,38 @@ class CodeList implements Validates
         return $this;
     }
 
+    /**
+     * @param $key
+     * @return mixed|null
+     */
     public function getValue($key)
     {
         if (isset($this->values[$key])) {
             return $this->values[$key];
         }
+
+        return null;
     }
 
-    public function process($value)
+    /**
+     * @param $value
+     * @return int|mixed
+     */
+    public function processValue($value)
     {
         if (ctype_digit($value)) {
             return (int)$value;
         }
 
         return $value;
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function formatValue($value)
+    {
+        return $value; //To description?
     }
 }

@@ -7,5 +7,16 @@ use SIVI\AFD\Models\Entity;
 
 interface EntityRepository
 {
+    /**
+     * @param $label
+     * @return Entity
+     */
+    public function instantiateObject($label): Entity;
+
+
+    /**
+     * @param $label
+     * @return Entity
+     */
     public function getByLabel($label): Entity;
 }

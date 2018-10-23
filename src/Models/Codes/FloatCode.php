@@ -38,12 +38,7 @@ class FloatCode extends Code
         return true;
     }
 
-    function format($value)
-    {
-        // TODO: Implement format() method.
-    }
-
-    public function process($value)
+    public function processValue($value)
     {
         return (double)$value;
     }

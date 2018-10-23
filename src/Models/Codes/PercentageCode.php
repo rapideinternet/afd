@@ -23,6 +23,8 @@ class PercentageCode extends Code
      */
     public function __construct($code, $delimiter = '.')
     {
+        parent::__construct($code);
+
         $this->length = (int)substr($code, 1);
         $this->delimiter = $delimiter;
     }
@@ -36,12 +38,7 @@ class PercentageCode extends Code
         return true;
     }
 
-    function format($value)
-    {
-        // TODO: Implement format() method.
-    }
-
-    public function process($value)
+    public function processValue($value)
     {
         return (double)$value;
     }

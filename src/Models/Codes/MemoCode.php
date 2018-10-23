@@ -14,9 +14,4 @@ class MemoCode extends Code
     {
         return strlen($value) < 99999;
     }
-
-    function format($value)
-    {
-        // TODO: Implement format() method.
-    }
 }

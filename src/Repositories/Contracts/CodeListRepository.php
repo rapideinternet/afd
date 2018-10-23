@@ -10,5 +10,11 @@ interface CodeListRepository
      * @param $label
      * @return CodeList
      */
+    public function instantiateObject($label): CodeList;
+
+    /**
+     * @param $label
+     * @return CodeList
+     */
     public function findByLabel($label): CodeList;
 }

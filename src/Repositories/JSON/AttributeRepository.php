@@ -40,12 +40,11 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
 
     /**
      * @param $label
-     * @throws \SIVI\AFD\Exceptions\InvalidFormatException
+     * @return Attribute
      */
-    public function getByLabel($label, $value = null): Attribute
+    public function instantiateObject($label): Attribute
     {
-        $type = substr($label, 3);
-        $class = Attribute::typeMap()[strtoupper($type)] ?? null;
+        $class = Attribute::typeMap()[strtoupper(Attribute::formatTypeLabel($label))] ?? null;
 
         if ($class !== null) {
             $attribute = new $class($label);
@@ -53,26 +52,43 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
             $attribute = new Attribute($label);
         }
 
-        $data = $this->getObjectData($type);
+        return $attribute;
+    }
+
+    /**
+     * @param $label
+     * @param null $value
+     * @return Attribute
+     * @throws FileNotFoundException
+     */
+    public function getByLabel($label, $value = null): Attribute
+    {
+        $attribute = $this->instantiateObject($label);
+
+        $data = $this->getObjectData($attribute->getTypeLabel());
         $this->mapDataToObject($attribute, $data);
 
-//        // Get CodeList Item
-//
-
-        // Get Format
-
+        //Set the actual value
         $attribute->setValue($value);
 
         return $attribute;
 
     }
 
+    /**
+     * @param Entity $entity
+     */
     public function getByEntity(Entity $entity)
     {
         // TODO: Implement getByEntity() method.
     }
 
-    protected function getObjectData($key)
+    /**
+     * @param $key
+     * @return array
+     * @throws FileNotFoundException
+     */
+    protected function getObjectData($key): array
     {
         if (file_exists($this->file)) {
             $json = json_decode(file_get_contents($this->file), true);
@@ -87,8 +103,14 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
             throw new FileNotFoundException(sprintf('Could not find attributes.json file'));
         }
 
+        return [];
     }
 
+    /**
+     * @param Attribute $attribute
+     * @param $data
+     * @return Attribute
+     */
     protected function mapDataToObject(Attribute $attribute, $data): Attribute
     {
         if (isset($data['Omschrijving'])) {

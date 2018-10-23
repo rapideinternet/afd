@@ -8,11 +8,11 @@ use MyCLabs\Enum\Enum;
 
 class Messages extends Enum
 {
-    const CONTRACT = 'Contractbericht';
-    const PACKAGE = 'Pakket';
-    const RELATION = 'RelatieDocument';
-    const BATCH = 'Batch';
-    const GROUP = 'Groepsdocument';
-    const DAMAGE = 'Schadedocument';
-    const DAMGEINVOICE = 'Scahdefactuur';
+    public const CONTRACT = 'Contractbericht';
+    public const PACKAGE = 'Pakket';
+    public const RELATION = 'RelatieDocument';
+    public const BATCH = 'Batch';
+    public const GROUP = 'Groepsdocument';
+    public const DAMAGE = 'Schadedocument';
+    public const DAMGEINVOICE = 'Scahdefactuur';
 }
