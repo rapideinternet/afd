@@ -31,7 +31,7 @@ class Code implements ValueFormats
      */
     public function formatValue($value)
     {
-        throw new NotImplementedException('Invalid code configuration format not implemented');
+        return $value;
     }
 
     public function __construct($code)

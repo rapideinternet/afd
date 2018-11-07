@@ -173,6 +173,25 @@ class Attribute implements Validatable
         return $this;
     }
 
+    public function getFormattedValue()
+    {
+        $value = $this->value;
+
+        if ($this->codeList) {
+            $value = $this->codeList->formatValue($value);
+        }
+
+        if ($this->code) {
+            $value = $this->code->formatValue($value);
+        }
+
+        if ($this->format) {
+            $value = $this->format->formatValue($value);
+        }
+
+        return $value;
+    }
+
     /**
      * @return Domain
      */

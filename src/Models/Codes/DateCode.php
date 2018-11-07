@@ -22,8 +22,14 @@ class DateCode extends Code
 
     public function formatValue($value)
     {
+        $format = trim($this->format, '!');
+
+        if ($value instanceof DateTime) {
+            return $value->format($format);
+        }
+
         $d = DateTime::createFromFormat($this->format, $value);
-        return $d->format($this->format);
+        return $d->format($format);
     }
 
     public function processValue($value)
