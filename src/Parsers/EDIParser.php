@@ -18,7 +18,7 @@ class EDIParser extends Parser implements EDIParserContract
 {
 
     const SEPERATOR = "+";
-    const EOL = "'\r\n";
+    const EOL = "'";
     const ENTITY = "ENT";
     const SENDER_DETAILS = "UNB";
     const INSURANCE_DETAILS = "PP";
@@ -73,55 +73,8 @@ class EDIParser extends Parser implements EDIParserContract
         return $message;
     }
 
-    /**
-     * @param array $message
-     * @return Message
-     */
-    protected function processMessage(array $entities): Message
-    {
-        $message = $this->messageRepository->getByLabel(Messages::CONTRACT);
-
-        foreach ($entities as $entityLabel => $attributes) {
-            $message->addEntity($this->processEntity($entityLabel, $attributes));
-        }
-
-        return $message;
-    }
-
-
-    /**
-     * @param $entityLabel
-     * @param array $attributes
-     * @return Entity
-     */
-    protected function processEntity($entityLabel, array $attributes): Entity
-    {
-        $entity = $this->entityRepository->getByLabel($entityLabel);
-
-        foreach ($attributes as $attributeLabel => $values) {
-            $entity->addAttribute($this->processAttribute($entityLabel, $attributeLabel, $values));
-        }
-
-        return $entity;
-    }
-
-    /**
-     * @param $entityLabel
-     * @param $attributeLabel
-     * @param array $values
-     * @return Attribute
-     */
-    protected function processAttribute($entityLabel, $attributeLabel, array $values): Attribute
-    {
-        return $this->attributeRepository->getByLabel(sprintf('%s_%s', $entityLabel, $attributeLabel),
-            $this->processValue($values));
-    }
-
-
     protected function formatEDIDataToArray($data)
     {
-        $data = str_replace("'", "", $data);
-
         $entityCode = null;
         $level = 0;
 
@@ -129,7 +82,7 @@ class EDIParser extends Parser implements EDIParserContract
         $batches = [];
 
         $started = false;
-        foreach (explode(PHP_EOL, $data) as $line) {
+        foreach (explode(self::EOL, $data) as $line) {
             if (substr_count($line, '+') < 2) {
                 continue;
             }
@@ -177,6 +130,49 @@ class EDIParser extends Parser implements EDIParserContract
         }
 
         return $batches;
+    }
+
+    /**
+     * @param array $message
+     * @return Message
+     */
+    protected function processMessage(array $entities): Message
+    {
+        $message = $this->messageRepository->getByLabel(Messages::CONTRACT);
+
+        foreach ($entities as $entityLabel => $attributes) {
+            $message->addEntity($this->processEntity($entityLabel, $attributes));
+        }
+
+        return $message;
+    }
+
+    /**
+     * @param $entityLabel
+     * @param array $attributes
+     * @return Entity
+     */
+    protected function processEntity($entityLabel, array $attributes): Entity
+    {
+        $entity = $this->entityRepository->getByLabel($entityLabel);
+
+        foreach ($attributes as $attributeLabel => $values) {
+            $entity->addAttribute($this->processAttribute($entityLabel, $attributeLabel, $values));
+        }
+
+        return $entity;
+    }
+
+    /**
+     * @param $entityLabel
+     * @param $attributeLabel
+     * @param array $values
+     * @return Attribute
+     */
+    protected function processAttribute($entityLabel, $attributeLabel, array $values): Attribute
+    {
+        return $this->attributeRepository->getByLabel(sprintf('%s_%s', $entityLabel, $attributeLabel),
+            $this->processValue($values));
     }
 
 

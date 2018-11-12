@@ -9,7 +9,7 @@ use SIVI\AFD\Models\Formats\Format;
 use SIVI\AFD\Models\Interfaces\Validatable;
 use SIVI\AFD\Models\Interfaces\ValueFormats;
 
-class Attribute implements Validatable
+class Attribute implements Validatable, Interfaces\Attribute
 {
     /**
      * @var string
