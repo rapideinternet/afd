@@ -14,5 +14,5 @@ class Messages extends Enum
     public const BATCH = 'Batch';
     public const GROUP = 'Groepsdocument';
     public const DAMAGE = 'Schadedocument';
-    public const DAMGEINVOICE = 'Scahdefactuur';
+    public const DAMGEINVOICE = 'Schadefactuur';
 }
