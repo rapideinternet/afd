@@ -223,7 +223,7 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @return array
+     * @return Attribute[]
      */
     public function getAttributes(): array
     {

@@ -3,7 +3,7 @@
 namespace SIVI\AFD\Repositories\JSON;
 
 use SIVI\AFD\Exceptions\FileNotFoundException;
-use SIVI\AFD\Models\CodesList\CodeList;
+use SIVI\AFD\Models\CodeList\CodeList;
 use SIVI\AFD\Models\Entity;
 
 class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityRepository

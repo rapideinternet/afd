@@ -2,8 +2,8 @@
 
 namespace SIVI\AFD\Models;
 
+use SIVI\AFD\Models\CodeList\CodeList;
 use SIVI\AFD\Models\Codes\Code;
-use SIVI\AFD\Models\CodesList\CodeList;
 use SIVI\AFD\Models\Domain\Domain;
 use SIVI\AFD\Models\Formats\Format;
 use SIVI\AFD\Models\Interfaces\Validatable;
@@ -11,56 +11,45 @@ use SIVI\AFD\Models\Interfaces\ValueFormats;
 
 class Attribute implements Validatable, Interfaces\Attribute
 {
+    protected static $type;
+    protected static $typeMap = [];
     /**
      * @var string
      */
     protected $label;
-
     protected $typeLabel;
-
-    protected static $type;
-
     /**
      * @var mixed
      */
     protected $value;
-
     /**
      * @var string
      */
     protected $rawValue;
-
     /**
      * @var Domain
      */
     protected $domain;
-
     /**
      * @var Format
      */
     protected $format;
-
     /**
      * @var Code
      */
     protected $code;
-
     /**
      * @var CodeList
      */
     protected $codeList;
-
     /**
      * @var string
      */
     protected $description;
-
     /**
      * @var string
      */
     protected $explanation;
-
-    protected static $typeMap = [];
 
     /**
      * Attribute constructor.
@@ -83,6 +72,15 @@ class Attribute implements Validatable, Interfaces\Attribute
         }
 
         return $map;
+    }
+
+    /**
+     * @param $label
+     * @return bool|string
+     */
+    public static function formatTypeLabel($label)
+    {
+        return substr($label, 3);
     }
 
     /**
@@ -134,43 +132,9 @@ class Attribute implements Validatable, Interfaces\Attribute
     /**
      * @return string
      */
-    public function getValue()
+    public function getRawValue()
     {
-        return $this->value;
-    }
-
-    /**
-     * @param $label
-     * @return bool|string
-     */
-    public static function formatTypeLabel($label)
-    {
-        return substr($label, 3);
-    }
-
-    /**
-     * @param mixed $value
-     * @return Attribute
-     */
-    public function setValue($value): Attribute
-    {
-        $this->rawValue = $value;
-
-        if ($this->format) {
-            $value = $this->format->processValue($value);
-        }
-
-        if ($this->code) {
-            $value = $this->code->processValue($value);
-        }
-
-        if ($this->codeList) {
-            $value = $this->codeList->processValue($value);
-        }
-
-        $this->value = $value;
-
-        return $this;
+        return $this->rawValue;
     }
 
     /**
@@ -299,5 +263,38 @@ class Attribute implements Validatable, Interfaces\Attribute
         }
 
         return null;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param mixed $value
+     * @return Attribute
+     */
+    public function setValue($value): Attribute
+    {
+        $this->rawValue = $value;
+
+        if ($this->format) {
+            $value = $this->format->processValue($value);
+        }
+
+        if ($this->code) {
+            $value = $this->code->processValue($value);
+        }
+
+        if ($this->codeList) {
+            $value = $this->codeList->processValue($value);
+        }
+
+        $this->value = $value;
+
+        return $this;
     }
 }

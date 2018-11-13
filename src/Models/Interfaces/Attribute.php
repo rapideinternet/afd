@@ -9,7 +9,7 @@
 namespace SIVI\AFD\Models\Interfaces;
 
 use SIVI\AFD\Models\Codes\Code;
-use SIVI\AFD\Models\CodesList\CodeList;
+use SIVI\AFD\Models\CodeList\CodeList;
 use SIVI\AFD\Models\Domain\Domain;
 use SIVI\AFD\Models\Formats\Format;
 

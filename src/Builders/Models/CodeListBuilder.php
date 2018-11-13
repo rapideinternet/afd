@@ -3,7 +3,7 @@
 namespace SIVI\AFD\Builders\Models;
 
 use SIVI\AFD\Builders\Builds;
-use SIVI\AFD\Models\CodesList\CodeList;
+use SIVI\AFD\Models\CodeList\CodeList;
 
 class CodeListBuilder implements Builds
 {
