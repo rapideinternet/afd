@@ -12,4 +12,9 @@ class ContractMessage extends Message
     protected $label = Messages::CONTRACT;
 
     protected static $type = Messages::CONTRACT;
+
+    public function __construct($label = null, array $entities = [], array $subMessages = [])
+    {
+        parent::__construct(Messages::CONTRACT, $entities, $subMessages);
+    }
 }
