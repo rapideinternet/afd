@@ -1,6 +1,6 @@
 <?php
 
-namespace SIVI\AFD\Models\CodesList;
+namespace SIVI\AFD\Models\CodeList;
 
 use SIVI\AFD\Models\Interfaces\ValueFormats;
 

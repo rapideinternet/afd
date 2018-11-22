@@ -2,7 +2,7 @@
 
 namespace SIVI\AFD\Repositories\Contracts;
 
-use SIVI\AFD\Models\CodesList\CodeList;
+use SIVI\AFD\Models\CodeList\CodeList;
 
 interface CodeListRepository
 {

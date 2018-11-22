@@ -58,7 +58,7 @@ class EDIParser extends Parser implements EDIParserContract
     public function parse($ediContent): Message
     {
         $data = $this->formatEDIDataToArray($ediContent);
-
+        
         if (count($data) > 1) {
             $message = $this->messageRepository->getByLabel(Messages::BATCH);
 
@@ -83,6 +83,8 @@ class EDIParser extends Parser implements EDIParserContract
 
         $started = false;
         foreach (explode(self::EOL, $data) as $line) {
+            $line = trim($line, "\r\n");
+
             if (substr_count($line, '+') < 2) {
                 continue;
             }
