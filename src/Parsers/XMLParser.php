@@ -52,21 +52,6 @@ class XMLParser extends Parser implements XMLParserContract
     }
 
     /**
-     * @param Message $message
-     * @param $key
-     * @param $node
-     */
-    public function processNode(Message $message, $key, $node)
-    {
-        //Determine if it is an entity
-        if ($this->isEntity($key)) {
-            $message->addEntity($this->processEntity($key, $node));
-        } elseif ($this->isSubmessage($key)) {
-            $message->addSubmessage($this->processMessage($key, $node));
-        }
-    }
-
-    /**
      * @param $name
      * @return Message
      */
@@ -83,34 +68,18 @@ class XMLParser extends Parser implements XMLParserContract
     }
 
     /**
-     * @param $entityLabel
-     * @param $nodes
-     * @return Entity
+     * @param Message $message
+     * @param $key
+     * @param $node
      */
-    public function processEntity($entityLabel, $nodes): Entity
+    public function processNode(Message $message, $key, $node)
     {
-        $entity = $this->entityRepository->getByLabel($entityLabel);
-
-        foreach ($nodes as $nodeLabel => $node) {
-
-            if ($this->isEntity($nodeLabel)) {
-                $entity->addSubEntity($this->processEntity($nodeLabel, $node));
-            } else {
-                $entity->addAttribute($this->processAttribute($entityLabel, $nodeLabel, $node));
-            }
+        //Determine if it is an entity
+        if ($this->isEntity($key)) {
+            $message->addEntity($this->processEntity($key, $node));
+        } elseif ($this->isSubmessage($key)) {
+            $message->addSubmessage($this->processMessage($key, $node));
         }
-
-        return $entity;
-    }
-
-    /**
-     * @param $attributeLabel
-     * @param $value
-     * @return \SIVI\AFD\Models\Attribute
-     */
-    protected function processAttribute($entityLabel, $attributeLabel, $value)
-    {
-        return $this->attributeRepository->getByLabel($entityLabel, $attributeLabel, $this->processValue($value));
     }
 
     /**
@@ -126,6 +95,37 @@ class XMLParser extends Parser implements XMLParserContract
 
             return true;
         }
+    }
+
+    /**
+     * @param $entityLabel
+     * @param $nodes
+     * @return Entity
+     */
+    public function processEntity($entityLabel, $nodes): Entity
+    {
+        $entity = $this->entityRepository->getByLabel($entityLabel);
+
+        foreach ($nodes as $nodeLabel => $node) {
+
+            if ($this->isEntity($nodeLabel)) {
+                $entity->addSubEntity($this->processEntity($nodeLabel, $node));
+            } else {
+                $entity->addAttribute($this->processAttribute($nodeLabel, $node));
+            }
+        }
+
+        return $entity;
+    }
+
+    /**
+     * @param $attributeLabel
+     * @param $value
+     * @return \SIVI\AFD\Models\Attribute
+     */
+    protected function processAttribute($attributeLabel, $value)
+    {
+        return $this->attributeRepository->getByLabel($attributeLabel, $this->processValue($value));
     }
 
     /**
