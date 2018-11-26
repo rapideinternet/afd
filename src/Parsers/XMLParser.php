@@ -4,6 +4,7 @@
 namespace SIVI\AFD\Parsers;
 
 
+use SIVI\AFD\Models\Attribute;
 use SIVI\AFD\Models\Entity;
 use SIVI\AFD\Models\Message;
 use SIVI\AFD\Parsers\Contracts\XMLParser as XMLParserContract;
@@ -75,8 +76,8 @@ class XMLParser extends Parser implements XMLParserContract
     public function processNode(Message $message, $key, $node)
     {
         //Determine if it is an entity
-        if ($this->isEntity($key)) {
-            $message->addEntity($this->processEntity($key, $node));
+        if ($this->isEntity($key) && ($entity = $this->processEntity($key, $node)) instanceof Entity) {
+            $message->addEntity($entity);
         } elseif ($this->isSubmessage($key)) {
             $message->addSubmessage($this->processMessage($key, $node));
         }
@@ -100,18 +101,18 @@ class XMLParser extends Parser implements XMLParserContract
     /**
      * @param $entityLabel
      * @param $nodes
-     * @return Entity
+     * @return Entity|null
      */
-    public function processEntity($entityLabel, $nodes): Entity
+    public function processEntity($entityLabel, $nodes): ?Entity
     {
         $entity = $this->entityRepository->getByLabel($entityLabel);
 
         foreach ($nodes as $nodeLabel => $node) {
 
-            if ($this->isEntity($nodeLabel)) {
-                $entity->addSubEntity($this->processEntity($nodeLabel, $node));
-            } else {
-                $entity->addAttribute($this->processAttribute($nodeLabel, $node));
+            if ($this->isEntity($nodeLabel) && ($subEntity = $this->processEntity($nodeLabel, $node)) instanceof Entity) {
+                $entity->addSubEntity($subEntity);
+            } elseif (($attribute = $this->processAttribute($nodeLabel, $node)) instanceof Attribute) {
+                $entity->addAttribute($attribute);
             }
         }
 
@@ -121,9 +122,9 @@ class XMLParser extends Parser implements XMLParserContract
     /**
      * @param $attributeLabel
      * @param $value
-     * @return \SIVI\AFD\Models\Attribute
+     * @return \SIVI\AFD\Models\Attribute|null
      */
-    protected function processAttribute($attributeLabel, $value)
+    protected function processAttribute($attributeLabel, $value): ?Attribute
     {
         return $this->attributeRepository->getByLabel($attributeLabel, $this->processValue($value));
     }

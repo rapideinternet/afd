@@ -3,6 +3,7 @@
 namespace SIVI\AFD\Models;
 
 
+use Carbon\Carbon;
 use SIVI\AFD\Models\Contracts\Message as MessageContract;
 use SIVI\AFD\Models\Interfaces\Validatable;
 use SIVI\AFD\Models\Messages\BatchMessage;
@@ -13,37 +14,47 @@ class Message implements MessageContract, Validatable
     /**
      * @var string
      */
-    protected $label;
-
-    /**
-     * @var string
-     */
     protected static $type;
-
-    /**
-     * @var array
-     */
-    protected $entities = [];
-
-    /**
-     * @var array
-     */
-    protected $allowedEntities = [];
-
-    /**
-     * @var array
-     */
-    protected $subMessages = [];
-
-    /**
-     * @var array
-     */
-    protected $allowedSubMessages = [];
-
     protected static $typeMap = [
         ContractMessage::class,
         BatchMessage::class
     ];
+    /**
+     * @var string
+     */
+    protected $label;
+    /**
+     * @var array
+     */
+    protected $entities = [];
+    /**
+     * @var array
+     */
+    protected $allowedEntities = [];
+    /**
+     * @var array
+     */
+    protected $subMessages = [];
+    /**
+     * @var string
+     */
+    protected $sender;
+    /**
+     * @var string
+     */
+    protected $receiver;
+    /**
+     * @var Carbon
+     */
+    protected $dateTime;
+    /**
+     * @var string
+     */
+    protected $messageId;
+    /**
+     * @var array
+     */
+    protected $allowedSubMessages = [];
 
     /**
      * Message constructor.
@@ -72,6 +83,12 @@ class Message implements MessageContract, Validatable
         return $map;
     }
 
+    public static function matchMessage(MessageContract $message): bool
+    {
+        //If a default message is matched this should return false at it wil
+        //trigger an override
+        return false;
+    }
 
     /**
      * @return bool
@@ -138,16 +155,18 @@ class Message implements MessageContract, Validatable
         return $this->subMessages;
     }
 
-    public static function matchMessage(MessageContract $message): bool
+    /**
+     * @return int
+     */
+    public function getSubMessagesCount(): int
     {
-        //If a default message is matched this should return false at it wil
-        //trigger an override
-        return false;
-    }
+        $count = 0;
 
-    public function hasEntity($label): bool
-    {
-        return isset($this->entities[$label]) && count($this->entities[$label]) > 0;
+        foreach ($this->subMessages as $subMessages) {
+            $count += count($subMessages);
+        }
+
+        return $count;
     }
 
     /**
@@ -169,6 +188,11 @@ class Message implements MessageContract, Validatable
         return !empty($result) && array_product($result);
     }
 
+    public function hasEntity($label): bool
+    {
+        return isset($this->entities[$label]) && count($this->entities[$label]) > 0;
+    }
+
     /**
      * @param $label
      * @param $entityLabel
@@ -186,5 +210,69 @@ class Message implements MessageContract, Validatable
         }
 
         return !empty($result) && array_product($result);
+    }
+
+    /**
+     * @return Carbon|null
+     */
+    public function getDateTime(): ?Carbon
+    {
+        return $this->dateTime;
+    }
+
+    /**
+     * @param Carbon $dateTime
+     */
+    public function setDateTime(Carbon $dateTime): void
+    {
+        $this->dateTime = $dateTime;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getMessageId(): ?string
+    {
+        return $this->messageId;
+    }
+
+    /**
+     * @param string $messageId
+     */
+    public function setMessageId(string $messageId): void
+    {
+        $this->messageId = $messageId;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getSender(): ?string
+    {
+        return $this->sender;
+    }
+
+    /**
+     * @param string $sender
+     */
+    public function setSender(string $sender): void
+    {
+        $this->sender = $sender;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getReceiver(): ?string
+    {
+        return $this->receiver;
+    }
+
+    /**
+     * @param string $receiver
+     */
+    public function setReceiver(string $receiver): void
+    {
+        $this->receiver = $receiver;
     }
 }

@@ -47,7 +47,7 @@ class CodeRepository implements \SIVI\AFD\Repositories\Contracts\CodeRepository
      * @return Code
      * @throws NotFoundException
      */
-    public function findByCode($code): Code
+    public function findByCode($code): ?Code
     {
         return $this->instantiateObject($code);
     }

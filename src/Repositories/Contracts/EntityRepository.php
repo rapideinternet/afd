@@ -16,7 +16,7 @@ interface EntityRepository
 
     /**
      * @param $label
-     * @return Entity
+     * @return Entity|null
      */
-    public function getByLabel($label): Entity;
+    public function getByLabel($label): ?Entity;
 }

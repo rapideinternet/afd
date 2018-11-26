@@ -38,7 +38,7 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
     /**
      * {@inheritDoc}
      */
-    public function findByLabel($label): CodeList
+    public function findByLabel($label): ?CodeList
     {
         $codeList = $this->instantiateObject($label);
 

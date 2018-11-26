@@ -129,12 +129,12 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
             }
         }
 
-        if (isset($data['Code']) && !empty($data['Code'])) {
-            $attribute->setCode($this->codeRepository->findByCode($data['Code']));
+        if (isset($data['Code']) && !empty($data['Code']) && ($code = $this->codeRepository->findByCode($data['Code'])) !== null) {
+            $attribute->setCode($code);
         }
 
-        if (isset($data['Codelijst']) && !empty($data['Codelijst'])) {
-            $attribute->setCodeList($this->codeListRepository->findByLabel($data['Codelijst']));
+        if (isset($data['Codelijst']) && !empty($data['Codelijst']) && ($codeList = $this->codeListRepository->findByLabel($data['Codelijst'])) !== null) {
+            $attribute->setCodeList($codeList);
         }
 
         return $attribute;

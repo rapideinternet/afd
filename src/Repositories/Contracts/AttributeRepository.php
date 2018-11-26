@@ -16,9 +16,9 @@ interface AttributeRepository
     /**
      * @param $label
      * @param null $value
-     * @return Attribute
+     * @return Attribute|null
      */
-    public function getByLabel($label, $value = null): Attribute;
+    public function getByLabel($label, $value = null): ?Attribute;
 
     /**
      * @param Entity $entity

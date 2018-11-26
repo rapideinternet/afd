@@ -14,7 +14,7 @@ interface CodeListRepository
 
     /**
      * @param $label
-     * @return CodeList
+     * @return CodeList|null
      */
-    public function findByLabel($label): CodeList;
+    public function findByLabel($label): ?CodeList;
 }
