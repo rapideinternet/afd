@@ -73,11 +73,12 @@ class EDIParser extends Parser implements EDIParserContract
     {
         $message = $this->messageRepository->getByLabel(Messages::BATCH);
 
+        // TODO: incorporate this in parsing of data
         $allowedSpecialCharacters = '';
         $entityCode = null;
         /** @var Message $subMessage */
         $subMessage = null;
-        $level = 0;
+        $orderNumber = 0;
         $entityAttributes = [];
 
         foreach (explode(self::EOL, $ediContent) as $line) {
@@ -95,23 +96,23 @@ class EDIParser extends Parser implements EDIParserContract
                 $subMessage = $this->getSubMessageByMessageHeader($line, $message);
             } elseif ($rowIdentifier === self::MESSAGE_TRAILER) {
                 if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
-                    $subMessage->addEntity($entity);
+                    $subMessage->addEntity($entity, $orderNumber);
                 }
                 $entityAttributes = [];
                 $message->addSubmessage($subMessage);
             } elseif ($rowIdentifier === self::ENTITY) {
                 if (count($entityAttributes)) {
                     if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
-                        $subMessage->addEntity($entity);
+                        $subMessage->addEntity($entity, $orderNumber);
                     }
                     $entityAttributes = [];
                 }
-                list(, $entityCode, $level) = explode(self::SEPARATOR, $line);
+                list(, $entityCode, $orderNumber) = explode(self::SEPARATOR, $line);
             } elseif ($rowIdentifier === self::ATTRIBUTE) {
                 $attributeRow = explode(self::SEPARATOR, $line);
                 $code = $attributeRow[1];
                 $value = $attributeRow[2] ?? null;
-                $entityAttributes[$level][$code] = $value;
+                $entityAttributes[$code] = $value;
             }
         }
 
@@ -170,6 +171,7 @@ class EDIParser extends Parser implements EDIParserContract
     protected function getSubMessageByMessageHeader($headerLine, Message $message)
     {
         list($rowIdentifier, $messageId, $messageInfo) = explode(self::SEPARATOR, $headerLine);
+        // TODO: implement different parsing based on $ediFormatType and $ediFormatVersion
         list(
             $ediFormatType,
             $ediFormatVersion,
@@ -204,15 +206,15 @@ class EDIParser extends Parser implements EDIParserContract
 
     /**
      * @param $entityLabel
-     * @param array $attributes
+     * @param array $attributesGroups
      * @return Entity
      */
     protected function processEntity($entityLabel, array $attributes): ?Entity
     {
         $entity = $this->entityRepository->getByLabel($entityLabel);
 
-        foreach ($attributes as $attributeLabel => $values) {
-            if (($attribute = $this->processAttribute($entityLabel, $attributeLabel, $values)) instanceof Attribute) {
+        foreach ($attributes as $attributeLabel => $value) {
+            if (($attribute = $this->processAttribute($entityLabel, $attributeLabel, $value)) instanceof Attribute) {
                 $entity->addAttribute($attribute);
             }
         }
@@ -223,7 +225,7 @@ class EDIParser extends Parser implements EDIParserContract
     /**
      * @param $entityLabel
      * @param $attributeLabel
-     * @param string $values
+     * @param $value
      * @return Attribute
      */
     protected function processAttribute($entityLabel, $attributeLabel, $value): ?Attribute
