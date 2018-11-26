@@ -17,5 +17,5 @@ interface CodeRepository
      * @param $code
      * @return Code
      */
-    public function findByCode($code): Code;
+    public function findByCode($code): ?Code;
 }
