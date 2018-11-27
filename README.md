@@ -1,6 +1,6 @@
 # AFD package
 
-This package contains the basis for reading and handling AFD messages base on the SIVI standard.
+This package contains the basis for reading and handling AFD messages based on the SIVI standard.
 
 ## Parsers
 
@@ -11,4 +11,4 @@ Parsing raw data to an AFD message is currently supported for two data structure
 
 ## Example usage
 
-For an implementation of the package we suggest you take a look at the [rapideinternet/afd.laravel](https://github.com/rapideinternet/afd.laravel) package.
+For an implementation of this package we suggest you take a look at the [rapideinternet/afd.laravel](https://github.com/rapideinternet/afd.laravel) package.
