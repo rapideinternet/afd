@@ -179,7 +179,8 @@ class Message implements MessageContract, Validatable
     {
         $result = [];
 
-        if ($this->hasEntity($entityLabel)) /** @var Entity $entity */ {
+        if ($this->hasEntity($entityLabel)) {
+            /** @var Entity $entity */
             foreach ($this->entities[$entityLabel] as $entity) {
                 $result[] = $entity->hasAttribute($label);
             }

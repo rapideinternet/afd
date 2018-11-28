@@ -1,8 +1,8 @@
 <?php
 
-
 namespace SIVI\AFD\Models\Contracts;
 
+use SIVI\AFD\Models\Interfaces\Attribute;
 
 interface Entity
 {
@@ -11,6 +11,12 @@ interface Entity
      * @return mixed
      */
     public function hasAttribute($label);
+
+    /**
+     * @param $label
+     * @return array|Attribute[]
+     */
+    public function getAttributesByLabel($label);
 
     /**
      * @param $label

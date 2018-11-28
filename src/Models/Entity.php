@@ -12,40 +12,33 @@ class Entity implements EntityContract, Validatable
     /**
      * @var string
      */
-    protected $label;
-
-    /**
-     * @var string
-     */
     protected static $type;
-
-    /**
-     * @var array
-     */
-    protected $attributes = [];
-
-    /**
-     * @var array
-     */
-    protected $subEntities = [];
-
-    /**
-     * @var string
-     */
-    protected $description;
-
-    /**
-     * @var string
-     */
-    protected $explanation;
-
     /**
      * @var array
      */
     protected static $typeMap = [
         ByEntity::class
     ];
-
+    /**
+     * @var string
+     */
+    protected $label;
+    /**
+     * @var array
+     */
+    protected $attributes = [];
+    /**
+     * @var array
+     */
+    protected $subEntities = [];
+    /**
+     * @var string
+     */
+    protected $description;
+    /**
+     * @var string
+     */
+    protected $explanation;
     /**
      * Should be implemented in the lower classes
      *
@@ -88,6 +81,11 @@ class Entity implements EntityContract, Validatable
         return $map;
     }
 
+    public static function matchEntity(EntityContract $message): bool
+    {
+        return false;
+    }
+
     /**
      * @return bool
      */
@@ -105,46 +103,12 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @return null|string
-     */
-    public function getOrderNumber()
-    {
-        if ($this->hasAttribute(AttributeTypes::VOLGNUM)) {
-            $attribute = array_first($this->attributes[AttributeTypes::VOLGNUM]);
-
-            if ($attribute instanceof Attribute) {
-                return $attribute->getValue();
-            }
-        }
-
-        return null;
-    }
-
-    /**
      * @param $label
-     * @return bool
+     * @return array|Attribute[]
      */
-    public function hasAttribute($label): bool
+    public function getAttributesByLabel($label)
     {
-        return isset($this->attributes[$label]) && count($this->attributes[$label]) > 0;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLabel(): string
-    {
-        return $this->label;
-    }
-
-    /**
-     * @param string $label
-     * @return Entity
-     */
-    public function setLabel(string $label): Entity
-    {
-        $this->label = $label;
-        return $this;
+        return $this->attributes[$label] ?? [];
     }
 
     /**
@@ -205,9 +169,47 @@ class Entity implements EntityContract, Validatable
         }
     }
 
-    public static function matchEntity(EntityContract $message): bool
+    /**
+     * @return null|string
+     */
+    public function getOrderNumber()
     {
-        return false;
+        if ($this->hasAttribute(AttributeTypes::VOLGNUM)) {
+            $attribute = array_first($this->attributes[AttributeTypes::VOLGNUM]);
+
+            if ($attribute instanceof Attribute) {
+                return $attribute->getValue();
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * @param $label
+     * @return bool
+     */
+    public function hasAttribute($label): bool
+    {
+        return isset($this->attributes[$label]) && count($this->attributes[$label]) > 0;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLabel(): string
+    {
+        return $this->label;
+    }
+
+    /**
+     * @param string $label
+     * @return Entity
+     */
+    public function setLabel(string $label): Entity
+    {
+        $this->label = $label;
+        return $this;
     }
 
     public function hasAttributeValue($label, $value)
