@@ -123,7 +123,10 @@ class Format implements ValueFormats
      */
     public function formatValue($value)
     {
-        if ($this->type == self::NUMERIC && !$this->maxLength) {
+        if (
+            ($this->type == self::NUMERIC && !$this->maxLength)
+            || ($this->type == self::ALPHA_NUMERIC && !$this->maxLength)
+        ) {
             return str_pad($value, $this->value, '0', STR_PAD_LEFT);
         }
 
