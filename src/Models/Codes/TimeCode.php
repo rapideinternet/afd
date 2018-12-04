@@ -2,7 +2,6 @@
 
 namespace SIVI\AFD\Models\Codes;
 
-use DateTime;
 use SIVI\AFD\Enums\Codes;
 
 class TimeCode extends DateCode
@@ -13,13 +12,6 @@ class TimeCode extends DateCode
 
     protected $format = 'Hi';
 
-    public function displayValue($value)
-    {
-        if ($value instanceof DateTime) {
-            return $value->format('H:i');
-        }
+    protected $displayFormat = 'H:i';
 
-        $d = DateTime::createFromFormat($this->format, $value);
-        return $d->format('H:i');
-    }
 }
