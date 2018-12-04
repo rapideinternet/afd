@@ -119,14 +119,36 @@ class Format implements ValueFormats
 
     /**
      * @param $value
+     * @param bool $optionalPadding
      * @return mixed
      */
-    public function formatValue($value)
+    public function formatValue($value, $optionalPadding = false)
     {
-        if ($this->type == self::NUMERIC && !$this->maxLength) {
+        if (
+            ($this->type == self::NUMERIC && !$this->maxLength)
+            || ($this->type == self::ALPHA_NUMERIC && $optionalPadding === true)
+        ) {
             return str_pad($value, $this->value, '0', STR_PAD_LEFT);
         }
 
         return $value;
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function displayValue($value)
+    {
+        return $value;
+    }
+
+    /**
+     * @param $key
+     * @return bool
+     */
+    public function hasKey($key)
+    {
+        return false;
     }
 }

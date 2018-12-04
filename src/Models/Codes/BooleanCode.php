@@ -40,4 +40,21 @@ class BooleanCode extends Code
 
         return null;
     }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function displayValue($value)
+    {
+        if ($value === true) {
+            return 'Ja';
+        }
+
+        if ($value === false) {
+            return 'Nee';
+        }
+
+        return '';
+    }
 }

@@ -8,37 +8,9 @@ use SIVI\AFD\Models\Interfaces\ValueFormats;
 class Code implements ValueFormats
 {
     /**
-     * Codes Enum
-     * @var string
-     */
-    protected static $code;
-
-    /**
-     * @var
-     */
-    protected $description;
-
-    /**
      * @var bool
      */
     public static $variableLength = false;
-
-    protected $rawCode;
-
-    /**
-     * @param $value
-     * @throws NotImplementedException
-     */
-    public function formatValue($value)
-    {
-        return $value;
-    }
-
-    public function __construct($code)
-    {
-        $this->rawCode = $code;
-    }
-
     public static $codeMap = [
         AttachmentCode::class,
         BankAccount11Code::class,
@@ -54,6 +26,21 @@ class Code implements ValueFormats
         PercentageCode::class,
         TimeCode::class
     ];
+    /**
+     * Codes Enum
+     * @var string
+     */
+    protected static $code;
+    /**
+     * @var
+     */
+    protected $description;
+    protected $rawCode;
+
+    public function __construct($code)
+    {
+        $this->rawCode = $code;
+    }
 
     /**
      * @return array
@@ -71,6 +58,24 @@ class Code implements ValueFormats
 
     /**
      * @param $value
+     * @throws NotImplementedException
+     */
+    public function formatValue($value)
+    {
+        return $value;
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function displayValue($value)
+    {
+        return $value;
+    }
+
+    /**
+     * @param $value
      * @return array|void
      * @throws NotImplementedException
      */
@@ -82,5 +87,14 @@ class Code implements ValueFormats
     public function processValue($value)
     {
         return $value;
+    }
+
+    /**
+     * @param $key
+     * @return bool
+     */
+    public function hasKey($key)
+    {
+        return false;
     }
 }

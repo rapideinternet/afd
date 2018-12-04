@@ -11,4 +11,7 @@ class TimeCode extends DateCode
     protected $description = 'Tijd formaat UUMM';
 
     protected $format = 'Hi';
+
+    protected $displayFormat = 'H:i';
+
 }

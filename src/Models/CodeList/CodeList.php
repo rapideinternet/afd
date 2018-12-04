@@ -145,6 +145,24 @@ class CodeList implements ValueFormats
      */
     public function formatValue($value)
     {
-        return $value; //To description?
+        return $value;
+    }
+
+    /**
+     * @param $key
+     * @return bool
+     */
+    public function hasKey($key)
+    {
+        return array_key_exists($key, $this->values);
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function displayValue($value)
+    {
+        return $this->getValue($value);
     }
 }

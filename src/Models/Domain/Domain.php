@@ -28,4 +28,22 @@ class Domain implements ValueFormats
     {
         // TODO: Implement formatValue() method.
     }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function displayValue($value)
+    {
+        // TODO: Implement displayValue() method.
+    }
+
+    /**
+     * @param $key
+     * @return bool
+     */
+    public function hasKey($key)
+    {
+        // TODO: Implement hasKey() method.
+    }
 }

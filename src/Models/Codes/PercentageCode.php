@@ -6,15 +6,11 @@ use SIVI\AFD\Enums\Codes;
 
 class PercentageCode extends Code
 {
-    protected static $code = Codes::PERCENTAGE;
-
-    protected $description = 'Percentage met maximaal n decimalen';
-
-    protected $delimiter;
-
-    protected $length;
-
     public static $variableLength = true;
+    protected static $code = Codes::PERCENTAGE;
+    protected $description = 'Percentage met maximaal n decimalen';
+    protected $delimiter;
+    protected $length;
 
     /**
      * CurrencyCode constructor.
@@ -41,5 +37,10 @@ class PercentageCode extends Code
     public function processValue($value)
     {
         return (double)$value;
+    }
+
+    public function displayValue($value)
+    {
+        return number_format((float)$value, $this->length) . ' %';
     }
 }

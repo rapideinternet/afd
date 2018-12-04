@@ -156,6 +156,29 @@ class Attribute implements Validatable, Interfaces\Attribute
         return $value;
     }
 
+    public function getDisplayValue()
+    {
+        $value = $this->value;
+
+        if ($this->codeList) {
+            if (!$this->codeList->hasKey($value) && $this->format) {
+                $value = $this->format->formatValue($value, true);
+            }
+
+            return $this->codeList->displayValue($value);
+        }
+
+        if ($this->code) {
+            return $this->code->displayValue($value);
+        }
+
+        if ($this->format) {
+            return $this->format->displayValue($value);
+        }
+
+        return $value;
+    }
+
     /**
      * @return Domain
      */

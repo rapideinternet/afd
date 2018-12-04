@@ -21,4 +21,16 @@ interface ValueFormats
      * @return mixed
      */
     public function formatValue($value);
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function displayValue($value);
+
+    /**
+     * @param $key
+     * @return bool
+     */
+    public function hasKey($key);
 }

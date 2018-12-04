@@ -6,15 +6,11 @@ use SIVI\AFD\Enums\Codes;
 
 class CurrencyCode extends Code
 {
-    protected static $code = Codes::CURRENCY;
-
-    protected $description = 'Bedrag met maximaal n decimalen';
-
-    protected $delimiter;
-
-    protected $length;
-
     public static $variableLength = true;
+    protected static $code = Codes::CURRENCY;
+    protected $description = 'Bedrag met maximaal n decimalen';
+    protected $delimiter;
+    protected $length;
 
     /**
      * CurrencyCode constructor.
@@ -41,5 +37,10 @@ class CurrencyCode extends Code
     public function processValue($value)
     {
         return (double)$value;
+    }
+
+    public function displayValue($value)
+    {
+        return sprintf('&euro; %s', number_format((float)$value, $this->length), ',', '.');
     }
 }

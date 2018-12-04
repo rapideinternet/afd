@@ -11,4 +11,6 @@ class Date1Code extends DateCode
     protected $description = 'Datum formaat EEJJMMDD';
 
     protected $format = '!Ymd';
+
+    protected $displayFormat = 'd/m/Y';
 }
