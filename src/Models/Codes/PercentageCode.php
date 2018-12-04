@@ -39,7 +39,7 @@ class PercentageCode extends Code
         return (double)$value;
     }
 
-    public function formatValue($value)
+    public function displayValue($value)
     {
         return number_format((float)$value, $this->length) . ' %';
     }

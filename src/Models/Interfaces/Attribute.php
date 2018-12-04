@@ -30,6 +30,11 @@ interface Attribute
     /**
      * @return string
      */
+    public function getDisplayValue();
+
+    /**
+     * @return string
+     */
     public function getValue();
 
     /**

@@ -142,19 +142,38 @@ class Attribute implements Validatable, Interfaces\Attribute
         $value = $this->value;
 
         if ($this->codeList) {
-            if (!$this->codeList->hasKey($value) && $this->format) {
-                $value = $this->format->formatValue($value);
-            }
-
-            return $this->codeList->formatValue($value);
+            $value = $this->codeList->formatValue($value);
         }
 
         if ($this->code) {
-            return $this->code->formatValue($value);
+            $value = $this->code->formatValue($value);
         }
 
         if ($this->format) {
-            return $this->format->formatValue($value);
+            $value = $this->format->formatValue($value);
+        }
+
+        return $value;
+    }
+
+    public function getDisplayValue()
+    {
+        $value = $this->value;
+
+        if ($this->codeList) {
+            if (!$this->codeList->hasKey($value) && $this->format) {
+                $value = $this->format->formatValue($value, true);
+            }
+
+            return $this->codeList->displayValue($value);
+        }
+
+        if ($this->code) {
+            return $this->code->displayValue($value);
+        }
+
+        if ($this->format) {
+            return $this->format->displayValue($value);
         }
 
         return $value;

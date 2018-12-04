@@ -8,6 +8,8 @@ class DateCode extends Code
 {
     protected $format;
 
+    protected $displayFormat;
+
     protected function validateDateFormat($format, $value)
     {
         $d = DateTime::createFromFormat($format, $value);
@@ -35,5 +37,17 @@ class DateCode extends Code
     public function processValue($value)
     {
         return DateTime::createFromFormat($this->format, $value);
+    }
+
+    public function displayValue($value)
+    {
+        $format = $this->displayFormat;
+
+        if ($value instanceof DateTime) {
+            return $value->format($format);
+        }
+
+        $d = DateTime::createFromFormat($this->format, $value);
+        return $d->format($format);
     }
 }

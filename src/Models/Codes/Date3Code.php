@@ -11,4 +11,6 @@ class Date3Code extends DateCode
     protected $description = 'Datum formaat EEJJ';
 
     protected $format = '!Y';
+
+    protected $displayFormat = 'Y';
 }

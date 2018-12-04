@@ -67,6 +67,15 @@ class Code implements ValueFormats
 
     /**
      * @param $value
+     * @return mixed
+     */
+    public function displayValue($value)
+    {
+        return $value;
+    }
+
+    /**
+     * @param $value
      * @return array|void
      * @throws NotImplementedException
      */

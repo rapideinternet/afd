@@ -11,4 +11,6 @@ class Date5Code extends DateCode
     protected $description = 'Datum formaat MMDD';
 
     protected $format = '!md';
+
+    protected $displayFormat = 'd/m';
 }

@@ -39,7 +39,7 @@ class CurrencyCode extends Code
         return (double)$value;
     }
 
-    public function formatValue($value)
+    public function displayValue($value)
     {
         return sprintf('&euro; %s', number_format((float)$value, $this->length), ',', '.');
     }
