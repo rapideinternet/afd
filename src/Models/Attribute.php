@@ -160,7 +160,7 @@ class Attribute implements Validatable, Interfaces\Attribute
     {
         $value = $this->value;
 
-        if ($this->codeList) {
+        if ($this->codeList && $value) {
             if (!$this->codeList->hasKey($value) && $this->format) {
                 $value = $this->format->formatValue($value, true);
             }
