@@ -160,7 +160,7 @@ class Attribute implements Validatable, Interfaces\Attribute
     {
         $value = $this->value;
 
-        if ($this->codeList && (is_string($value) || is_int($value)) {
+        if ($this->codeList && (is_string($value) || is_int($value))) {
             if (!$this->codeList->hasKey($value) && $this->format) {
                 $value = $this->format->formatValue($value, true);
             }
