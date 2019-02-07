@@ -114,7 +114,22 @@ class Format implements ValueFormats
      */
     public function processValue($value)
     {
-        return $this->type == self::NUMERIC ? (int)$value : $value;
+        if ($this->isFloat($this->rawFormat)) {
+            return (float)$value;
+        } elseif ($this->type == self::NUMERIC) {
+            return (int)$value;
+        }
+
+        return $value;
+    }
+
+    /**
+     * @param $format
+     * @return bool
+     */
+    protected function isFloat($format): bool
+    {
+        return $this->type == self::NUMERIC && substr($format, 1, 2) == self::MAX_LENGTH_STRING;
     }
 
     /**

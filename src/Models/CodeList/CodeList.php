@@ -154,6 +154,10 @@ class CodeList implements ValueFormats
      */
     public function hasKey($key)
     {
+        if (is_float($key)) {
+            $key = (int)$key;
+        }
+
         return array_key_exists($key, $this->values);
     }
 
