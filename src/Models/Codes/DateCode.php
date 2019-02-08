@@ -36,6 +36,10 @@ class DateCode extends Code
 
     public function processValue($value)
     {
+        if ($value === false) {
+            return null;
+        }
+        
         return DateTime::createFromFormat($this->format, $value);
     }
 
@@ -47,7 +51,6 @@ class DateCode extends Code
             return $value->format($format);
         }
 
-        $d = DateTime::createFromFormat($this->format, $value);
-        return $d->format($format);
+        return null;
     }
 }
