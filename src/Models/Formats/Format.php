@@ -120,7 +120,7 @@ class Format implements ValueFormats
             return (int)$value;
         }
 
-        return $value;
+        return utf8_encode($value);
     }
 
     /**
@@ -155,7 +155,7 @@ class Format implements ValueFormats
      */
     public function displayValue($value)
     {
-        return $value;
+        return utf8_encode($value);
     }
 
     /**
