@@ -155,7 +155,7 @@ class Format implements ValueFormats
      */
     public function displayValue($value)
     {
-        return utf8_encode($value);
+        return $value;
     }
 
     /**
