@@ -19,7 +19,7 @@ class DateCode extends Code
 
     public function validateValue($value)
     {
-        $this->validateDateFormat($this->format, $value);
+        return $this->validateDateFormat($this->format, $value);
     }
 
     public function formatValue($value)
@@ -28,14 +28,20 @@ class DateCode extends Code
 
         if ($value instanceof DateTime) {
             return $value->format($format);
+        } elseif ($this->validateValue($value)) {
+            $d = DateTime::createFromFormat($this->format, $value);
+            return $d->format($format);
         }
-
-        $d = DateTime::createFromFormat($this->format, $value);
-        return $d->format($format);
+        
+        return $value;
     }
 
     public function processValue($value)
     {
+        if ($value === false) {
+            return null;
+        }
+        
         return DateTime::createFromFormat($this->format, $value);
     }
 
@@ -45,9 +51,11 @@ class DateCode extends Code
 
         if ($value instanceof DateTime) {
             return $value->format($format);
+        } elseif ($this->validateValue($value)) {
+            $d = DateTime::createFromFormat($this->format, $value);
+            return $d->format($format);
         }
 
-        $d = DateTime::createFromFormat($this->format, $value);
-        return $d->format($format);
+        return null;
     }
 }
