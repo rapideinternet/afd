@@ -300,8 +300,8 @@ class Attribute implements Validatable, Interfaces\Attribute
      */
     public function getCodeListDescription()
     {
-        if ($this->codeList) {
-            return $this->codeList->getValue($this->getValue());
+        if ($this->codeList && ($value = $this->codeList->getValue($this->getValue())) !== null) {
+            return $value;
         }
 
         return null;

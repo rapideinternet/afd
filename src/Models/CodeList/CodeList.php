@@ -123,7 +123,9 @@ class CodeList implements ValueFormats
             return $this->values[$key];
         }
 
-        return null;
+        return collect($this->values)->mapWithKeys(function ($value, $key) {
+            return [(int)$key => $value];
+        })->get($key);
     }
 
     /**
