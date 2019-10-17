@@ -308,7 +308,7 @@ class Attribute implements Validatable, Interfaces\Attribute
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getValue()
     {

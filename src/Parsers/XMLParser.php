@@ -109,7 +109,8 @@ class XMLParser extends Parser implements XMLParserContract
 
         foreach ($nodes as $nodeLabel => $node) {
 
-            if ($this->isEntity($nodeLabel) && ($subEntity = $this->processEntity($nodeLabel, $node)) instanceof Entity) {
+            if ($this->isEntity($nodeLabel) && ($subEntity = $this->processEntity($nodeLabel,
+                    $node)) instanceof Entity) {
                 $entity->addSubEntity($subEntity);
             } elseif (($attribute = $this->processAttribute($nodeLabel, $node)) instanceof Attribute) {
                 $entity->addAttribute($attribute);
