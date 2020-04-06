@@ -51,7 +51,7 @@ class XMLTransformer implements XMLTransformerContract
              * @var Attribute $attribute
              */
             foreach ($attributes as $attribute) {
-                $XMLElement->addChild($attribute->getLabel(), $attribute->getFormattedValue());
+                $XMLElement->addChild($attribute->getLabel(), htmlspecialchars($attribute->getFormattedValue()));
             }
         }
 
