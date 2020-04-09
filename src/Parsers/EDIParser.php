@@ -37,6 +37,7 @@ class EDIParser extends Parser implements EDIParserContract
     const MESSAGE_TYPE_MUTATION = 'PMB';
 
 
+    public $strictValidation = false;
     /**
      * @var MessageRepository
      */
@@ -151,7 +152,7 @@ class EDIParser extends Parser implements EDIParserContract
     {
         list($rowIdentifier, $messageCount, $batchMessageId) = explode(self::SEPARATOR, $footerLine);
 
-        if ($message->getSubMessagesCount() !== (int)$messageCount) {
+        if ($message->getSubMessagesCount() !== (int)$messageCount && $this->strictValidation === true) {
             throw new EDIException(
                 sprintf(
                     'Message verification count (%d) and number of parsed messages (%d) do not match!',
@@ -171,14 +172,15 @@ class EDIParser extends Parser implements EDIParserContract
     protected function getSubMessageByMessageHeader($headerLine, Message $message)
     {
         list($rowIdentifier, $messageId, $messageInfo) = explode(self::SEPARATOR, $headerLine);
+
         // TODO: implement different parsing based on $ediFormatType and $ediFormatVersion
-        list(
-            $ediFormatType,
-            $ediFormatVersion,
-            $ediFormatVersion2,
-            $messageDirection,
-            $messageType
-            ) = explode(self::HEADER_SEPARATOR, $messageInfo);
+        $messageInfoParts = explode(self::HEADER_SEPARATOR, $messageInfo);
+
+        $ediFormatType = $messageInfoParts[0] ?? null;
+        $ediFormatVersion = $messageInfoParts[1] ?? null;
+        $ediFormatVersion2 = $messageInfoParts[2] ?? null;
+        $messageDirection = $messageInfoParts[3] ?? 'IN';
+        $messageType = $messageInfoParts[4] ?? Messages::PROLONGATION;
 
         switch ($messageType) {
             case self::MESSAGE_TYPE_CONTRACT:
@@ -191,7 +193,11 @@ class EDIParser extends Parser implements EDIParserContract
                 $label = Messages::MUTATION;
                 break;
             default:
-                throw new EDIException('Could not determine message type');
+                if ($this->strictValidation === true) {
+                    throw new EDIException('Could not determine message type');
+                } else {
+                    $label = Messages::PROLONGATION;
+                }
         }
 
         $subMessage = $this->messageRepository->getByLabel($label);
