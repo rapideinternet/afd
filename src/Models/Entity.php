@@ -149,10 +149,15 @@ class Entity implements EntityContract, Validatable
 
     /**
      * @param Attribute $attribute
+     * @param int|null $orderNumber
      */
-    public function addAttribute(Attribute $attribute)
+    public function addAttribute(Attribute $attribute, $orderNumber = null): void
     {
-        $this->attributes[$attribute->getTypeLabel()][] = $attribute;
+        if ($orderNumber !== null) {
+            $this->attributes[$attribute->getTypeLabel()][$orderNumber] = $attribute;
+        } else {
+            $this->attributes[$attribute->getTypeLabel()][] = $attribute;
+        }
     }
 
     /**
