@@ -175,6 +175,22 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
+     * @param string $label
+     */
+    public function unsetAttributesByLabel(string $label): void
+    {
+        unset($this->attributes[$label]);
+    }
+
+    /**
+     * @param string $label
+     */
+    public function unsetSubEntityByLabel(string $label): void
+    {
+        unset($this->subEntities[$label]);
+    }
+
+    /**
      * @return null|string
      */
     public function getOrderNumber()

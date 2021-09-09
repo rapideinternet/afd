@@ -132,6 +132,22 @@ class Message implements MessageContract, Validatable
     }
 
     /**
+     * @param string $label
+     */
+    public function unsetEntitiesByLabel(string $label): void
+    {
+        unset($this->entities[$label]);
+    }
+
+    /**
+     * @param string $label
+     */
+    public function unsetSubmessagesByLabel(string $label)
+    {
+        unset($this->subMessages[$label]);
+    }
+
+    /**
      * @return null
      */
     public function getLabel()
