@@ -161,6 +161,71 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
+     * @param string $label
+     */
+    public function unsetAttributesByLabel(string $label): void
+    {
+//        unset($this->attributes[$label]);
+    }
+
+    /**
+     * @param string $label
+     */
+    public function unsetSubEntityByLabel(string $label): void
+    {
+        unset($this->subEntities[$label]);
+    }
+
+    public function hasAttributeValue($label, $value)
+    {
+        if ($this->hasAttribute($label)) {
+            /** @var Attribute $attribute */
+            foreach ($this->attributes[$label] as $attribute) {
+                return $attribute->getValue() == $value;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * @param $label
+     * @return bool
+     */
+    public function hasAttribute($label): bool
+    {
+        return isset($this->attributes[$label]) && count($this->attributes[$label]) > 0;
+    }
+
+    /**
+     * @return Attribute[]
+     */
+    public function getAttributes(): array
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getSubEntities(): array
+    {
+        return $this->subEntities;
+    }
+
+    public function unsetSubEntityByLabelAndOrderNumber(string $entityType, int $orderNumber)
+    {
+        unset($this->subEntities[$entityType][$orderNumber]);
+    }
+
+    public function addSubEntities(array $subEntities)
+    {
+        foreach ($subEntities as $subEntity) {
+            $this->addSubEntity($subEntity);
+        }
+    }
+
+    /**
      * @param Entity $entity
      */
     public function addSubEntity(Entity $entity)
@@ -172,22 +237,6 @@ class Entity implements EntityContract, Validatable
         } else {
             $this->subEntities[$entity->getLabel()][$orderNumber] = $entity;
         }
-    }
-
-    /**
-     * @param string $label
-     */
-    public function unsetAttributesByLabel(string $label): void
-    {
-        unset($this->attributes[$label]);
-    }
-
-    /**
-     * @param string $label
-     */
-    public function unsetSubEntityByLabel(string $label): void
-    {
-        unset($this->subEntities[$label]);
     }
 
     /**
@@ -204,15 +253,6 @@ class Entity implements EntityContract, Validatable
         }
 
         return null;
-    }
-
-    /**
-     * @param $label
-     * @return bool
-     */
-    public function hasAttribute($label): bool
-    {
-        return isset($this->attributes[$label]) && count($this->attributes[$label]) > 0;
     }
 
     /**
@@ -233,31 +273,8 @@ class Entity implements EntityContract, Validatable
         return $this;
     }
 
-    public function hasAttributeValue($label, $value)
+    public function unsetAttributeByLabelAndOrderNumber(string $attributeType, int $orderNumber)
     {
-        if ($this->hasAttribute($label)) {
-            /** @var Attribute $attribute */
-            foreach ($this->attributes[$label] as $attribute) {
-                return $attribute->getValue() == $value;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * @return Attribute[]
-     */
-    public function getAttributes(): array
-    {
-        return $this->attributes;
-    }
-
-    /**
-     * @return array
-     */
-    public function getSubEntities(): array
-    {
-        return $this->subEntities;
+        unset($this->subEntities[$attributeType][$orderNumber]);
     }
 }

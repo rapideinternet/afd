@@ -184,7 +184,7 @@ class EDIParser extends Parser implements EDIParserContract
 
         switch ($messageType) {
             case self::MESSAGE_TYPE_CONTRACT:
-                $label = Messages::CONTRACT;
+                $label = Messages::CONTRACT_MESSAGE;
                 break;
             case self::MESSAGE_TYPE_PROLONGATION:
                 $label = Messages::PROLONGATION;

@@ -9,12 +9,12 @@ use SIVI\AFD\Models\Message;
 
 class ContractMessage extends Message
 {
-    protected $label = Messages::CONTRACT;
+    protected $label = Messages::CONTRACT_MESSAGE;
 
-    protected static $type = Messages::CONTRACT;
+    protected static $type = Messages::CONTRACT_MESSAGE;
 
     public function __construct($label = null, array $entities = [], array $subMessages = [])
     {
-        parent::__construct(Messages::CONTRACT, $entities, $subMessages);
+        parent::__construct(Messages::CONTRACT_MESSAGE, $entities, $subMessages);
     }
 }

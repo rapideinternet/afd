@@ -89,7 +89,7 @@ class EDITransformer implements \SIVI\AFD\Transformers\Contracts\EDITransformer
     protected function getTypeByLabel($label)
     {
         switch ($label) {
-            case Messages::CONTRACT:
+            case Messages::CONTRACT_MESSAGE:
                 return EDIParser::MESSAGE_TYPE_CONTRACT;
                 break;
             case Messages::PROLONGATION:

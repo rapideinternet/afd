@@ -148,6 +148,15 @@ class Message implements MessageContract, Validatable
     }
 
     /**
+     * @param string $label
+     * @param $orderNumber
+     */
+    public function unsetSubmessagesByLabelAndOrderNumber(string $label, $orderNumber)
+    {
+        unset($this->subMessages[$label][$orderNumber]);
+    }
+
+    /**
      * @return null
      */
     public function getLabel()
@@ -291,5 +300,10 @@ class Message implements MessageContract, Validatable
     public function setReceiver(string $receiver): void
     {
         $this->receiver = $receiver;
+    }
+
+    public function unsetEntitiesByLabelAndOrderNumber(string $entityType, int $orderNumber)
+    {
+        unset($this->entities[$entityType][$orderNumber]);
     }
 }
