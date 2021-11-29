@@ -339,4 +339,14 @@ class Attribute implements Validatable, Interfaces\Attribute
 
         return $this;
     }
+
+    public function __clone()
+    {
+        if (isset($this->codeList)) {
+            $this->codeList = clone $this->codeList;
+        }
+        if (isset($this->format)) {
+            $this->format = clone $this->format;
+        }
+    }
 }

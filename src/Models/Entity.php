@@ -277,4 +277,10 @@ class Entity implements EntityContract, Validatable
     {
         unset($this->subEntities[$attributeType][$orderNumber]);
     }
+
+    public function __clone()
+    {
+        $this->attributes = array_copy($this->attributes);
+        $this->subEntities = array_copy($this->subEntities);
+    }
 }

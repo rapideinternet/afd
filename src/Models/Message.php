@@ -132,6 +132,14 @@ class Message implements MessageContract, Validatable
     }
 
     /**
+     * @return null
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
      * @param string $label
      */
     public function unsetEntitiesByLabel(string $label): void
@@ -154,14 +162,6 @@ class Message implements MessageContract, Validatable
     public function unsetSubmessagesByLabelAndOrderNumber(string $label, $orderNumber)
     {
         unset($this->subMessages[$label][$orderNumber]);
-    }
-
-    /**
-     * @return null
-     */
-    public function getLabel()
-    {
-        return $this->label;
     }
 
     /**
@@ -305,5 +305,11 @@ class Message implements MessageContract, Validatable
     public function unsetEntitiesByLabelAndOrderNumber(string $entityType, int $orderNumber)
     {
         unset($this->entities[$entityType][$orderNumber]);
+    }
+
+    public function __clone()
+    {
+        $this->entities = array_copy($this->entities);
+        $this->subMessages = array_copy($this->subMessages);
     }
 }
