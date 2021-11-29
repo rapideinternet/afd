@@ -27,7 +27,7 @@
       "SIVI\\AFD\\": "src"
     },
     "files": [
-      "Helpers/functions.php"
+      "src/Helpers/functions.php"
     ]
   },
   "require-dev": {}
