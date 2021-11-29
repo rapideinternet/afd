@@ -25,7 +25,10 @@
   "autoload": {
     "psr-4": {
       "SIVI\\AFD\\": "src"
-    }
+    },
+    "files": [
+      "Helpers/functions.php"
+    ]
   },
   "require-dev": {}
 }
