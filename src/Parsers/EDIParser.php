@@ -91,6 +91,9 @@ class EDIParser extends Parser implements EDIParserContract
                 $allowedSpecialCharacters = substr($line, 3);
             } elseif ($rowIdentifier === self::INTERCHANGE_HEADER) {
                 $this->parseHeader($line, $message);
+                if (empty($message->getMessageId())) {
+                    $message->setMessageId(md5($ediContent));
+                }
             } elseif ($rowIdentifier === self::INTERCHANGE_TRAILER) {
                 $this->parseFooter($line, $message);
             } elseif ($rowIdentifier === self::MESSAGE_HEADER) {
@@ -206,6 +209,10 @@ class EDIParser extends Parser implements EDIParserContract
         $subMessage->setReceiver($message->getReceiver());
         $subMessage->setDateTime($message->getDateTime());
         $subMessage->setMessageId($messageId);
+
+        if (empty($subMessage->getMessageId())) {
+            $subMessage->setMessageId(md5($headerLine));
+        }
 
         return $subMessage;
     }

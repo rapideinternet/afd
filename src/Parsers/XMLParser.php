@@ -49,7 +49,13 @@ class XMLParser extends Parser implements XMLParserContract
     {
         $xml = simplexml_load_string($xmlString);
 
-        return $this->processMessage($xml->getName(), $xml);
+        $message = $this->processMessage($xml->getName(), $xml);
+
+        if (empty($message->getMessageId())) {
+            $message->setMessageId(md5($xmlString));
+        }
+        
+        return $message;
     }
 
     /**
@@ -59,7 +65,7 @@ class XMLParser extends Parser implements XMLParserContract
     public function processMessage($name, $nodes): Message
     {
         $message = $this->messageRepository->getByLabel($name);
-
+        
         //Loop over nodes
         foreach ($nodes as $key => $node) {
             $this->processNode($message, $key, $node);
