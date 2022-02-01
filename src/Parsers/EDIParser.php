@@ -72,6 +72,8 @@ class EDIParser extends Parser implements EDIParserContract
      */
     public function parse($ediContent): Message
     {
+        $this->verifyThatStringContainsEDIFact($ediContent);
+        
         $message = $this->messageRepository->getByLabel(Messages::BATCH);
 
         // TODO: incorporate this in parsing of data
@@ -121,6 +123,19 @@ class EDIParser extends Parser implements EDIParserContract
         }
 
         return $message;
+    }
+
+    protected function verifyThatStringContainsEDIFact($string)
+    {
+        $needles = [self::SERVICE_STRING_ADVICE, self::INTERCHANGE_HEADER];
+
+        foreach ($needles as $needle) {
+            if ($needle !== '' && substr($string, 0, strlen($needle)) === (string) $needle) {
+                return true;
+            }
+        }
+
+        throw new EDIException('Provided string does not start with EDIFACT header');
     }
 
     /**
