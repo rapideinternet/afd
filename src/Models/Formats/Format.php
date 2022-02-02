@@ -150,7 +150,7 @@ class Format implements ValueFormats
     }
 
     /**
-     * @param $value
+     * @param mixed $value
      * @return mixed
      */
     public function displayValue($value)

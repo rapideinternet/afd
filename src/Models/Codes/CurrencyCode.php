@@ -41,6 +41,6 @@ class CurrencyCode extends Code
 
     public function displayValue($value)
     {
-        return sprintf('€ %s', number_format((float)$value, $this->length), ',', '.');
+        return sprintf('€ %s', number_format((float)$value, $this->length, ',', '.'));
     }
 }

@@ -9,56 +9,47 @@ use SIVI\AFD\Models\Interfaces\Validatable;
 
 class Entity implements EntityContract, Validatable
 {
+
+    protected static string $type;
     /**
-     * @var string
+     * @var array<class-string>
      */
-    protected static $type;
-    /**
-     * @var array
-     */
-    protected static $typeMap = [
+    protected static array $typeMap = [
         ByEntity::class
     ];
+
+    protected string $label;
     /**
-     * @var string
+     * @var array<string, array<string|int, Attribute>>
      */
-    protected $label;
+    protected array $attributes = [];
     /**
-     * @var array
+     * @var array<string, array<string|int, Entity>>
      */
-    protected $attributes = [];
-    /**
-     * @var array
-     */
-    protected $subEntities = [];
-    /**
-     * @var string
-     */
-    protected $description;
-    /**
-     * @var string
-     */
-    protected $explanation;
+    protected array $subEntities = [];
+
+    protected ?string $description;
+
+    protected ?string $explanation;
     /**
      * Should be implemented in the lower classes
      *
-     * @var array
+     * @var array<class-string>
      */
-    protected $allowedAttributeTypes = [
-    ];
+    protected array $allowedAttributeTypes = [];
 
     /**
      * Entity constructor.
-     * @param $label
-     * @param array $attributes
-     * @param array $subEntities
+     * 
+     * @param array<string, array<string|int, Attribute>> $attributes
+     * @param array<string, array<string|int, Entity>> $subEntities
      */
     public function __construct(
-        $label,
+        string $label,
         array $attributes = [],
         array $subEntities = [],
-        $description = null,
-        $explanation = null
+        ?string $description = null,
+        ?string $explanation = null
     ) {
         $this->setLabel($label);
         $this->attributes = $attributes;
@@ -70,7 +61,7 @@ class Entity implements EntityContract, Validatable
     /**
      * @return array
      */
-    public static function typeMap()
+    public static function typeMap(): array
     {
         $map = [];
 
@@ -81,6 +72,9 @@ class Entity implements EntityContract, Validatable
         return $map;
     }
 
+    /**
+     * TODO: implement or remove
+     */
     public static function matchEntity(EntityContract $message): bool
     {
         return false;
@@ -103,45 +97,30 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @param $label
-     * @return array|Attribute[]
+     * @return array<string|int, Attribute>
      */
-    public function getAttributesByLabel($label)
+    public function getAttributesByLabel(string $label): array
     {
         return $this->attributes[$label] ?? [];
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     * @return Entity
-     */
-    public function setDescription(string $description): Entity
+    public function setDescription(?string $description): Entity
     {
         $this->description = $description;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getExplanation(): string
+    public function getExplanation(): ?string
     {
         return $this->explanation;
     }
 
-    /**
-     * @param string $explanation
-     * @return Entity
-     */
-    public function setExplanation(string $explanation): Entity
+    public function setExplanation(?string $explanation): Entity
     {
         $this->explanation = $explanation;
         return $this;
@@ -165,7 +144,7 @@ class Entity implements EntityContract, Validatable
      */
     public function unsetAttributesByLabel(string $label): void
     {
-//        unset($this->attributes[$label]);
+        unset($this->attributes[$label]);
     }
 
     /**
@@ -176,7 +155,10 @@ class Entity implements EntityContract, Validatable
         unset($this->subEntities[$label]);
     }
 
-    public function hasAttributeValue($label, $value)
+    /**
+     * @param mixed $value
+     */
+    public function hasAttributeValue(string $label, $value): bool
     {
         if ($this->hasAttribute($label)) {
             /** @var Attribute $attribute */
@@ -188,17 +170,15 @@ class Entity implements EntityContract, Validatable
         return false;
     }
 
-    /**
-     * @param $label
-     * @return bool
-     */
-    public function hasAttribute($label): bool
+    public function hasAttribute(string $label): bool
     {
-        return isset($this->attributes[$label]) && count($this->attributes[$label]) > 0;
+        return isset($this->attributes[$label])
+            && is_array($this->attributes[$label])
+            && count($this->attributes[$label]) > 0;
     }
 
     /**
-     * @return Attribute[]
+     * @return array<string|int, Attribute>
      */
     public function getAttributes(): array
     {
@@ -206,19 +186,25 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @return array
+     * @return array<string|int, Entity>
      */
     public function getSubEntities(): array
     {
         return $this->subEntities;
     }
 
-    public function unsetSubEntityByLabelAndOrderNumber(string $entityType, int $orderNumber)
+    /**
+     * @param string|int $orderNumber
+     */
+    public function unsetSubEntityByLabelAndOrderNumber(string $entityType, $orderNumber): void
     {
         unset($this->subEntities[$entityType][$orderNumber]);
     }
 
-    public function addSubEntities(array $subEntities)
+    /**
+     * @param array<string|int, Entity> $subEntities
+     */
+    public function addSubEntities(array $subEntities): void
     {
         foreach ($subEntities as $subEntity) {
             $this->addSubEntity($subEntity);
@@ -226,11 +212,11 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @param Entity $entity
+     * @param string|int|null $orderNumber
      */
-    public function addSubEntity(Entity $entity)
+    public function addSubEntity(Entity $entity, $orderNumber = null): void
     {
-        $orderNumber = $entity->getOrderNumber();
+        $orderNumber ??= $entity->getOrderNumber();
 
         if ($orderNumber === null) {
             $this->subEntities[$entity->getLabel()][] = $entity;
