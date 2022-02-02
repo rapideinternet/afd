@@ -2,6 +2,8 @@
 
 namespace SIVI\AFD\Models;
 
+use SIVI\AFD\Exceptions\AFDException;
+use SIVI\AFD\Exceptions\NotImplementedException;
 use SIVI\AFD\Models\CodeList\CodeList;
 use SIVI\AFD\Models\Codes\Code;
 use SIVI\AFD\Models\Domain\Domain;
@@ -11,51 +13,37 @@ use SIVI\AFD\Models\Interfaces\ValueFormats;
 
 class Attribute implements Validatable, Interfaces\Attribute
 {
-    protected static $type;
-    protected static $typeMap = [];
-    /**
-     * @var string
-     */
-    protected $label;
-    protected $typeLabel;
+    protected static string $type;
+
+    protected static array $typeMap = [];
+
+    protected string $label;
+
+    protected string $typeLabel;
     /**
      * @var mixed
      */
     protected $value;
-    /**
-     * @var string
-     */
-    protected $rawValue;
-    /**
-     * @var Domain
-     */
-    protected $domain;
-    /**
-     * @var Format
-     */
-    protected $format;
-    /**
-     * @var Code
-     */
-    protected $code;
-    /**
-     * @var CodeList
-     */
-    protected $codeList;
-    /**
-     * @var string
-     */
-    protected $description;
-    /**
-     * @var string
-     */
-    protected $explanation;
+
+    protected string $rawValue;
+
+    protected Domain $domain;
+
+    protected Format $format;
+
+    protected Code $code;
+
+    protected CodeList $codeList;
+
+    protected string $description;
+
+    protected ?string $explanation;
 
     /**
      * Attribute constructor.
-     * @param $value
+     * @throws AFDException
      */
-    public function __construct($label)
+    public function __construct(string $label)
     {
         $this->setLabel($label);
     }
@@ -63,7 +51,7 @@ class Attribute implements Validatable, Interfaces\Attribute
     /**
      * @return array
      */
-    public static function typeMap()
+    public static function typeMap(): array
     {
         $map = [];
 
@@ -75,52 +63,53 @@ class Attribute implements Validatable, Interfaces\Attribute
     }
 
     /**
-     * @param $label
-     * @return bool|string
+     * @throws AFDException
      */
-    public static function formatTypeLabel($label)
+    public static function formatTypeLabel(string $label): string
     {
-        return substr($label, 3);
+        $formattedLabel = substr($label, 3);
+
+        if ($formattedLabel === false) {
+            throw new AFDException(sprintf('Could not format label "%s"', $label));
+        }
+
+        return $formattedLabel;
     }
 
     /**
      * @return bool
-     * @throws \SIVI\AFD\Exceptions\NotImplementedException
+     * @throws NotImplementedException
      */
     public function validate(): bool
     {
         $valid = [];
 
-        if ($this->domain instanceof ValueFormats) {
+        if (isset($this->domain) && $this->domain instanceof ValueFormats) {
             $valid[] = $this->domain->validateValue($this->value);
         }
 
-        if ($this->format instanceof ValueFormats) {
+        if (isset($this->format) && $this->format instanceof ValueFormats) {
             $valid[] = $this->format->validateValue($this->value);
         }
 
-        if ($this->code instanceof ValueFormats) {
+        if (isset($this->code) && $this->code instanceof ValueFormats) {
             $valid[] = $this->code->validateValue($this->value);
         }
 
-        if ($this->codeList instanceof ValueFormats) {
+        if (isset($this->codeList) && $this->codeList instanceof ValueFormats) {
             $valid[] = $this->codeList->validateValue($this->value);
         }
 
-        return !empty($valid) && array_product($valid);
+        return count($valid) !== 0 && (bool)array_product($valid);
     }
 
-    /**
-     * @return string
-     */
     public function getLabel(): string
     {
         return $this->label;
     }
 
     /**
-     * @param string $label
-     * @return Attribute
+     * @throws AFDException
      */
     public function setLabel(string $label): Attribute
     {
@@ -129,113 +118,93 @@ class Attribute implements Validatable, Interfaces\Attribute
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRawValue()
+    public function getRawValue(): string
     {
         return $this->rawValue;
     }
 
+    /**
+     * @return mixed
+     * @throws NotImplementedException
+     */
     public function getFormattedValue()
     {
         $value = $this->value;
 
-        if ($this->codeList) {
+        if (isset($this->codeList)) {
             $value = $this->codeList->formatValue($value);
         }
 
-        if ($this->code) {
+        if (isset($this->code)) {
             $value = $this->code->formatValue($value);
         }
 
-        if ($this->format) {
+        if (isset($this->format)) {
             $value = $this->format->formatValue($value);
         }
 
         return $value;
     }
 
+    /**
+     * @return mixed
+     */
     public function getDisplayValue()
     {
         $value = $this->value;
 
-        if ($this->codeList && (is_string($value) || is_int($value))) {
-            if (!$this->codeList->hasKey($value) && $this->format) {
+        if (isset($this->codeList) && (is_string($value) || is_int($value))) {
+            if (isset($this->format) && !$this->codeList->hasKey($value)) {
                 $value = $this->format->formatValue($value, true);
             }
 
             return $this->codeList->displayValue($value);
         }
 
-        if ($this->code) {
+        if (isset($this->code)) {
             return $this->code->displayValue($value);
         }
 
-        if ($this->format) {
+        if (isset($this->format)) {
             return $this->format->displayValue($value);
         }
 
         return $value;
     }
 
-    /**
-     * @return Domain
-     */
     public function getDomain(): Domain
     {
         return $this->domain;
     }
 
-    /**
-     * @param Domain $domain
-     * @return Attribute
-     */
     public function setDomain(Domain $domain): Attribute
     {
         $this->domain = $domain;
         return $this;
     }
 
-    /**
-     * @return Format
-     */
     public function getFormat(): Format
     {
         return $this->format;
     }
 
-    /**
-     * @param Format $format
-     * @return Attribute
-     */
     public function setFormat(Format $format): Attribute
     {
         $this->format = $format;
         return $this;
     }
 
-    /**
-     * @return Code
-     */
     public function getCode(): Code
     {
         return $this->code;
     }
 
-    /**
-     * @param Code $code
-     * @return Attribute
-     */
     public function setCode(Code $code): Attribute
     {
         $this->code = $code;
         return $this;
     }
 
-    /**
-     * @return CodeList
-     */
     public function getCodeList(): CodeList
     {
         return $this->codeList;
@@ -251,9 +220,6 @@ class Attribute implements Validatable, Interfaces\Attribute
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return $this->description;
@@ -287,10 +253,7 @@ class Attribute implements Validatable, Interfaces\Attribute
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTypeLabel()
+    public function getTypeLabel(): string
     {
         return $this->typeLabel;
     }
@@ -300,7 +263,7 @@ class Attribute implements Validatable, Interfaces\Attribute
      */
     public function getCodeListDescription()
     {
-        if ($this->codeList && ($value = $this->codeList->getValue($this->getValue())) !== null) {
+        if (isset($this->codeList) && ($value = $this->codeList->getValue($this->getValue())) !== null) {
             return $value;
         }
 
@@ -321,17 +284,17 @@ class Attribute implements Validatable, Interfaces\Attribute
      */
     public function setValue($value): Attribute
     {
-        $this->rawValue = $value;
+        $this->rawValue = (string) ($value ?? '');
 
-        if ($this->format) {
+        if (isset($this->format)) {
             $value = $this->format->processValue($value);
         }
 
-        if ($this->code) {
+        if (isset($this->code)) {
             $value = $this->code->processValue($value);
         }
 
-        if ($this->codeList) {
+        if (isset($this->codeList)) {
             $value = $this->codeList->processValue($value);
         }
 

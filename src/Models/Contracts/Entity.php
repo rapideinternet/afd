@@ -6,28 +6,18 @@ use SIVI\AFD\Models\Interfaces\Attribute;
 
 interface Entity
 {
-    /**
-     * @param $label
-     * @return mixed
-     */
-    public function hasAttribute($label);
+    
+    public function hasAttribute(string $label): bool;
 
     /**
-     * @param $label
-     * @return array|Attribute[]
+     * @return array<string|int, Attribute>
      */
-    public function getAttributesByLabel($label);
+    public function getAttributesByLabel(string $label): array;
 
     /**
-     * @param $label
-     * @param $value
-     * @return mixed
+     * @param mixed $value
      */
-    public function hasAttributeValue($label, $value);
+    public function hasAttributeValue(string $label, $value): bool;
 
-    /**
-     * @param Entity $message
-     * @return bool
-     */
     public static function matchEntity(Entity $message): bool;
 }
