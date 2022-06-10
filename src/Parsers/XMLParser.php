@@ -47,7 +47,7 @@ class XMLParser extends Parser implements XMLParserContract
      */
     public function parse($xmlString): Message
     {
-        $xml = simplexml_load_string($xmlString);
+        $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_COMPACT | LIBXML_PARSEHUGE);
 
         $message = $this->processMessage($xml->getName(), $xml);
 
