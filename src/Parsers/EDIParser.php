@@ -135,7 +135,9 @@ class EDIParser extends Parser implements EDIParserContract
             }
         }
 
-        throw new EDIException(sprintf('Provided string does not start with EDIFACT header: "%s"', substr($string, 0, 150)));
+        $formattedString = utf8_encode(substr($string, 0, 150));
+
+        throw new EDIException(sprintf('Provided string does not start with EDIFACT header: "%s"', $formattedString));
     }
 
     /**
