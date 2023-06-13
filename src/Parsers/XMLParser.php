@@ -4,6 +4,7 @@
 namespace SIVI\AFD\Parsers;
 
 
+use SIVI\AFD\Exceptions\InvalidParseException;
 use SIVI\AFD\Models\Attribute;
 use SIVI\AFD\Models\Entity;
 use SIVI\AFD\Models\Message;
@@ -44,17 +45,22 @@ class XMLParser extends Parser implements XMLParserContract
     /**
      * @param $xmlString
      * @return Message
+     * @throws InvalidParseException
      */
     public function parse($xmlString): Message
     {
         $xml = simplexml_load_string($xmlString, 'SimpleXMLElement', LIBXML_COMPACT | LIBXML_PARSEHUGE);
+
+        if ($xml === false) {
+            throw new InvalidParseException('Failed to parse a string to SimpleXMLElement');
+        }
 
         $message = $this->processMessage($xml->getName(), $xml);
 
         if (empty($message->getMessageId())) {
             $message->setMessageId(md5($xmlString));
         }
-        
+
         return $message;
     }
 
@@ -65,7 +71,7 @@ class XMLParser extends Parser implements XMLParserContract
     public function processMessage($name, $nodes): Message
     {
         $message = $this->messageRepository->getByLabel($name);
-        
+
         //Loop over nodes
         foreach ($nodes as $key => $node) {
             $this->processNode($message, $key, $node);
