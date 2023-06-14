@@ -68,7 +68,7 @@ class EDIParser extends Parser implements EDIParserContract
     /**
      * @throws EDIException
      */
-    public function parse($ediContent): Message
+    public function parse(string $ediContent): Message
     {
         $this->verifyThatStringContainsEDIFact($ediContent);
 
