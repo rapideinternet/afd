@@ -4,11 +4,15 @@
 namespace SIVI\AFD\Parsers;
 
 
+use SIVI\AFD\Exceptions\InvalidParseException;
 use SIVI\AFD\Models\Message;
 
 abstract class Parser
 {
-    abstract public function parse($xmlString): Message;
+    /**
+     * @throws InvalidParseException
+     */
+    abstract public function parse(string $xmlString): Message;
 
     /**
      * @param $value

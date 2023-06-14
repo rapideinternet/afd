@@ -4,6 +4,7 @@
 namespace SIVI\AFD\Processors\Content;
 
 
+use SIVI\AFD\Exceptions\InvalidParseException;
 use SIVI\AFD\Models\Message;
 use SIVI\AFD\Processors\Content\Contracts\TwoPassProcessor as TwoPassProcessorContract;
 use SIVI\AFD\Processors\Message\Contracts\MessageProcessor;
@@ -32,6 +33,9 @@ class TwoPassProcessor extends ContentProcessor implements TwoPassProcessorContr
         $this->messageProcessor = $messageProcessor;
     }
 
+    /**
+     * @throws InvalidParseException
+     */
     public function process($extension, $content): Message
     {
         //Determine parsers type

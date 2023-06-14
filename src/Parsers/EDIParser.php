@@ -66,14 +66,12 @@ class EDIParser extends Parser implements EDIParserContract
     }
 
     /**
-     * @param string $ediContent
-     * @return Message
      * @throws EDIException
      */
     public function parse($ediContent): Message
     {
         $this->verifyThatStringContainsEDIFact($ediContent);
-        
+
         $message = $this->messageRepository->getByLabel(Messages::BATCH);
 
         // TODO: incorporate this in parsing of data

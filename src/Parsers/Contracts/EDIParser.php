@@ -8,5 +8,5 @@ use SIVI\AFD\Models\Message;
 
 interface EDIParser extends Parser
 {
-    public function parse($editContent): Message;
+    public function parse(string $editContent): Message;
 }
