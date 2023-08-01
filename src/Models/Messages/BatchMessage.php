@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SIVI\AFD\Models\Messages;
-
 
 use SIVI\AFD\Enums\Messages;
 use SIVI\AFD\Models\Message;

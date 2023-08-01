@@ -13,5 +13,4 @@ class TimeCode extends DateCode
     protected $format = 'Hi';
 
     protected $displayFormat = 'H:i';
-
 }

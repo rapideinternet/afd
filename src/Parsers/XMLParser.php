@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SIVI\AFD\Parsers;
-
 
 use SIVI\AFD\Exceptions\InvalidParseException;
 use SIVI\AFD\Models\Attribute;
@@ -30,15 +28,14 @@ class XMLParser extends Parser implements XMLParserContract
 
     /**
      * XMLParser constructor.
-     * @param MessageRepository $messageRepository
      */
     public function __construct(
         MessageRepository $messageRepository,
         EntityRepository $entityRepository,
         AttributeRepository $attributeRepository
     ) {
-        $this->messageRepository = $messageRepository;
-        $this->entityRepository = $entityRepository;
+        $this->messageRepository   = $messageRepository;
+        $this->entityRepository    = $entityRepository;
         $this->attributeRepository = $attributeRepository;
     }
 
@@ -64,7 +61,6 @@ class XMLParser extends Parser implements XMLParserContract
 
     /**
      * @param $name
-     * @return Message
      */
     public function processMessage($name, $nodes): Message
     {
@@ -79,7 +75,6 @@ class XMLParser extends Parser implements XMLParserContract
     }
 
     /**
-     * @param Message $message
      * @param $key
      * @param $node
      */
@@ -95,6 +90,7 @@ class XMLParser extends Parser implements XMLParserContract
 
     /**
      * @param $key
+     *
      * @return bool
      */
     protected function isEntity($key)
@@ -103,7 +99,6 @@ class XMLParser extends Parser implements XMLParserContract
         if (strlen($key) == 2) {
             //TODO: Is in list of possible entities
 
-
             return true;
         }
     }
@@ -111,14 +106,12 @@ class XMLParser extends Parser implements XMLParserContract
     /**
      * @param $entityLabel
      * @param $nodes
-     * @return Entity|null
      */
     public function processEntity($entityLabel, $nodes): ?Entity
     {
         $entity = $this->entityRepository->getByLabel($entityLabel);
 
         foreach ($nodes as $nodeLabel => $node) {
-
             if ($this->isEntity($nodeLabel) && ($subEntity = $this->processEntity($nodeLabel,
                     $node)) instanceof Entity) {
                 $entity->addSubEntity($subEntity);
@@ -133,7 +126,6 @@ class XMLParser extends Parser implements XMLParserContract
     /**
      * @param $attributeLabel
      * @param $value
-     * @return \SIVI\AFD\Models\Attribute|null
      */
     protected function processAttribute($attributeLabel, $value): ?Attribute
     {
@@ -142,6 +134,7 @@ class XMLParser extends Parser implements XMLParserContract
 
     /**
      * @param $key
+     *
      * @return bool
      */
     protected function isSubmessage($key)
@@ -149,5 +142,4 @@ class XMLParser extends Parser implements XMLParserContract
         //TODO: Is in list of possible sub messages
         return true;
     }
-
 }

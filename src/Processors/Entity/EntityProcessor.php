@@ -1,6 +1,5 @@
 <?php
 
-
 namespace SIVI\AFD\Processors\Entity;
 
 use SIVI\AFD\Models\Entity;
@@ -16,7 +15,6 @@ class EntityProcessor implements EntityProcessorContract
 
     /**
      * EntityProcessor constructor.
-     * @param EntityImplementationResolver $entityImplementationResolver
      */
     public function __construct(EntityImplementationResolver $entityImplementationResolver)
     {

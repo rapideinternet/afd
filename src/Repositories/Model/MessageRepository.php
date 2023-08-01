@@ -20,6 +20,7 @@ class MessageRepository implements \SIVI\AFD\Repositories\Contracts\MessageRepos
 
     /**
      * @param $code
+     *
      * @return Code
      */
     public function getByLabel($label): Message

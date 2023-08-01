@@ -18,6 +18,7 @@ class FloatCode extends Code
 
     /**
      * CurrencyCode constructor.
+     *
      * @param $length
      * @param string $delimiter
      */
@@ -25,7 +26,7 @@ class FloatCode extends Code
     {
         parent::__construct($code);
 
-        $this->length = (int)substr($code, 1);
+        $this->length    = (int)substr($code, 1);
         $this->delimiter = $delimiter;
     }
 
@@ -40,6 +41,6 @@ class FloatCode extends Code
 
     public function processValue($value)
     {
-        return (double)$value;
+        return (float)$value;
     }
 }

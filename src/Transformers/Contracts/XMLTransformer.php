@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SIVI\AFD\Transformers\Contracts;
-
 
 use SIVI\AFD\Models\Message;
 

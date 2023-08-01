@@ -19,6 +19,7 @@ class AttributeBuilder implements Builds
 
     /**
      * AttributeBuilder constructor.
+     *
      * @param $label
      * @param $value
      */
@@ -30,8 +31,6 @@ class AttributeBuilder implements Builds
 
     public function build()
     {
-        $attribute = new Attribute($this->value);
-
-        return $attribute;
+        return new Attribute($this->value);
     }
 }

@@ -2,7 +2,6 @@
 
 namespace SIVI\AFD\Models;
 
-
 use Carbon\Carbon;
 use SIVI\AFD\Models\Contracts\Message as MessageContract;
 use SIVI\AFD\Models\Interfaces\Validatable;
@@ -17,7 +16,7 @@ class Message implements MessageContract, Validatable
     protected static $type;
     protected static $typeMap = [
         ContractMessage::class,
-        BatchMessage::class
+        BatchMessage::class,
     ];
     /**
      * @var string
@@ -58,14 +57,14 @@ class Message implements MessageContract, Validatable
 
     /**
      * Message constructor.
-     * @param null $label
-     * @param array $entities
+     *
+     * @param null  $label
      * @param array $subMessages
      */
     public function __construct($label = null, array $entities = [], $subMessages = [])
     {
-        $this->label = $label;
-        $this->entities = $entities;
+        $this->label       = $label;
+        $this->entities    = $entities;
         $this->subMessages = $subMessages;
     }
 
@@ -90,9 +89,6 @@ class Message implements MessageContract, Validatable
         return false;
     }
 
-    /**
-     * @return bool
-     */
     public function validate(): bool
     {
         $valid = [];
@@ -108,12 +104,11 @@ class Message implements MessageContract, Validatable
 
     public function isPackage()
     {
-
     }
 
     public function addEntity(Entity $entity, $orderNumber = null)
     {
-        $orderNumber = $orderNumber ?? $entity->getOrderNumber();
+        $orderNumber ??= $entity->getOrderNumber();
 
         if ($orderNumber === null) {
             $this->entities[$entity->getLabel()][] = $entity;
@@ -131,32 +126,22 @@ class Message implements MessageContract, Validatable
         }
     }
 
-    /**
-     * @return null
-     */
     public function getLabel()
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     */
     public function unsetEntitiesByLabel(string $label): void
     {
         unset($this->entities[$label]);
     }
 
-    /**
-     * @param string $label
-     */
     public function unsetSubmessagesByLabel(string $label)
     {
         unset($this->subMessages[$label]);
     }
 
     /**
-     * @param string $label
      * @param $orderNumber
      */
     public function unsetSubmessagesByLabelAndOrderNumber(string $label, $orderNumber)
@@ -164,25 +149,16 @@ class Message implements MessageContract, Validatable
         unset($this->subMessages[$label][$orderNumber]);
     }
 
-    /**
-     * @return array
-     */
     public function getEntities(): array
     {
         return $this->entities;
     }
 
-    /**
-     * @return array
-     */
     public function getSubMessages(): array
     {
         return $this->subMessages;
     }
 
-    /**
-     * @return int
-     */
     public function getSubMessagesCount(): int
     {
         $count = 0;
@@ -198,7 +174,6 @@ class Message implements MessageContract, Validatable
      * @param $label
      * @param $entityLabel
      * @param null $value
-     * @return bool
      */
     public function hasAttribute($label, $entityLabel, $value = null): bool
     {
@@ -223,7 +198,6 @@ class Message implements MessageContract, Validatable
      * @param $label
      * @param $entityLabel
      * @param $value
-     * @return bool
      */
     public function hasAttributeValue($label, $entityLabel, $value): bool
     {
@@ -238,65 +212,41 @@ class Message implements MessageContract, Validatable
         return !empty($result) && array_product($result);
     }
 
-    /**
-     * @return Carbon|null
-     */
     public function getDateTime(): ?Carbon
     {
         return $this->dateTime;
     }
 
-    /**
-     * @param Carbon $dateTime
-     */
     public function setDateTime(Carbon $dateTime): void
     {
         $this->dateTime = $dateTime;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMessageId(): ?string
     {
         return $this->messageId;
     }
 
-    /**
-     * @param string $messageId
-     */
     public function setMessageId(string $messageId): void
     {
         $this->messageId = $messageId;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSender(): ?string
     {
         return $this->sender;
     }
 
-    /**
-     * @param string $sender
-     */
     public function setSender(string $sender): void
     {
         $this->sender = $sender;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReceiver(): ?string
     {
         return $this->receiver;
     }
 
-    /**
-     * @param string $receiver
-     */
     public function setReceiver(string $receiver): void
     {
         $this->receiver = $receiver;
@@ -309,7 +259,7 @@ class Message implements MessageContract, Validatable
 
     public function __clone()
     {
-        $this->entities = array_copy($this->entities);
+        $this->entities    = array_copy($this->entities);
         $this->subMessages = array_copy($this->subMessages);
     }
 }

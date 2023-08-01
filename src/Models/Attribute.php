@@ -20,9 +20,7 @@ class Attribute implements Validatable, Interfaces\Attribute
     protected string $label;
 
     protected string $typeLabel;
-    /**
-     * @var mixed
-     */
+
     protected $value;
 
     protected string $rawValue;
@@ -41,6 +39,7 @@ class Attribute implements Validatable, Interfaces\Attribute
 
     /**
      * Attribute constructor.
+     *
      * @throws AFDException
      */
     public function __construct(string $label)
@@ -48,9 +47,6 @@ class Attribute implements Validatable, Interfaces\Attribute
         $this->setLabel($label);
     }
 
-    /**
-     * @return array
-     */
     public static function typeMap(): array
     {
         $map = [];
@@ -77,7 +73,6 @@ class Attribute implements Validatable, Interfaces\Attribute
     }
 
     /**
-     * @return bool
      * @throws NotImplementedException
      */
     public function validate(): bool
@@ -113,8 +108,9 @@ class Attribute implements Validatable, Interfaces\Attribute
      */
     public function setLabel(string $label): Attribute
     {
-        $this->label = $label;
+        $this->label     = $label;
         $this->typeLabel = self::formatTypeLabel($label);
+
         return $this;
     }
 
@@ -124,7 +120,6 @@ class Attribute implements Validatable, Interfaces\Attribute
     }
 
     /**
-     * @return mixed
      * @throws NotImplementedException
      */
     public function getFormattedValue()
@@ -146,9 +141,6 @@ class Attribute implements Validatable, Interfaces\Attribute
         return $value;
     }
 
-    /**
-     * @return mixed
-     */
     public function getDisplayValue()
     {
         $value = $this->value;
@@ -180,6 +172,7 @@ class Attribute implements Validatable, Interfaces\Attribute
     public function setDomain(Domain $domain): Attribute
     {
         $this->domain = $domain;
+
         return $this;
     }
 
@@ -191,6 +184,7 @@ class Attribute implements Validatable, Interfaces\Attribute
     public function setFormat(Format $format): Attribute
     {
         $this->format = $format;
+
         return $this;
     }
 
@@ -202,6 +196,7 @@ class Attribute implements Validatable, Interfaces\Attribute
     public function setCode(Code $code): Attribute
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -210,13 +205,10 @@ class Attribute implements Validatable, Interfaces\Attribute
         return $this->codeList;
     }
 
-    /**
-     * @param CodeList $codeList
-     * @return Attribute
-     */
     public function setCodeList(CodeList $codeList): Attribute
     {
         $this->codeList = $codeList;
+
         return $this;
     }
 
@@ -225,31 +217,22 @@ class Attribute implements Validatable, Interfaces\Attribute
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     * @return Attribute
-     */
     public function setDescription(string $description): Attribute
     {
         $this->description = $description;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getExplanation(): string
     {
         return $this->explanation;
     }
 
-    /**
-     * @param string $explanation
-     * @return Attribute
-     */
     public function setExplanation(string $explanation): Attribute
     {
         $this->explanation = $explanation;
+
         return $this;
     }
 
@@ -270,21 +253,14 @@ class Attribute implements Validatable, Interfaces\Attribute
         return null;
     }
 
-    /**
-     * @return mixed
-     */
     public function getValue()
     {
         return $this->value;
     }
 
-    /**
-     * @param mixed $value
-     * @return Attribute
-     */
     public function setValue($value): Attribute
     {
-        $this->rawValue = (string) ($value ?? '');
+        $this->rawValue = (string)($value ?? '');
 
         if (isset($this->format)) {
             $value = $this->format->processValue($value);
@@ -308,6 +284,7 @@ class Attribute implements Validatable, Interfaces\Attribute
         if (isset($this->codeList)) {
             $this->codeList = clone $this->codeList;
         }
+
         if (isset($this->format)) {
             $this->format = clone $this->format;
         }

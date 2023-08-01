@@ -8,7 +8,7 @@ use SIVI\AFD\Models\Interfaces\ValueFormats;
 class Format implements ValueFormats
 {
     public const ALPHA_NUMERIC = 'AN';
-    public const NUMERIC = 'N';
+    public const NUMERIC       = 'N';
 
     public const MAX_LENGTH_STRING = '..';
 
@@ -34,20 +34,22 @@ class Format implements ValueFormats
 
     /**
      * Format constructor.
+     *
      * @param $format
+     *
      * @throws InvalidFormatException
      */
     public function __construct($format)
     {
         $this->rawFormat = $format;
-        $this->type = $this->determineType($format);
+        $this->type      = $this->determineType($format);
         $this->maxLength = $this->determineMaxLength($format);
-        $this->value = $this->determineValue($format);
+        $this->value     = $this->determineValue($format);
     }
 
     /**
      * @param $format
-     * @return string
+     *
      * @throws InvalidFormatException
      */
     protected function determineType($format): string
@@ -65,7 +67,6 @@ class Format implements ValueFormats
 
     /**
      * @param $format
-     * @return bool
      */
     protected function determineMaxLength($format): bool
     {
@@ -74,7 +75,6 @@ class Format implements ValueFormats
 
     /**
      * @param $format
-     * @return int
      */
     protected function determineValue($format): int
     {
@@ -85,7 +85,6 @@ class Format implements ValueFormats
 
     /**
      * @param $value
-     * @return bool
      */
     public function validateValue($value): bool
     {
@@ -110,13 +109,16 @@ class Format implements ValueFormats
 
     /**
      * @param $value
+     *
      * @return int|mixed
      */
     public function processValue($value)
     {
         if ($this->isFloat($this->rawFormat)) {
             return (float)$value;
-        } elseif ($this->type == self::NUMERIC) {
+        }
+
+        if ($this->type == self::NUMERIC) {
             return (int)$value;
         }
 
@@ -125,7 +127,6 @@ class Format implements ValueFormats
 
     /**
      * @param $format
-     * @return bool
      */
     protected function isFloat($format): bool
     {
@@ -135,7 +136,6 @@ class Format implements ValueFormats
     /**
      * @param $value
      * @param bool $optionalPadding
-     * @return mixed
      */
     public function formatValue($value, $optionalPadding = false)
     {
@@ -149,10 +149,6 @@ class Format implements ValueFormats
         return $value;
     }
 
-    /**
-     * @param mixed $value
-     * @return mixed
-     */
     public function displayValue($value)
     {
         return $value;
@@ -160,6 +156,7 @@ class Format implements ValueFormats
 
     /**
      * @param $key
+     *
      * @return bool
      */
     public function hasKey($key)

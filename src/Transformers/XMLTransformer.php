@@ -1,6 +1,5 @@
 <?php
 
-
 namespace SIVI\AFD\Transformers;
 
 use SimpleXMLElement;
@@ -11,7 +10,6 @@ use SIVI\AFD\Transformers\Contracts\XMLTransformer as XMLTransformerContract;
 
 class XMLTransformer implements XMLTransformerContract
 {
-
     public function transform(Message $message): string
     {
         return $this->transformMessage($message)->asXML();
@@ -22,7 +20,6 @@ class XMLTransformer implements XMLTransformerContract
         if ($XMLElement === null) {
             $XMLElement = new SimpleXMLElement(sprintf('<%s/>', $message->getLabel()));
         }
-
 
         foreach ($message->getEntities() as $entities) {
             foreach ($entities as $orderNumber => $entity) {
@@ -38,16 +35,14 @@ class XMLTransformer implements XMLTransformerContract
             }
         }
 
-
         return $XMLElement;
     }
 
     public function transformEntity(SimpleXMLElement $XMLElement, Entity $entity, $orderNumber = null): SimpleXMLElement
     {
-
         foreach ($entity->getAttributes() as $attributes) {
             /**
-             * @var int $attributeOrderNumber
+             * @var int       $attributeOrderNumber
              * @var Attribute $attribute
              */
             foreach ($attributes as $attribute) {

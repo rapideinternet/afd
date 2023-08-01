@@ -9,22 +9,21 @@ use SIVI\AFD\Models\Interfaces\Validatable;
 
 class Entity implements EntityContract, Validatable
 {
-
     protected static string $type;
     /**
      * @var array<class-string>
      */
     protected static array $typeMap = [
-        ByEntity::class
+        ByEntity::class,
     ];
 
     protected string $label;
     /**
-     * @var array<string, array<string|int, Attribute>>
+     * @var array<string, array<int|string, Attribute>>
      */
     protected array $attributes = [];
     /**
-     * @var array<string, array<string|int, Entity>>
+     * @var array<string, array<int|string, Entity>>
      */
     protected array $subEntities = [];
 
@@ -32,7 +31,7 @@ class Entity implements EntityContract, Validatable
 
     protected ?string $explanation;
     /**
-     * Should be implemented in the lower classes
+     * Should be implemented in the lower classes.
      *
      * @var array<class-string>
      */
@@ -40,9 +39,9 @@ class Entity implements EntityContract, Validatable
 
     /**
      * Entity constructor.
-     * 
-     * @param array<string, array<string|int, Attribute>> $attributes
-     * @param array<string, array<string|int, Entity>> $subEntities
+     *
+     * @param array<string, array<int|string, Attribute>> $attributes
+     * @param array<string, array<int|string, Entity>>    $subEntities
      */
     public function __construct(
         string $label,
@@ -52,15 +51,12 @@ class Entity implements EntityContract, Validatable
         ?string $explanation = null
     ) {
         $this->setLabel($label);
-        $this->attributes = $attributes;
+        $this->attributes  = $attributes;
         $this->subEntities = $subEntities;
         $this->description = $description;
         $this->explanation = $explanation;
     }
 
-    /**
-     * @return array
-     */
     public static function typeMap(): array
     {
         $map = [];
@@ -73,16 +69,13 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * TODO: implement or remove
+     * TODO: implement or remove.
      */
     public static function matchEntity(EntityContract $message): bool
     {
         return false;
     }
 
-    /**
-     * @return bool
-     */
     public function validate(): bool
     {
         $valid = [];
@@ -97,7 +90,7 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @return array<string|int, Attribute>
+     * @return array<int|string, Attribute>
      */
     public function getAttributesByLabel(string $label): array
     {
@@ -112,6 +105,7 @@ class Entity implements EntityContract, Validatable
     public function setDescription(?string $description): Entity
     {
         $this->description = $description;
+
         return $this;
     }
 
@@ -123,11 +117,11 @@ class Entity implements EntityContract, Validatable
     public function setExplanation(?string $explanation): Entity
     {
         $this->explanation = $explanation;
+
         return $this;
     }
 
     /**
-     * @param Attribute $attribute
      * @param int|null $orderNumber
      */
     public function addAttribute(Attribute $attribute, $orderNumber = null): void
@@ -139,25 +133,16 @@ class Entity implements EntityContract, Validatable
         }
     }
 
-    /**
-     * @param string $label
-     */
     public function unsetAttributesByLabel(string $label): void
     {
         unset($this->attributes[$label]);
     }
 
-    /**
-     * @param string $label
-     */
     public function unsetSubEntityByLabel(string $label): void
     {
         unset($this->subEntities[$label]);
     }
 
-    /**
-     * @param mixed $value
-     */
     public function hasAttributeValue(string $label, $value): bool
     {
         if ($this->hasAttribute($label)) {
@@ -178,7 +163,7 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @return array<string|int, Attribute>
+     * @return array<int|string, Attribute>
      */
     public function getAttributes(): array
     {
@@ -186,7 +171,7 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @return array<string|int, Entity>
+     * @return array<int|string, Entity>
      */
     public function getSubEntities(): array
     {
@@ -194,7 +179,7 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @param string|int $orderNumber
+     * @param int|string $orderNumber
      */
     public function unsetSubEntityByLabelAndOrderNumber(string $entityType, $orderNumber): void
     {
@@ -202,7 +187,7 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @param array<string|int, Entity> $subEntities
+     * @param array<int|string, Entity> $subEntities
      */
     public function addSubEntities(array $subEntities): void
     {
@@ -212,7 +197,7 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @param string|int|null $orderNumber
+     * @param int|string|null $orderNumber
      */
     public function addSubEntity(Entity $entity, $orderNumber = null): void
     {
@@ -226,7 +211,7 @@ class Entity implements EntityContract, Validatable
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getOrderNumber()
     {
@@ -241,21 +226,15 @@ class Entity implements EntityContract, Validatable
         return null;
     }
 
-    /**
-     * @return string
-     */
     public function getLabel(): string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     * @return Entity
-     */
     public function setLabel(string $label): Entity
     {
         $this->label = $label;
+
         return $this;
     }
 
@@ -266,7 +245,7 @@ class Entity implements EntityContract, Validatable
 
     public function __clone()
     {
-        $this->attributes = array_copy($this->attributes);
+        $this->attributes  = array_copy($this->attributes);
         $this->subEntities = array_copy($this->subEntities);
     }
 }

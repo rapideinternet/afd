@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SIVI\AFD\Models\Entities;
-
 
 use SIVI\AFD\Models\Attribute;
 use SIVI\AFD\Models\Entity;
@@ -10,14 +8,14 @@ use SIVI\AFD\Models\Entity;
 class ByEntity extends Entity
 {
     protected static string $type = 'BY';
-    
+
     protected string $label = 'BY';
 
     /**
      * Entity constructor.
      *
-     * @param array<string, array<string|int, Attribute>> $attributes
-     * @param array<string, array<string|int, Entity>> $subEntities
+     * @param array<string, array<int|string, Attribute>> $attributes
+     * @param array<string, array<int|string, Entity>>    $subEntities
      */
     public function __construct(
         array $attributes = [],
@@ -29,7 +27,7 @@ class ByEntity extends Entity
     }
 
     /**
-     * Logic for attaching an attachment
+     * Logic for attaching an attachment.
      *
      * TODO: implement
      */
@@ -38,4 +36,3 @@ class ByEntity extends Entity
         // Add all attributes associated with file
     }
 }
-

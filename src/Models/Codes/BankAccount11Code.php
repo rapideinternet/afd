@@ -10,7 +10,6 @@ class BankAccount11Code extends Code
 
     protected $description = '11-proef voor bankrekeningnummer';
 
-
     public function validateValue($value)
     {
         return true; //TODO: use imap check library

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace SIVI\AFD\Transformers;
 
 use SIVI\AFD\Enums\Messages;
@@ -12,12 +11,9 @@ use SIVI\AFD\Parsers\EDIParser;
 
 class EDITransformer implements \SIVI\AFD\Transformers\Contracts\EDITransformer
 {
-
-    const EOL = EDIParser::EOL . "\n";
+    public const EOL = EDIParser::EOL . "\n";
 
     /**
-     * @param Message $message
-     * @return string
      * @throws EDIException
      */
     public function transform(Message $message): string
@@ -26,13 +22,11 @@ class EDITransformer implements \SIVI\AFD\Transformers\Contracts\EDITransformer
     }
 
     /**
-     * @param Message $message
-     * @return string
      * @throws EDIException
      */
     public function transformMessage(Message $message): string
     {
-        $batchRows = $this->buildHeader($message);
+        $batchRows   = $this->buildHeader($message);
         $messageRows = $this->buildMessageHeader($message);
 
         /** @var Entity[] $entityGroup */
@@ -43,14 +37,13 @@ class EDITransformer implements \SIVI\AFD\Transformers\Contracts\EDITransformer
         }
 
         $messageRows[] = $this->buildMessageFooter($message, count($messageRows) + 1);
-        $batchRows = array_merge($batchRows, $messageRows);
-        $batchRows[] = $this->buildFooter($message);
+        $batchRows     = array_merge($batchRows, $messageRows);
+        $batchRows[]   = $this->buildFooter($message);
 
         return sprintf('%s%s', implode(self::EOL, $batchRows), self::EOL);
     }
 
     /**
-     * @param Message $message
      * @return array
      */
     protected function buildHeader(Message $message)
@@ -67,9 +60,9 @@ class EDITransformer implements \SIVI\AFD\Transformers\Contracts\EDITransformer
     }
 
     /**
-     * @param Message $message
-     * @return array
      * @throws EDIException
+     *
+     * @return array
      */
     protected function buildMessageHeader(Message $message)
     {
@@ -77,34 +70,41 @@ class EDITransformer implements \SIVI\AFD\Transformers\Contracts\EDITransformer
             vsprintf('UNH+%s+INSLBW:1:0:IN:%s', [
                 $message->getMessageId(),
                 $this->getTypeByLabel($message->getLabel()),
-            ])
+            ]),
         ];
     }
 
     /**
      * @param $label
-     * @return string
+     *
      * @throws EDIException
+     *
+     * @return string
      */
     protected function getTypeByLabel($label)
     {
         switch ($label) {
             case Messages::CONTRACT_MESSAGE:
                 return EDIParser::MESSAGE_TYPE_CONTRACT;
+
                 break;
+
             case Messages::PROLONGATION:
                 return EDIParser::MESSAGE_TYPE_PROLONGATION;
+
                 break;
+
             case Messages::MUTATION:
                 return EDIParser::MESSAGE_TYPE_MUTATION;
+
                 break;
+
             default:
                 throw new EDIException('Could not determine message type by label');
         }
     }
 
     /**
-     * @param Entity $entity
      * @return array
      */
     protected function buildEntity(Entity $entity, $orderNumber)
@@ -113,7 +113,7 @@ class EDITransformer implements \SIVI\AFD\Transformers\Contracts\EDITransformer
             vsprintf('ENT+%s+%s', [
                 $entity->getLabel(),
                 $orderNumber,
-            ])
+            ]),
         ];
 
         /** @var Attribute[] $attributeGroup */
@@ -130,9 +130,9 @@ class EDITransformer implements \SIVI\AFD\Transformers\Contracts\EDITransformer
     }
 
     /**
-     * @param Message $message
-     * @return string
      * @throws EDIException
+     *
+     * @return string
      */
     protected function buildMessageFooter(Message $message, $rowCount)
     {
@@ -143,9 +143,9 @@ class EDITransformer implements \SIVI\AFD\Transformers\Contracts\EDITransformer
     }
 
     /**
-     * @param Message $message
-     * @return string
      * @throws EDIException
+     *
+     * @return string
      */
     protected function buildFooter(Message $message)
     {

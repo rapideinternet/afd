@@ -43,7 +43,6 @@ class BooleanCode extends Code
 
     /**
      * @param $value
-     * @return mixed
      */
     public function displayValue($value)
     {

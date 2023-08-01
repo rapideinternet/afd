@@ -1,6 +1,5 @@
 <?php
 
-
 namespace SIVI\AFD\Processors\Message;
 
 use SIVI\AFD\Models\Message;
@@ -21,14 +20,12 @@ class MessageProcessor implements MessageProcessorContract
 
     /**
      * MessageProcessor constructor.
-     * @param EntityProcessor $entityProcessor
-     * @param array $messageImplementations
      */
     public function __construct(
         EntityProcessor $entityProcessor,
         MessageImplementationResolver $messageImplementationResolver
     ) {
-        $this->entityProcessor = $entityProcessor;
+        $this->entityProcessor               = $entityProcessor;
         $this->messageImplementationResolver = $messageImplementationResolver;
     }
 

@@ -8,13 +8,12 @@ interface CodeRepository
 {
     /**
      * @param $code
-     * @return Code
      */
     public function instantiateObject($code): Code;
 
-
     /**
      * @param $code
+     *
      * @return Code
      */
     public function findByCode($code): ?Code;

@@ -12,6 +12,7 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
 
     /**
      * AttributeRepository constructor.
+     *
      * @param null $file
      * @param $valuePath
      */
@@ -22,7 +23,6 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
 
     /**
      * @param $label
-     * @return Entity
      */
     public function instantiateObject($label): Entity
     {
@@ -39,8 +39,10 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
 
     /**
      * @param $label
-     * @return CodeList
+     *
      * @throws FileNotFoundException
+     *
+     * @return CodeList
      */
     public function getByLabel($label): Entity
     {
@@ -54,12 +56,12 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
     }
 
     /**
-     * @return array
      * @throws FileNotFoundException
+     *
+     * @return array
      */
     protected function getObjectData($key)
     {
-
         if (file_exists($this->file)) {
             $json = json_decode(file_get_contents($this->file), true);
 
@@ -74,11 +76,6 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
         throw new FileNotFoundException(sprintf('Could not find entities.json file'));
     }
 
-    /**
-     * @param Entity $entity
-     * @param array $data
-     * @return Entity
-     */
     protected function mapDataToObject(Entity $entity, array $data): Entity
     {
         if (isset($data['Omschrijving'])) {

@@ -11,7 +11,7 @@ class Code implements ValueFormats
      * @var bool
      */
     public static $variableLength = false;
-    public static $codeMap = [
+    public static $codeMap        = [
         AttachmentCode::class,
         BankAccount11Code::class,
         BankAccount97Code::class,
@@ -24,10 +24,11 @@ class Code implements ValueFormats
         FloatCode::class,
         MemoCode::class,
         PercentageCode::class,
-        TimeCode::class
+        TimeCode::class,
     ];
     /**
-     * Codes Enum
+     * Codes Enum.
+     *
      * @var string
      */
     protected static $code;
@@ -58,6 +59,7 @@ class Code implements ValueFormats
 
     /**
      * @param $value
+     *
      * @throws NotImplementedException
      */
     public function formatValue($value)
@@ -67,7 +69,6 @@ class Code implements ValueFormats
 
     /**
      * @param $value
-     * @return mixed
      */
     public function displayValue($value)
     {
@@ -76,8 +77,10 @@ class Code implements ValueFormats
 
     /**
      * @param $value
-     * @return array|void
+     *
      * @throws NotImplementedException
+     *
+     * @return array|void
      */
     public function validateValue($value)
     {
@@ -91,6 +94,7 @@ class Code implements ValueFormats
 
     /**
      * @param $key
+     *
      * @return bool
      */
     public function hasKey($key)

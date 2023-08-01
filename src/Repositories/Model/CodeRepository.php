@@ -14,18 +14,17 @@ class CodeRepository implements \SIVI\AFD\Repositories\Contracts\CodeRepository
 
     /**
      * CodeRepository constructor.
+     *
      * @param string $delimiter
      */
     public function __construct($delimiter = '.')
     {
-
         $this->delimiter = $delimiter;
     }
 
-
     /**
      * @param $code
-     * @return Code
+     *
      * @throws NotFoundException
      */
     public function instantiateObject($code): Code
@@ -44,25 +43,21 @@ class CodeRepository implements \SIVI\AFD\Repositories\Contracts\CodeRepository
 
     /**
      * @param $code
-     * @return Code
+     *
      * @throws NotFoundException
+     *
+     * @return Code
      */
     public function findByCode($code): ?Code
     {
         return $this->instantiateObject($code);
     }
 
-    /**
-     * @return string
-     */
     public function getDelimiter(): string
     {
         return $this->delimiter;
     }
 
-    /**
-     * @param string $delimiter
-     */
     public function setDelimiter(string $delimiter): void
     {
         $this->delimiter = $delimiter;

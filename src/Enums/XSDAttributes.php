@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SIVI\AFD\Enums;
-
 
 class XSDAttributes
 {

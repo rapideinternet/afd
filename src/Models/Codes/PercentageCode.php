@@ -7,13 +7,14 @@ use SIVI\AFD\Enums\Codes;
 class PercentageCode extends Code
 {
     public static $variableLength = true;
-    protected static $code = Codes::PERCENTAGE;
-    protected $description = 'Percentage met maximaal n decimalen';
+    protected static $code        = Codes::PERCENTAGE;
+    protected $description        = 'Percentage met maximaal n decimalen';
     protected $delimiter;
     protected $length;
 
     /**
      * CurrencyCode constructor.
+     *
      * @param $length
      * @param string $delimiter
      */
@@ -21,7 +22,7 @@ class PercentageCode extends Code
     {
         parent::__construct($code);
 
-        $this->length = (int)substr($code, 1);
+        $this->length    = (int)substr($code, 1);
         $this->delimiter = $delimiter;
     }
 
@@ -36,7 +37,7 @@ class PercentageCode extends Code
 
     public function processValue($value)
     {
-        return (double)$value;
+        return (float)$value;
     }
 
     public function displayValue($value)

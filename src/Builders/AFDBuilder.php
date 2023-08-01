@@ -2,18 +2,15 @@
 
 namespace SIVI\AFD\Builders;
 
-
 class AFDBuilder
 {
-    protected $AFD = null;
+    protected $AFD;
 
     public function buildAFD()
     {
-
     }
 
-    public function getAFD(){
-
+    public function getAFD()
+    {
     }
-
 }

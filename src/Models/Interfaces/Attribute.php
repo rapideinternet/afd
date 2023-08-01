@@ -2,31 +2,21 @@
 
 namespace SIVI\AFD\Models\Interfaces;
 
-use SIVI\AFD\Models\Codes\Code;
 use SIVI\AFD\Models\CodeList\CodeList;
+use SIVI\AFD\Models\Codes\Code;
 use SIVI\AFD\Models\Domain\Domain;
 use SIVI\AFD\Models\Formats\Format;
 
 interface Attribute
 {
-
     public function getLabel(): string;
 
     public function setLabel(string $label): self;
 
-    /**
-     * @return mixed
-     */
     public function getDisplayValue();
 
-    /**
-     * @return mixed
-     */
     public function getValue();
 
-    /**
-     * @param mixed $value
-     */
     public function setValue($value): self;
 
     public function getDomain(): Domain;

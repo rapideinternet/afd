@@ -7,7 +7,8 @@ use SIVI\AFD\Models\Interfaces\ValueFormats;
 class CodeList implements ValueFormats
 {
     /**
-     * Name of the list
+     * Name of the list.
+     *
      * @var string
      */
     protected $label;
@@ -29,6 +30,7 @@ class CodeList implements ValueFormats
 
     /**
      * CodeList constructor.
+     *
      * @param $label
      */
     public function __construct($label)
@@ -41,80 +43,57 @@ class CodeList implements ValueFormats
         return isset($this->values[$value]);
     }
 
-    /**
-     * @return string
-     */
     public function getLabel(): string
     {
         return $this->label;
     }
 
-    /**
-     * @param string $label
-     * @return CodeList
-     */
     public function setLabel(string $label): CodeList
     {
         $this->label = $label;
+
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isExternal(): bool
     {
         return $this->external;
     }
 
-    /**
-     * @param bool $external
-     * @return CodeList
-     */
     public function setExternal(bool $external): CodeList
     {
         $this->external = $external;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     * @return CodeList
-     */
     public function setDescription(string $description): CodeList
     {
         $this->description = $description;
+
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function getValues(): array
     {
         return $this->values;
     }
 
-    /**
-     * @param array $values
-     * @return CodeList
-     */
     public function setValues(array $values): CodeList
     {
         $this->values = $values;
+
         return $this;
     }
 
     /**
      * @param $key
+     *
      * @return mixed|null
      */
     public function getValue($key)
@@ -134,6 +113,7 @@ class CodeList implements ValueFormats
 
     /**
      * @param $value
+     *
      * @return int|mixed
      */
     public function processValue($value)
@@ -147,7 +127,6 @@ class CodeList implements ValueFormats
 
     /**
      * @param $value
-     * @return mixed
      */
     public function formatValue($value)
     {
@@ -156,6 +135,7 @@ class CodeList implements ValueFormats
 
     /**
      * @param $key
+     *
      * @return bool
      */
     public function hasKey($key)
@@ -169,7 +149,6 @@ class CodeList implements ValueFormats
 
     /**
      * @param $value
-     * @return mixed
      */
     public function displayValue($value)
     {

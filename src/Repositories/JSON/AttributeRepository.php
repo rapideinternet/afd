@@ -2,7 +2,6 @@
 
 namespace SIVI\AFD\Repositories\JSON;
 
-
 use SIVI\AFD\Exceptions\FileNotFoundException;
 use SIVI\AFD\Exceptions\InvalidFormatException;
 use SIVI\AFD\Models\Attribute;
@@ -28,19 +27,18 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
 
     /**
      * AttributeRepository constructor.
+     *
      * @param null $file
-     * @param CodeListRepository $codeListRepository
      */
     public function __construct(CodeListRepository $codeListRepository, CodeRepository $codeRepository, $file = null)
     {
-        $this->file = $file ?? __DIR__ . '/../../../data/JSON/attributes.json';
+        $this->file               = $file ?? __DIR__ . '/../../../data/JSON/attributes.json';
         $this->codeListRepository = $codeListRepository;
-        $this->codeRepository = $codeRepository;
+        $this->codeRepository     = $codeRepository;
     }
 
     /**
      * @param $label
-     * @return Attribute
      */
     public function instantiateObject($label): Attribute
     {
@@ -58,7 +56,7 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
     /**
      * @param $label
      * @param null $value
-     * @return Attribute
+     *
      * @throws FileNotFoundException
      */
     public function getByLabel($label, $value = null): Attribute
@@ -72,12 +70,8 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
         $attribute->setValue($value);
 
         return $attribute;
-
     }
 
-    /**
-     * @param Entity $entity
-     */
     public function getByEntity(Entity $entity)
     {
         // TODO: Implement getByEntity() method.
@@ -85,7 +79,7 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
 
     /**
      * @param $key
-     * @return array
+     *
      * @throws FileNotFoundException
      */
     protected function getObjectData($key): array
@@ -107,9 +101,7 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
     }
 
     /**
-     * @param Attribute $attribute
      * @param $data
-     * @return Attribute
      */
     protected function mapDataToObject(Attribute $attribute, $data): Attribute
     {

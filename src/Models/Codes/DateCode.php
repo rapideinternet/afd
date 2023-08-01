@@ -28,11 +28,14 @@ class DateCode extends Code
 
         if ($value instanceof DateTime) {
             return $value->format($format);
-        } elseif ($this->validateValue($value)) {
+        }
+
+        if ($this->validateValue($value)) {
             $d = DateTime::createFromFormat($this->format, $value);
+
             return $d->format($format);
         }
-        
+
         return $value;
     }
 
@@ -41,7 +44,7 @@ class DateCode extends Code
         if ($value === false) {
             return null;
         }
-        
+
         return DateTime::createFromFormat($this->format, $value);
     }
 
@@ -51,8 +54,11 @@ class DateCode extends Code
 
         if ($value instanceof DateTime) {
             return $value->format($format);
-        } elseif ($this->validateValue($value)) {
+        }
+
+        if ($this->validateValue($value)) {
             $d = DateTime::createFromFormat($this->format, $value);
+
             return $d->format($format);
         }
 

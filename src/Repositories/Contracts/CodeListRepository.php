@@ -8,13 +8,11 @@ interface CodeListRepository
 {
     /**
      * @param $label
-     * @return CodeList
      */
     public function instantiateObject($label): CodeList;
 
     /**
      * @param $label
-     * @return CodeList|null
      */
     public function findByLabel($label): ?CodeList;
 }

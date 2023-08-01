@@ -13,26 +13,25 @@ class ParserService implements ParserServiceContract
      * @var ContainerInterface
      */
     protected $container;
-    /**bol
+    /*bol
      * @var string
      */
     protected $bindingPrefix;
 
     /**
      * ParserService constructor.
-     * @param ContainerInterface $container
+     *
      * @param string $bindingPrefix
      */
     public function __construct(ContainerInterface $container, $bindingPrefix = 'afd.parsers')
     {
-
-        $this->container = $container;
+        $this->container     = $container;
         $this->bindingPrefix = $bindingPrefix;
     }
 
     /**
      * @param $extension
-     * @return Parser
+     *
      * @throws NotImplementedException
      */
     public function getParserByExtension($extension): Parser
@@ -48,6 +47,7 @@ class ParserService implements ParserServiceContract
 
     /**
      * @param $extension
+     *
      * @return string
      */
     protected function getNamedBinding($extension)

@@ -18,12 +18,13 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
 
     /**
      * AttributeRepository constructor.
+     *
      * @param null $file
      * @param $valuePath
      */
     public function __construct($file = null, $valuePath = null)
     {
-        $this->file = $file ?? __DIR__ . '/../../../data/JSON/codeList.json';
+        $this->file      = $file      ?? __DIR__ . '/../../../data/JSON/codeList.json';
         $this->valuePath = $valuePath ?? __DIR__ . '/../../../data/JSON/CodeList';
     }
 
@@ -49,12 +50,10 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
     }
 
     /**
-     * @return array
      * @throws FileNotFoundException
      */
     protected function getObjectData($key): array
     {
-
         if (file_exists($this->file)) {
             $json = json_decode(file_get_contents($this->file), true);
 
@@ -72,9 +71,8 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
     }
 
     /**
-     * @param CodeList $codeList
      * @param $data
-     * @return CodeList
+     *
      * @throws FileNotFoundException
      */
     protected function mapDataToObject(CodeList $codeList, $data): CodeList
@@ -90,8 +88,10 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
 
     /**
      * @param $label
-     * @return array
+     *
      * @throws FileNotFoundException
+     *
+     * @return array
      */
     protected function getValues($label)
     {
@@ -99,6 +99,7 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
 
         if (!file_exists($path)) {
             return [];
+
             throw new FileNotFoundException(sprintf('Could not find json file for label %s', $label));
         }
 
@@ -106,6 +107,7 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
 
         //Format values
         $map = [];
+
         foreach ($values as $item) {
             $map[$item['Code']] = $item['Omschrijving'];
         }

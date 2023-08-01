@@ -13,7 +13,6 @@ class Domain implements ValueFormats
 
     /**
      * @param $value
-     * @return mixed
      */
     public function processValue($value)
     {
@@ -22,7 +21,6 @@ class Domain implements ValueFormats
 
     /**
      * @param $value
-     * @return mixed
      */
     public function formatValue($value)
     {
@@ -31,7 +29,6 @@ class Domain implements ValueFormats
 
     /**
      * @param $value
-     * @return mixed
      */
     public function displayValue($value)
     {
@@ -40,6 +37,7 @@ class Domain implements ValueFormats
 
     /**
      * @param $key
+     *
      * @return bool
      */
     public function hasKey($key)
