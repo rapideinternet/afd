@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SIVI\AFD\Parsers;
-
 
 use Carbon\Carbon;
 use SIVI\AFD\Enums\Messages;
@@ -17,25 +15,23 @@ use SIVI\AFD\Repositories\Contracts\MessageRepository;
 
 class EDIParser extends Parser implements EDIParserContract
 {
+    public const SEPARATOR             = '+';
+    public const EOL                   = '\'';
+    public const ENTITY                = 'ENT';
+    public const ATTRIBUTE             = 'LBW';
+    public const SERVICE_STRING_ADVICE = 'UNA';
+    public const INTERCHANGE_HEADER    = 'UNB';
+    public const MESSAGE_HEADER        = 'UNH';
+    public const MESSAGE_TRAILER       = 'UNT';
+    public const INTERCHANGE_TRAILER   = 'UNZ';
+    public const INSURANCE_DETAILS     = 'PP';
 
-    const SEPARATOR = '+';
-    const EOL = '\'';
-    const ENTITY = 'ENT';
-    const ATTRIBUTE = 'LBW';
-    const SERVICE_STRING_ADVICE = 'UNA';
-    const INTERCHANGE_HEADER = 'UNB';
-    const MESSAGE_HEADER = 'UNH';
-    const MESSAGE_TRAILER = 'UNT';
-    const INTERCHANGE_TRAILER = 'UNZ';
-    const INSURANCE_DETAILS = 'PP';
+    public const HEADER_DATE_TIME_FORMAT = 'ymd:Hi';
+    public const HEADER_SEPARATOR        = ':';
 
-    const HEADER_DATE_TIME_FORMAT = 'ymd:Hi';
-    const HEADER_SEPARATOR = ':';
-
-    const MESSAGE_TYPE_CONTRACT = 'PBI';
-    const MESSAGE_TYPE_PROLONGATION = 'PPR';
-    const MESSAGE_TYPE_MUTATION = 'PMB';
-
+    public const MESSAGE_TYPE_CONTRACT     = 'PBI';
+    public const MESSAGE_TYPE_PROLONGATION = 'PPR';
+    public const MESSAGE_TYPE_MUTATION     = 'PMB';
 
     public $strictValidation = false;
     /**
@@ -53,16 +49,77 @@ class EDIParser extends Parser implements EDIParserContract
 
     /**
      * XMLParser constructor.
-     * @param MessageRepository $messageRepository
      */
     public function __construct(
         MessageRepository $messageRepository,
         EntityRepository $entityRepository,
         AttributeRepository $attributeRepository
     ) {
-        $this->messageRepository = $messageRepository;
-        $this->entityRepository = $entityRepository;
+        $this->messageRepository   = $messageRepository;
+        $this->entityRepository    = $entityRepository;
         $this->attributeRepository = $attributeRepository;
+    }
+
+    /**
+     * @param callback(Message):void $callback
+     */
+    public function stream(string $ediContent, callable $callback): void
+    {
+        $this->verifyThatStringContainsEDIFact($ediContent);
+
+        $message = $this->messageRepository->getByLabel(Messages::BATCH);
+
+        // TODO: incorporate this in parsing of data
+        $allowedSpecialCharacters = '';
+        $entityCode               = null;
+        /** @var Message $subMessage */
+        $subMessage       = null;
+        $orderNumber      = 0;
+        $entityAttributes = [];
+
+        foreach (explode(self::EOL, $ediContent) as $line) {
+            $line = trim($line, "\r\n");
+
+            $rowIdentifier = substr($line, 0, 3);
+
+            if ($rowIdentifier === self::SERVICE_STRING_ADVICE) {
+                $allowedSpecialCharacters = substr($line, 3);
+            } elseif ($rowIdentifier === self::INTERCHANGE_HEADER) {
+                $this->parseHeader($line, $message);
+
+                if (empty($message->getMessageId())) {
+                    $message->setMessageId(md5($ediContent));
+                }
+            } elseif ($rowIdentifier === self::INTERCHANGE_TRAILER) {
+                $this->parseFooter($line, $message);
+            } elseif ($rowIdentifier === self::MESSAGE_HEADER) {
+                $subMessage = $this->getSubMessageByMessageHeader($line, $message);
+            } elseif ($rowIdentifier === self::MESSAGE_TRAILER) {
+                if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
+                    $subMessage->addEntity($entity, $orderNumber);
+                }
+                $entityAttributes = [];
+
+                $clonedMessage = clone $message;
+                $clonedMessage->addSubmessage($subMessage);
+                $callback($clonedMessage);
+
+                unset($clonedMessage, $subMessage);
+            } elseif ($rowIdentifier === self::ENTITY) {
+                if (count($entityAttributes)) {
+                    if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
+                        $subMessage->addEntity($entity, $orderNumber);
+                    }
+                    $entityAttributes = [];
+                }
+                [, $entityCode, $orderNumber] = explode(self::SEPARATOR, $line);
+            } elseif ($rowIdentifier === self::ATTRIBUTE) {
+                $attributeRow            = explode(self::SEPARATOR, $line);
+                $code                    = $attributeRow[1];
+                $value                   = $attributeRow[2] ?? null;
+                $entityAttributes[$code] = $value;
+            }
+        }
     }
 
     /**
@@ -76,10 +133,10 @@ class EDIParser extends Parser implements EDIParserContract
 
         // TODO: incorporate this in parsing of data
         $allowedSpecialCharacters = '';
-        $entityCode = null;
+        $entityCode               = null;
         /** @var Message $subMessage */
-        $subMessage = null;
-        $orderNumber = 0;
+        $subMessage       = null;
+        $orderNumber      = 0;
         $entityAttributes = [];
 
         foreach (explode(self::EOL, $ediContent) as $line) {
@@ -91,6 +148,7 @@ class EDIParser extends Parser implements EDIParserContract
                 $allowedSpecialCharacters = substr($line, 3);
             } elseif ($rowIdentifier === self::INTERCHANGE_HEADER) {
                 $this->parseHeader($line, $message);
+
                 if (empty($message->getMessageId())) {
                     $message->setMessageId(md5($ediContent));
                 }
@@ -111,11 +169,11 @@ class EDIParser extends Parser implements EDIParserContract
                     }
                     $entityAttributes = [];
                 }
-                list(, $entityCode, $orderNumber) = explode(self::SEPARATOR, $line);
+                [, $entityCode, $orderNumber] = explode(self::SEPARATOR, $line);
             } elseif ($rowIdentifier === self::ATTRIBUTE) {
-                $attributeRow = explode(self::SEPARATOR, $line);
-                $code = $attributeRow[1];
-                $value = $attributeRow[2] ?? null;
+                $attributeRow            = explode(self::SEPARATOR, $line);
+                $code                    = $attributeRow[1];
+                $value                   = $attributeRow[2] ?? null;
                 $entityAttributes[$code] = $value;
             }
         }
@@ -128,7 +186,7 @@ class EDIParser extends Parser implements EDIParserContract
         $needles = [self::SERVICE_STRING_ADVICE, self::INTERCHANGE_HEADER];
 
         foreach ($needles as $needle) {
-            if ($needle !== '' && substr($string, 0, strlen($needle)) === (string) $needle) {
+            if ($needle !== '' && substr($string, 0, strlen($needle)) === (string)$needle) {
                 return true;
             }
         }
@@ -140,18 +198,17 @@ class EDIParser extends Parser implements EDIParserContract
 
     /**
      * @param $headerLine
-     * @param Message $message
      */
     protected function parseHeader($headerLine, Message &$message)
     {
-        list(
+        [
             $rowIdentifier,
             $characterSet,
             $sender,
             $receiver,
             $rawDateTime,
             $batchMessageId
-            ) = explode(self::SEPARATOR, $headerLine);
+            ] = explode(self::SEPARATOR, $headerLine);
 
         $dateTime = Carbon::createFromFormat(self::HEADER_DATE_TIME_FORMAT, $rawDateTime);
 
@@ -163,12 +220,12 @@ class EDIParser extends Parser implements EDIParserContract
 
     /**
      * @param $footerLine
-     * @param Message $message
+     *
      * @throws EDIException
      */
     protected function parseFooter($footerLine, Message $message)
     {
-        list($rowIdentifier, $messageCount, $batchMessageId) = explode(self::SEPARATOR, $footerLine);
+        [$rowIdentifier, $messageCount, $batchMessageId] = explode(self::SEPARATOR, $footerLine);
 
         if ($message->getSubMessagesCount() !== (int)$messageCount && $this->strictValidation === true) {
             throw new EDIException(
@@ -183,39 +240,45 @@ class EDIParser extends Parser implements EDIParserContract
 
     /**
      * @param $headerLine
-     * @param Message $message
-     * @return Message
+     *
      * @throws EDIException
+     *
+     * @return Message
      */
     protected function getSubMessageByMessageHeader($headerLine, Message $message)
     {
-        list($rowIdentifier, $messageId, $messageInfo) = explode(self::SEPARATOR, $headerLine);
+        [$rowIdentifier, $messageId, $messageInfo] = explode(self::SEPARATOR, $headerLine);
 
         // TODO: implement different parsing based on $ediFormatType and $ediFormatVersion
         $messageInfoParts = explode(self::HEADER_SEPARATOR, $messageInfo);
 
-        $ediFormatType = $messageInfoParts[0] ?? null;
-        $ediFormatVersion = $messageInfoParts[1] ?? null;
+        $ediFormatType     = $messageInfoParts[0] ?? null;
+        $ediFormatVersion  = $messageInfoParts[1] ?? null;
         $ediFormatVersion2 = $messageInfoParts[2] ?? null;
-        $messageDirection = $messageInfoParts[3] ?? 'IN';
-        $messageType = $messageInfoParts[4] ?? Messages::PROLONGATION;
+        $messageDirection  = $messageInfoParts[3] ?? 'IN';
+        $messageType       = $messageInfoParts[4] ?? Messages::PROLONGATION;
 
         switch ($messageType) {
             case self::MESSAGE_TYPE_CONTRACT:
                 $label = Messages::CONTRACT_MESSAGE;
+
                 break;
+
             case self::MESSAGE_TYPE_PROLONGATION:
                 $label = Messages::PROLONGATION;
+
                 break;
+
             case self::MESSAGE_TYPE_MUTATION:
                 $label = Messages::MUTATION;
+
                 break;
+
             default:
                 if ($this->strictValidation === true) {
                     throw new EDIException('Could not determine message type');
-                } else {
-                    $label = Messages::PROLONGATION;
                 }
+                    $label = Messages::PROLONGATION;
         }
 
         $subMessage = $this->messageRepository->getByLabel($label);
@@ -234,7 +297,7 @@ class EDIParser extends Parser implements EDIParserContract
 
     /**
      * @param $entityLabel
-     * @param array $attributesGroups
+     *
      * @return Entity
      */
     protected function processEntity($entityLabel, array $attributes): ?Entity
@@ -254,11 +317,11 @@ class EDIParser extends Parser implements EDIParserContract
      * @param $entityLabel
      * @param $attributeLabel
      * @param $value
+     *
      * @return Attribute
      */
     protected function processAttribute($entityLabel, $attributeLabel, $value): ?Attribute
     {
         return $this->attributeRepository->getByLabel(sprintf('%s_%s', $entityLabel, $attributeLabel), $value);
     }
-
 }

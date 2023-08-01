@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SIVI\AFD\Processors\Content;
-
 
 use SIVI\AFD\Exceptions\InvalidParseException;
 use SIVI\AFD\Models\Message;
@@ -23,13 +21,10 @@ class TwoPassProcessor extends ContentProcessor implements TwoPassProcessorContr
 
     /**
      * TwoPassProcessor constructor.
-     * @param ParserService $parserService
-     * @param MessageProcessor $messageProcessor
      */
     public function __construct(ParserService $parserService, MessageProcessor $messageProcessor)
     {
-
-        $this->parserService = $parserService;
+        $this->parserService    = $parserService;
         $this->messageProcessor = $messageProcessor;
     }
 
@@ -45,9 +40,24 @@ class TwoPassProcessor extends ContentProcessor implements TwoPassProcessorContr
         $message = $parser->parse($content);
 
         //Start 2 pass for replacing specific versions
-        $message = $this->messageProcessor->process($message);
-
+        return $this->messageProcessor->process($message);
         //Return the message with replaced
-        return $message;
+    }
+
+    /**
+     * @param callable(Message):void $callback
+     */
+    public function stream(string $extension, string $content, callable $callback): void
+    {
+        //Determine parsers type
+        $parser = $this->parserService->getParserByExtension($extension);
+
+        //Parse string of context
+        $parser->stream($content, function (Message $message) use ($callback) {
+            //Start 2 pass for replacing specific versions
+            $message = $this->messageProcessor->process($message);
+
+            $callback($message);
+        });
     }
 }

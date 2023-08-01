@@ -1,10 +1,9 @@
 <?php
 
-
 namespace SIVI\AFD\Parsers;
 
-
 use SIVI\AFD\Exceptions\InvalidParseException;
+use SIVI\AFD\Exceptions\NotImplementedException;
 use SIVI\AFD\Models\Message;
 
 abstract class Parser
@@ -15,7 +14,16 @@ abstract class Parser
     abstract public function parse(string $xmlString): Message;
 
     /**
+     * @throws NotImplementedException
+     */
+    public function stream(string $string, callable $callback): void
+    {
+        throw new NotImplementedException();
+    }
+
+    /**
      * @param $value
+     *
      * @return array|mixed|null
      */
     protected function processValue($value)

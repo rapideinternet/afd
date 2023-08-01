@@ -6,5 +6,5 @@ use SIVI\AFD\Models\Message;
 
 interface ContentProcessor
 {
-    public function process($extension, $content): Message;
+    public function process(string $extension, string $content): Message;
 }
