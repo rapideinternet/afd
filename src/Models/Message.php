@@ -55,6 +55,8 @@ class Message implements MessageContract, Validatable
      */
     protected $allowedSubMessages = [];
 
+    protected string $messageContentHash = '';
+
     /**
      * Message constructor.
      *
@@ -261,5 +263,15 @@ class Message implements MessageContract, Validatable
     {
         $this->entities    = array_copy($this->entities);
         $this->subMessages = array_copy($this->subMessages);
+    }
+
+    public function setMessageContentHash(string $messageHash): void
+    {
+        $this->messageContentHash = $messageHash;
+    }
+
+    public function getMessageContentHash(): string
+    {
+        return $this->messageContentHash;
     }
 }

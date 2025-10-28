@@ -15,6 +15,10 @@
     {
       "name": "Peter Mein",
       "email": "petermein@gmail.com"
+    },
+    {
+      "name": "Jörn Leidorf",
+      "email": "jorn@dossierdata.nl"
     }
   ],
   "require": {
