@@ -26,6 +26,11 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
     protected $codeRepository;
 
     /**
+     * @var array<string, array>|null
+     */
+    protected $attributesData;
+
+    /**
      * AttributeRepository constructor.
      *
      * @param null $file
@@ -84,20 +89,42 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
      */
     protected function getObjectData($key): array
     {
-        if (file_exists($this->file)) {
-            $json = json_decode(file_get_contents($this->file), true);
+        $data = $this->loadAttributesData();
 
-            //TODO optimize n-problem
-            foreach ($json as $item) {
-                if (isset($item['Label']) && $item['Label'] == $key) {
-                    return $item;
-                }
-            }
-        } else {
+        if (!isset($data[$key])) {
+            return [];
+        }
+
+        return $data[$key];
+    }
+
+    /**
+     * @throws FileNotFoundException
+     *
+     * @return array<string, array>
+     */
+    protected function loadAttributesData(): array
+    {
+        if ($this->attributesData !== null) {
+            return $this->attributesData;
+        }
+
+        if (!file_exists($this->file)) {
             throw new FileNotFoundException(sprintf('Could not find attributes.json file'));
         }
 
-        return [];
+        $json = json_decode(file_get_contents($this->file), true);
+        $this->attributesData = [];
+
+        if (is_array($json)) {
+            foreach ($json as $item) {
+                if (isset($item['Label'])) {
+                    $this->attributesData[$item['Label']] = $item;
+                }
+            }
+        }
+
+        return $this->attributesData;
     }
 
     /**

@@ -17,6 +17,16 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
     protected $valuePath;
 
     /**
+     * @var array<string, array>|null
+     */
+    protected $codeListData;
+
+    /**
+     * @var array<string, array>
+     */
+    protected $valuesCache = [];
+
+    /**
      * AttributeRepository constructor.
      *
      * @param null $file
@@ -54,20 +64,42 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
      */
     protected function getObjectData($key): array
     {
-        if (file_exists($this->file)) {
-            $json = json_decode(file_get_contents($this->file), true);
+        $data = $this->loadCodeListData();
 
-            //TODO optimize n-problem
-            foreach ($json as $item) {
-                if (isset($item['Label']) && $item['Label'] == $key) {
-                    return $item;
-                }
-            }
-        } else {
+        if (!isset($data[$key])) {
+            return [];
+        }
+
+        return $data[$key];
+    }
+
+    /**
+     * @throws FileNotFoundException
+     *
+     * @return array<string, array>
+     */
+    protected function loadCodeListData(): array
+    {
+        if ($this->codeListData !== null) {
+            return $this->codeListData;
+        }
+
+        if (!file_exists($this->file)) {
             throw new FileNotFoundException(sprintf('Could not find codeList.json file'));
         }
 
-        return [];
+        $json = json_decode(file_get_contents($this->file), true);
+        $this->codeListData = [];
+
+        if (is_array($json)) {
+            foreach ($json as $item) {
+                if (isset($item['Label'])) {
+                    $this->codeListData[$item['Label']] = $item;
+                }
+            }
+        }
+
+        return $this->codeListData;
     }
 
     /**
@@ -95,12 +127,14 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
      */
     protected function getValues($label)
     {
+        if (isset($this->valuesCache[$label])) {
+            return $this->valuesCache[$label];
+        }
+
         $path = sprintf('%s/%s.json', $this->valuePath, strtoupper($label));
 
         if (!file_exists($path)) {
-            return [];
-
-            throw new FileNotFoundException(sprintf('Could not find json file for label %s', $label));
+            return $this->valuesCache[$label] = [];
         }
 
         $values = json_decode(file_get_contents($path), true);
@@ -112,6 +146,6 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
             $map[$item['Code']] = $item['Omschrijving'];
         }
 
-        return $map;
+        return $this->valuesCache[$label] = $map;
     }
 }

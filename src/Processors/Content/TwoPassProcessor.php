@@ -43,8 +43,9 @@ class TwoPassProcessor extends ContentProcessor implements TwoPassProcessorContr
         $message = $this->messageProcessor->process($message);
 
         // Set content hash and append it to the message id
-        $message->setMessageContentHash(md5($content));
-        $message->setMessageId($message->getMessageId() . '-' . $message->getMessageContentHash()) ;
+        $hash = md5($content);
+        $message->setMessageContentHash($hash);
+        $message->setMessageId($this->appendHashToMessageId($message->getMessageId(), $hash));
 
         // Return the message
         return $message;
@@ -59,13 +60,28 @@ class TwoPassProcessor extends ContentProcessor implements TwoPassProcessorContr
         $parser = $this->parserService->getParserByExtension($extension);
 
         //Parse string of context
-        $parser->stream($content, function (Message $message, string $messageContent) use ($callback) {
+        $parser->stream($content, function (Message $message) use ($callback) {
             //Start 2 pass for replacing specific versions
             $message = $this->messageProcessor->process($message);
 
-            $message->setMessageContentHash(md5($messageContent));
+            $hash = $message->getMessageContentHash();
+
+            if ($hash !== '') {
+                $message->setMessageId($this->appendHashToMessageId($message->getMessageId(), $hash));
+            }
 
             $callback($message);
         });
+    }
+
+    protected function appendHashToMessageId(?string $messageId, string $hash): string
+    {
+        $messageId = $messageId ?? '';
+
+        if ($messageId === '') {
+            return $hash;
+        }
+
+        return sprintf('%s-%s', $messageId, $hash);
     }
 }

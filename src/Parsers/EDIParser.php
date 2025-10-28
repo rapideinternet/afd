@@ -69,65 +69,19 @@ class EDIParser extends Parser implements EDIParserContract
         $this->verifyThatStringContainsEDIFact($ediContent);
 
         $message = $this->messageRepository->getByLabel(Messages::BATCH);
+        $messageContentHash = md5($ediContent);
+        $message->setMessageContentHash($messageContentHash);
 
-        // TODO: incorporate this in parsing of data
-        $allowedSpecialCharacters = '';
-        $entityCode               = null;
-        /** @var Message $subMessage */
-        $subMessage       = null;
-        $orderNumber      = 0;
-        $entityAttributes = [];
-
-        $currentMessage = '';
-
-        foreach (explode(self::EOL, $ediContent) as $line) {
-            $currentMessage .= $line;
-            $line = trim($line, "\r\n");
-
-
-            $rowIdentifier = substr($line, 0, 3);
-
-            if ($rowIdentifier === self::SERVICE_STRING_ADVICE) {
-                $allowedSpecialCharacters = substr($line, 3);
-            } elseif ($rowIdentifier === self::INTERCHANGE_HEADER) {
-                $this->parseHeader($line, $message);
-
-                if (empty($message->getMessageId())) {
-                    $message->setMessageId(md5($ediContent));
-                }
-            } elseif ($rowIdentifier === self::INTERCHANGE_TRAILER) {
-                $this->parseFooter($line, $message);
-            } elseif ($rowIdentifier === self::MESSAGE_HEADER) {
-                $subMessage = $this->getSubMessageByMessageHeader($line, $message);
-            } elseif ($rowIdentifier === self::MESSAGE_TRAILER) {
-                if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
-                    $subMessage->addEntity($entity, $orderNumber);
-                }
-                $entityAttributes = [];
-
-                $clonedMessage = clone $message;
-                $subMessage->setMessageContentHash(md5($currentMessage));
-                $subMessage->setMessageId($subMessage->getMessageId() . '-' . $subMessage->getMessageContentHash());
-
+        $this->processSegments(
+            $this->iterateSegments($ediContent),
+            $message,
+            $messageContentHash,
+            function (Message $batchMessage, Message $subMessage) use ($callback): void {
+                $clonedMessage = clone $batchMessage;
                 $clonedMessage->addSubmessage($subMessage);
-                $callback($clonedMessage, $currentMessage);
-
-                $currentMessage = '';
-            } elseif ($rowIdentifier === self::ENTITY) {
-                if (count($entityAttributes)) {
-                    if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
-                        $subMessage->addEntity($entity, $orderNumber);
-                    }
-                    $entityAttributes = [];
-                }
-                [, $entityCode, $orderNumber] = explode(self::SEPARATOR, $line);
-            } elseif ($rowIdentifier === self::ATTRIBUTE) {
-                $attributeRow            = explode(self::SEPARATOR, $line);
-                $code                    = $attributeRow[1];
-                $value                   = $attributeRow[2] ?? null;
-                $entityAttributes[$code] = $value;
+                $callback($clonedMessage);
             }
-        }
+        );
     }
 
     /**
@@ -138,53 +92,17 @@ class EDIParser extends Parser implements EDIParserContract
         $this->verifyThatStringContainsEDIFact($ediContent);
 
         $message = $this->messageRepository->getByLabel(Messages::BATCH);
+        $messageContentHash = md5($ediContent);
+        $message->setMessageContentHash($messageContentHash);
 
-        // TODO: incorporate this in parsing of data
-        $allowedSpecialCharacters = '';
-        $entityCode               = null;
-        /** @var Message $subMessage */
-        $subMessage       = null;
-        $orderNumber      = 0;
-        $entityAttributes = [];
-
-        foreach (explode(self::EOL, $ediContent) as $line) {
-            $line = trim($line, "\r\n");
-
-            $rowIdentifier = substr($line, 0, 3);
-
-            if ($rowIdentifier === self::SERVICE_STRING_ADVICE) {
-                $allowedSpecialCharacters = substr($line, 3);
-            } elseif ($rowIdentifier === self::INTERCHANGE_HEADER) {
-                $this->parseHeader($line, $message);
-
-                if (empty($message->getMessageId())) {
-                    $message->setMessageId(md5($ediContent));
-                }
-            } elseif ($rowIdentifier === self::INTERCHANGE_TRAILER) {
-                $this->parseFooter($line, $message);
-            } elseif ($rowIdentifier === self::MESSAGE_HEADER) {
-                $subMessage = $this->getSubMessageByMessageHeader($line, $message);
-            } elseif ($rowIdentifier === self::MESSAGE_TRAILER) {
-                if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
-                    $subMessage->addEntity($entity, $orderNumber);
-                }
-                $entityAttributes = [];
-                $message->addSubmessage($subMessage);
-            } elseif ($rowIdentifier === self::ENTITY) {
-                if (count($entityAttributes)) {
-                    if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
-                        $subMessage->addEntity($entity, $orderNumber);
-                    }
-                    $entityAttributes = [];
-                }
-                [, $entityCode, $orderNumber] = explode(self::SEPARATOR, $line);
-            } elseif ($rowIdentifier === self::ATTRIBUTE) {
-                $attributeRow            = explode(self::SEPARATOR, $line);
-                $code                    = $attributeRow[1];
-                $value                   = $attributeRow[2] ?? null;
-                $entityAttributes[$code] = $value;
+        $this->processSegments(
+            $this->iterateSegments($ediContent),
+            $message,
+            $messageContentHash,
+            static function (Message $batchMessage, Message $subMessage): void {
+                $batchMessage->addSubmessage($subMessage);
             }
-        }
+        );
 
         return $message;
     }
@@ -244,6 +162,17 @@ class EDIParser extends Parser implements EDIParserContract
                 )
             );
         }
+    }
+
+    protected function appendHashToMessageId(?string $messageId, string $hash): string
+    {
+        $messageId = $messageId ?? '';
+
+        if ($messageId === '') {
+            return $hash;
+        }
+
+        return sprintf('%s-%s', $messageId, $hash);
     }
 
     /**
@@ -331,5 +260,130 @@ class EDIParser extends Parser implements EDIParserContract
     protected function processAttribute($entityLabel, $attributeLabel, $value): ?Attribute
     {
         return $this->attributeRepository->getByLabel(sprintf('%s_%s', $entityLabel, $attributeLabel), $value);
+    }
+
+    /**
+     * @param iterable<string> $segments
+     * @param callable(Message, Message):void $finalizeSubMessage
+     */
+    private function processSegments(iterable $segments, Message $message, string $messageContentHash, callable $finalizeSubMessage): void
+    {
+        // TODO: incorporate this in parsing of data
+        $allowedSpecialCharacters = '';
+        $entityCode               = null;
+        /** @var Message|null $subMessage */
+        $subMessage       = null;
+        $orderNumber      = 0;
+        $entityAttributes = [];
+        $collectingMessage = false;
+        $subMessageHash = null;
+
+        foreach ($segments as $segment) {
+            $rowIdentifier = substr($segment, 0, 3);
+
+            if ($rowIdentifier === self::SERVICE_STRING_ADVICE) {
+                $allowedSpecialCharacters = substr($segment, 3);
+            } elseif ($rowIdentifier === self::INTERCHANGE_HEADER) {
+                $this->parseHeader($segment, $message);
+
+                if (empty($message->getMessageId())) {
+                    $message->setMessageId($messageContentHash);
+                }
+            } elseif ($rowIdentifier === self::INTERCHANGE_TRAILER) {
+                $this->parseFooter($segment, $message);
+            }
+
+            if ($rowIdentifier === self::MESSAGE_HEADER) {
+                $collectingMessage = true;
+                $entityAttributes  = [];
+                $subMessage        = $this->getSubMessageByMessageHeader($segment, $message);
+                $subMessageHash    = hash_init('md5');
+                hash_update($subMessageHash, $segment . self::EOL);
+
+                continue;
+            }
+
+            if ($collectingMessage && $subMessageHash !== null) {
+                hash_update($subMessageHash, $segment . self::EOL);
+            }
+
+            if ($rowIdentifier === self::MESSAGE_TRAILER) {
+                if ($subMessage instanceof Message) {
+                    if ($entityCode !== null && count($entityAttributes)) {
+                        if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
+                            $subMessage->addEntity($entity, $orderNumber);
+                        }
+                    }
+
+                    $entityAttributes    = [];
+                    $collectingMessage   = false;
+
+                    if ($subMessageHash !== null) {
+                        $contentHash = hash_final($subMessageHash);
+                        $subMessage->setMessageContentHash($contentHash);
+                        $subMessage->setMessageId(
+                            $this->appendHashToMessageId($subMessage->getMessageId(), $contentHash)
+                        );
+                        $subMessageHash = null;
+                    }
+
+                    $finalizeSubMessage($message, $subMessage);
+                }
+
+                $subMessage = null;
+                $entityCode = null;
+
+                continue;
+            }
+
+            if ($rowIdentifier === self::ENTITY) {
+                if ($subMessage instanceof Message && count($entityAttributes) && $entityCode !== null) {
+                    if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
+                        $subMessage->addEntity($entity, $orderNumber);
+                    }
+                    $entityAttributes = [];
+                }
+
+                $parts = explode(self::SEPARATOR, $segment);
+                $entityCode  = $parts[1] ?? null;
+                $orderNumber = $parts[2] ?? null;
+
+                continue;
+            }
+
+            if ($rowIdentifier === self::ATTRIBUTE) {
+                $attributeRow = explode(self::SEPARATOR, $segment);
+                $code         = $attributeRow[1] ?? null;
+
+                if ($code !== null) {
+                    $value = $attributeRow[2] ?? null;
+                    $entityAttributes[$code] = $value;
+                }
+
+                continue;
+            }
+        }
+    }
+
+    /**
+     * @return \Generator<string>
+     */
+    private function iterateSegments(string $ediContent): \Generator
+    {
+        if ($ediContent === '') {
+            return;
+        }
+
+        $segment = strtok($ediContent, self::EOL);
+
+        while ($segment !== false) {
+            $line = trim($segment, "\r\n");
+
+            if ($line !== '') {
+                yield $line;
+            }
+
+            $segment = strtok(self::EOL);
+        }
     }
 }

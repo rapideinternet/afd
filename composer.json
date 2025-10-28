@@ -29,7 +29,8 @@
   },
   "autoload": {
     "psr-4": {
-      "SIVI\\AFD\\": "src"
+      "SIVI\\AFD\\": "src",
+      "SIVI\\AFD\\Tests\\": "tests"
     },
     "files": [
       "src/Helpers/functions.php"
