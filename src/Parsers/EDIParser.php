@@ -81,7 +81,9 @@ class EDIParser extends Parser implements EDIParserContract
         $currentMessage = '';
 
         foreach (explode(self::EOL, $ediContent) as $line) {
+            $currentMessage .= $line;
             $line = trim($line, "\r\n");
+
 
             $rowIdentifier = substr($line, 0, 3);
 
