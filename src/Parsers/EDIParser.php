@@ -62,6 +62,7 @@ class EDIParser extends Parser implements EDIParserContract
 
     /**
      * @param callback(Message):void $callback
+     * @throws EDIException
      */
     public function stream(string $ediContent, callable $callback): void
     {
@@ -76,6 +77,8 @@ class EDIParser extends Parser implements EDIParserContract
         $subMessage       = null;
         $orderNumber      = 0;
         $entityAttributes = [];
+
+        $currentMessage = '';
 
         foreach (explode(self::EOL, $ediContent) as $line) {
             $line = trim($line, "\r\n");
@@ -101,10 +104,13 @@ class EDIParser extends Parser implements EDIParserContract
                 $entityAttributes = [];
 
                 $clonedMessage = clone $message;
-                $clonedMessage->addSubmessage($subMessage);
-                $callback($clonedMessage);
+                $subMessage->setMessageContentHash(md5($currentMessage));
+                $subMessage->setMessageId($subMessage->getMessageId() . '-' . $subMessage->getMessageContentHash());
 
-                unset($clonedMessage, $subMessage);
+                $clonedMessage->addSubmessage($subMessage);
+                $callback($clonedMessage, $currentMessage);
+
+                $currentMessage = '';
             } elseif ($rowIdentifier === self::ENTITY) {
                 if (count($entityAttributes)) {
                     if (($entity = $this->processEntity($entityCode, $entityAttributes)) instanceof Entity) {
