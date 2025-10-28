@@ -18,8 +18,8 @@ final class EDIParserTest extends ParserTestCase
         $message = $parser->parse($ediContent);
 
         self::assertSame('Batch', $message->getLabel());
-        self::assertSame('EMS8888940000349', $message->getSender());
-        self::assertSame('9001618', $message->getReceiver());
+        self::assertSame('EMS8888000012345', $message->getSender());
+        self::assertSame('9876543', $message->getReceiver());
         self::assertSame('348', $message->getMessageId());
         self::assertSame(md5($ediContent), $message->getMessageContentHash());
         self::assertSame(1, $message->getSubMessagesCount());
