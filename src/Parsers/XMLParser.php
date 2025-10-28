@@ -86,7 +86,10 @@ class XMLParser extends Parser implements XMLParserContract
         if ($this->isEntity($key) && ($entity = $this->processEntity($key, $node)) instanceof Entity) {
             $message->addEntity($entity);
         } elseif ($this->isSubmessage($key)) {
-            $message->addSubmessage($this->processMessage($key, $node));
+            $submessage = $this->processMessage($key, $node);
+            $submessage->setMessageContentHash(md5($node->asXML()));
+            $submessage->setMessageId($submessage->getMessageId() . '-' . $submessage->getMessageContentHash());
+            $message->addSubmessage($submessage);
         }
     }
 
