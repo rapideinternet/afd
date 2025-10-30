@@ -88,7 +88,7 @@ class CodeListRepository implements \SIVI\AFD\Repositories\Contracts\CodeListRep
             throw new FileNotFoundException(sprintf('Could not find codeList.json file'));
         }
 
-        $json = json_decode(file_get_contents($this->file), true);
+        $json               = json_decode(file_get_contents($this->file), true);
         $this->codeListData = [];
 
         if (is_array($json)) {

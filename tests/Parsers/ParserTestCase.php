@@ -35,7 +35,7 @@ abstract class ParserTestCase extends TestCase
 
     protected function createEntityRepository(): EntityRepository
     {
-        return new class extends EntityRepository {
+        return new class() extends EntityRepository {
             public function instantiateObject($label): Entity
             {
                 try {
@@ -54,10 +54,10 @@ abstract class ParserTestCase extends TestCase
 
     protected function loadFixture(string $filename): string
     {
-        $path = __DIR__ . '/../files/' . $filename;
+        $path     = __DIR__ . '/../files/' . $filename;
         $contents = file_get_contents($path);
 
-        $this->assertNotFalse($contents, sprintf('Fixture "%s" could not be loaded.', $filename));
+        self::assertNotFalse($contents, sprintf('Fixture "%s" could not be loaded.', $filename));
 
         return $contents;
     }

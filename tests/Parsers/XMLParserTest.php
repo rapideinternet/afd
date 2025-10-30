@@ -8,11 +8,15 @@ use SIVI\AFD\Models\Attribute;
 use SIVI\AFD\Models\Message;
 use SIVI\AFD\Parsers\XMLParser;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class XMLParserTest extends ParserTestCase
 {
     public function testParseTransformsXmlIntoMessageHierarchy(): void
     {
-        $parser = $this->createXmlParser();
+        $parser     = $this->createXmlParser();
         $xmlContent = $this->loadFixture('test.xml');
 
         $message = $parser->parse($xmlContent);
@@ -36,14 +40,14 @@ final class XMLParserTest extends ParserTestCase
         self::assertArrayHasKey('AL', $entities);
         self::assertArrayHasKey('PK', $entities);
 
-        $alEntity = current($entities['AL']);
+        $alEntity          = current($entities['AL']);
         $vrwrkcdAttributes = $alEntity->getAttributesByLabel('VRWRKCD');
         self::assertNotEmpty($vrwrkcdAttributes);
         $vrwrkcd = current($vrwrkcdAttributes);
         self::assertInstanceOf(Attribute::class, $vrwrkcd);
         self::assertSame(0, $vrwrkcd->getValue());
 
-        $pkEntity = current($entities['PK']);
+        $pkEntity         = current($entities['PK']);
         $nummerAttributes = $pkEntity->getAttributesByLabel('NUMMER');
         self::assertNotEmpty($nummerAttributes);
         $nummer = current($nummerAttributes);
@@ -59,7 +63,7 @@ final class XMLParserTest extends ParserTestCase
 
     public function testParseExtractsAttachmentDataFromBySubEntity(): void
     {
-        $parser = $this->createXmlParser();
+        $parser     = $this->createXmlParser();
         $xmlContent = $this->loadFixture('test.xml');
 
         $message = $parser->parse($xmlContent);
@@ -74,7 +78,7 @@ final class XMLParserTest extends ParserTestCase
         self::assertArrayHasKey('AL', $entities);
 
         /** @var \SIVI\AFD\Models\Entity $alEntity */
-        $alEntity = current($entities['AL']);
+        $alEntity    = current($entities['AL']);
         $subEntities = $alEntity->getSubEntities();
 
         self::assertArrayHasKey('BY', $subEntities);

@@ -8,11 +8,15 @@ use SIVI\AFD\Models\Attribute;
 use SIVI\AFD\Models\Message;
 use SIVI\AFD\Parsers\EDIParser;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class EDIParserTest extends ParserTestCase
 {
     public function testParseBuildsBatchMessageWithExpectedEntities(): void
     {
-        $parser = $this->createEdiParser();
+        $parser     = $this->createEdiParser();
         $ediContent = $this->loadFixture('test.edifact');
 
         $message = $parser->parse($ediContent);
@@ -28,7 +32,7 @@ final class EDIParserTest extends ParserTestCase
         self::assertArrayHasKey('Prolongatie', $subMessages);
 
         /** @var Message $subMessage */
-        $subMessage = current($subMessages['Prolongatie']);
+        $subMessage             = current($subMessages['Prolongatie']);
         $expectedSubMessageHash = $this->calculateFirstMessageHash($ediContent);
 
         self::assertSame($expectedSubMessageHash, $subMessage->getMessageContentHash());
@@ -38,14 +42,14 @@ final class EDIParserTest extends ParserTestCase
         self::assertArrayHasKey('AL', $entities);
         self::assertArrayHasKey('PK', $entities);
 
-        $alEntity = current($entities['AL']);
+        $alEntity        = current($entities['AL']);
         $trrefAttributes = $alEntity->getAttributesByLabel('TRREF');
         self::assertNotEmpty($trrefAttributes);
         /** @var Attribute $trackingReference */
         $trackingReference = current($trrefAttributes);
         self::assertSame('0000AA-000999XYZ', $trackingReference->getValue());
 
-        $pkEntity = current($entities['PK']);
+        $pkEntity                 = current($entities['PK']);
         $aantalPolissenAttributes = $pkEntity->getAttributesByLabel('AANTPOL');
         self::assertNotEmpty($aantalPolissenAttributes);
         $aantalPolissen = current($aantalPolissenAttributes);
@@ -55,7 +59,7 @@ final class EDIParserTest extends ParserTestCase
 
     public function testStreamInvokesCallbackWithSameMessageStructure(): void
     {
-        $parser = $this->createEdiParser();
+        $parser     = $this->createEdiParser();
         $ediContent = $this->loadFixture('test.edifact');
 
         $streamedMessages = [];
@@ -69,20 +73,20 @@ final class EDIParserTest extends ParserTestCase
         self::assertCount(1, $streamedMessages);
 
         $streamedMessage = $streamedMessages[0];
-        $parsedMessage = $this->createEdiParser()->parse($ediContent);
+        $parsedMessage   = $this->createEdiParser()->parse($ediContent);
 
         self::assertSame($parsedMessage->getLabel(), $streamedMessage->getLabel());
         self::assertSame($parsedMessage->getMessageContentHash(), $streamedMessage->getMessageContentHash());
         self::assertSame($parsedMessage->getMessageId(), $streamedMessage->getMessageId());
         self::assertSame($parsedMessage->getSubMessagesCount(), $streamedMessage->getSubMessagesCount());
 
-        $parsedSubMessages = $parsedMessage->getSubMessages();
+        $parsedSubMessages   = $parsedMessage->getSubMessages();
         $streamedSubMessages = $streamedMessage->getSubMessages();
 
         self::assertArrayHasKey('Prolongatie', $parsedSubMessages);
         self::assertArrayHasKey('Prolongatie', $streamedSubMessages);
 
-        $parsedSubMessage = current($parsedSubMessages['Prolongatie']);
+        $parsedSubMessage   = current($parsedSubMessages['Prolongatie']);
         $streamedSubMessage = current($streamedSubMessages['Prolongatie']);
 
         self::assertSame($parsedSubMessage->getMessageId(), $streamedSubMessage->getMessageId());
@@ -94,7 +98,7 @@ final class EDIParserTest extends ParserTestCase
 
     public function testStreamMatchesParseForLargePayload(): void
     {
-        $parser = $this->createEdiParser();
+        $parser     = $this->createEdiParser();
         $ediContent = $this->createLargeEdiFixture();
 
         $parsedMessage = $parser->parse($ediContent);
@@ -114,13 +118,13 @@ final class EDIParserTest extends ParserTestCase
         self::assertSame($parsedMessage->getMessageContentHash(), $streamedMessage->getMessageContentHash());
         self::assertSame($parsedMessage->getSubMessagesCount(), $streamedMessage->getSubMessagesCount());
 
-        $parsedSubMessages = $parsedMessage->getSubMessages();
+        $parsedSubMessages   = $parsedMessage->getSubMessages();
         $streamedSubMessages = $streamedMessage->getSubMessages();
 
         self::assertArrayHasKey('Prolongatie', $parsedSubMessages);
         self::assertArrayHasKey('Prolongatie', $streamedSubMessages);
 
-        $parsedSubMessage = current($parsedSubMessages['Prolongatie']);
+        $parsedSubMessage   = current($parsedSubMessages['Prolongatie']);
         $streamedSubMessage = current($streamedSubMessages['Prolongatie']);
 
         self::assertSame($parsedSubMessage->getMessageId(), $streamedSubMessage->getMessageId());
@@ -132,7 +136,7 @@ final class EDIParserTest extends ParserTestCase
 
     public function testParseAndStreamHandleMultipleSubMessages(): void
     {
-        $parser = $this->createEdiParser();
+        $parser     = $this->createEdiParser();
         $ediContent = $this->createBatchFixtureWithMessages(50);
 
         $parsedMessage = $parser->parse($ediContent);
@@ -159,8 +163,8 @@ final class EDIParserTest extends ParserTestCase
             $subMessages['Prolongatie']
         );
 
-        $streamedHashes = [];
-        $streamedIds = [];
+        $streamedHashes    = [];
+        $streamedIds       = [];
         $expectedBatchHash = $parsedMessage->getMessageContentHash();
 
         $parser->stream(
@@ -175,7 +179,7 @@ final class EDIParserTest extends ParserTestCase
                 /** @var Message $subMessage */
                 $subMessage = current($subMessages['Prolongatie']);
                 $streamedHashes[] = $subMessage->getMessageContentHash();
-                $streamedIds[]    = $subMessage->getMessageId();
+                $streamedIds[] = $subMessage->getMessageId();
 
                 self::assertSame(md5($message->getMessageContentHash()), md5($message->getMessageContentHash()));
             }
@@ -187,7 +191,7 @@ final class EDIParserTest extends ParserTestCase
 
     public function testMessagesWithDuplicateHeaderIdsReceiveUniqueHashes(): void
     {
-        $parser = $this->createEdiParser();
+        $parser     = $this->createEdiParser();
         $ediContent = $this->createBatchFixtureWithDuplicateIds();
 
         $parsedMessage = $parser->parse($ediContent);
@@ -230,7 +234,7 @@ final class EDIParserTest extends ParserTestCase
     private function calculateFirstMessageHash(string $ediContent): string
     {
         $collecting = false;
-        $hash = null;
+        $hash       = null;
 
         $segment = strtok($ediContent, EDIParser::EOL);
 
@@ -239,6 +243,7 @@ final class EDIParserTest extends ParserTestCase
 
             if ($segment === '') {
                 $segment = strtok(EDIParser::EOL);
+
                 continue;
             }
 
@@ -246,7 +251,7 @@ final class EDIParserTest extends ParserTestCase
 
             if ($identifier === EDIParser::MESSAGE_HEADER) {
                 $collecting = true;
-                $hash = hash_init('md5');
+                $hash       = hash_init('md5');
             }
 
             if ($collecting && $hash !== null) {
@@ -265,11 +270,11 @@ final class EDIParserTest extends ParserTestCase
 
     private function createLargeEdiFixture(): string
     {
-        $baseContent = $this->loadFixture('test.edifact');
+        $baseContent   = $this->loadFixture('test.edifact');
         $extraSegments = '';
 
         for ($i = 0; $i < 2000; $i++) {
-            $code = sprintf('EXTRA%04d', $i);
+            $code  = sprintf('EXTRA%04d', $i);
             $value = sprintf('VALUE%04d', $i);
             $extraSegments .= sprintf("LBW+%s+%s'\n", $code, $value);
         }
@@ -335,11 +340,11 @@ final class EDIParserTest extends ParserTestCase
 
         preg_match('/UNH\+(\d+)\+/', $messageTemplate, $messageIdMatches);
         self::assertNotEmpty($messageIdMatches, 'Could not extract message id from base fixture.');
-        $baseMessageId = (int) $messageIdMatches[1];
+        $baseMessageId = (int)$messageIdMatches[1];
 
         preg_match('/UNT\+(\d+)\+\d+/', $messageTemplate, $segmentCountMatches);
         self::assertNotEmpty($segmentCountMatches, 'Could not extract segment count from base fixture.');
-        $segmentCount = (int) $segmentCountMatches[1];
+        $segmentCount = (int)$segmentCountMatches[1];
 
         $messageOne = preg_replace('/UNH\+\d+\+/', 'UNH+' . $baseMessageId . '+', $messageTemplate, 1);
         $messageOne = preg_replace('/UNT\+\d+\+\d+/', 'UNT+' . $segmentCount . '+' . $baseMessageId, $messageOne, 1);
@@ -347,7 +352,7 @@ final class EDIParserTest extends ParserTestCase
         $messageTwo = $messageTemplate;
         $messageTwo = preg_replace('/UNH\+\d+\+/', 'UNH+' . $baseMessageId . '+', $messageTwo, 1);
         $messageTwo = preg_replace('/UNT\+\d+\+\d+/', 'UNT+' . $segmentCount . '+' . $baseMessageId, $messageTwo, 1);
-        $messageTwo = preg_replace("/LBW\+NUMMER\+[^']+'/", "LBW+NUMMER+DIFFERENT123'", $messageTwo, 1);
+        $messageTwo = preg_replace("/LBW\\+NUMMER\\+[^']+'/", "LBW+NUMMER+DIFFERENT123'", $messageTwo, 1);
 
         $footer = preg_replace('/UNZ\+\d+\+/', 'UNZ+2+', $footer, 1);
 

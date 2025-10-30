@@ -62,13 +62,14 @@ class EDIParser extends Parser implements EDIParserContract
 
     /**
      * @param callback(Message):void $callback
+     *
      * @throws EDIException
      */
     public function stream(string $ediContent, callable $callback): void
     {
         $this->verifyThatStringContainsEDIFact($ediContent);
 
-        $message = $this->messageRepository->getByLabel(Messages::BATCH);
+        $message            = $this->messageRepository->getByLabel(Messages::BATCH);
         $messageContentHash = md5($ediContent);
         $message->setMessageContentHash($messageContentHash);
 
@@ -91,7 +92,7 @@ class EDIParser extends Parser implements EDIParserContract
     {
         $this->verifyThatStringContainsEDIFact($ediContent);
 
-        $message = $this->messageRepository->getByLabel(Messages::BATCH);
+        $message            = $this->messageRepository->getByLabel(Messages::BATCH);
         $messageContentHash = md5($ediContent);
         $message->setMessageContentHash($messageContentHash);
 
@@ -166,7 +167,7 @@ class EDIParser extends Parser implements EDIParserContract
 
     protected function appendHashToMessageId(?string $messageId, string $hash): string
     {
-        $messageId = $messageId ?? '';
+        $messageId ??= '';
 
         if ($messageId === '') {
             return $hash;
@@ -263,7 +264,7 @@ class EDIParser extends Parser implements EDIParserContract
     }
 
     /**
-     * @param iterable<string> $segments
+     * @param iterable<string>                $segments
      * @param callable(Message, Message):void $finalizeSubMessage
      */
     private function processSegments(iterable $segments, Message $message, string $messageContentHash, callable $finalizeSubMessage): void
@@ -272,11 +273,11 @@ class EDIParser extends Parser implements EDIParserContract
         $allowedSpecialCharacters = '';
         $entityCode               = null;
         /** @var Message|null $subMessage */
-        $subMessage       = null;
-        $orderNumber      = 0;
-        $entityAttributes = [];
+        $subMessage        = null;
+        $orderNumber       = 0;
+        $entityAttributes  = [];
         $collectingMessage = false;
-        $subMessageHash = null;
+        $subMessageHash    = null;
 
         foreach ($segments as $segment) {
             $rowIdentifier = substr($segment, 0, 3);
@@ -315,8 +316,8 @@ class EDIParser extends Parser implements EDIParserContract
                         }
                     }
 
-                    $entityAttributes    = [];
-                    $collectingMessage   = false;
+                    $entityAttributes  = [];
+                    $collectingMessage = false;
 
                     if ($subMessageHash !== null) {
                         $contentHash = hash_final($subMessageHash);
@@ -344,7 +345,7 @@ class EDIParser extends Parser implements EDIParserContract
                     $entityAttributes = [];
                 }
 
-                $parts = explode(self::SEPARATOR, $segment);
+                $parts       = explode(self::SEPARATOR, $segment);
                 $entityCode  = $parts[1] ?? null;
                 $orderNumber = $parts[2] ?? null;
 
@@ -356,7 +357,7 @@ class EDIParser extends Parser implements EDIParserContract
                 $code         = $attributeRow[1] ?? null;
 
                 if ($code !== null) {
-                    $value = $attributeRow[2] ?? null;
+                    $value                   = $attributeRow[2] ?? null;
                     $entityAttributes[$code] = $value;
                 }
 

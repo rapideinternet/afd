@@ -67,6 +67,7 @@ class XMLParser extends Parser implements XMLParserContract
         $message = $this->messageRepository->getByLabel($name);
 
         $messageContent = $this->serialiseNode($nodes);
+
         if ($messageContent !== null) {
             $message->setMessageContentHash(md5($messageContent));
         }
@@ -89,8 +90,9 @@ class XMLParser extends Parser implements XMLParserContract
         if ($this->isEntity($key) && ($entity = $this->processEntity($key, $node)) instanceof Entity) {
             $message->addEntity($entity);
         } elseif ($this->isSubmessage($key)) {
-            $submessage = $this->processMessage($key, $node);
+            $submessage        = $this->processMessage($key, $node);
             $submessageContent = $this->serialiseNode($node);
+
             if ($submessageContent !== null) {
                 $hash = md5($submessageContent);
                 $submessage->setMessageContentHash($hash);
@@ -174,7 +176,7 @@ class XMLParser extends Parser implements XMLParserContract
 
     protected function appendHashToMessageId(?string $messageId, string $hash): string
     {
-        $messageId = $messageId ?? '';
+        $messageId ??= '';
 
         if ($messageId === '') {
             return $hash;

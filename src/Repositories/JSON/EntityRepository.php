@@ -104,7 +104,7 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
             throw new FileNotFoundException(sprintf('Could not find entities.json file'));
         }
 
-        $json = json_decode(file_get_contents($this->file), true);
+        $json               = json_decode(file_get_contents($this->file), true);
         $this->entitiesData = [];
 
         if (is_array($json)) {

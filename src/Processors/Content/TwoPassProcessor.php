@@ -76,7 +76,7 @@ class TwoPassProcessor extends ContentProcessor implements TwoPassProcessorContr
 
     protected function appendHashToMessageId(?string $messageId, string $hash): string
     {
-        $messageId = $messageId ?? '';
+        $messageId ??= '';
 
         if ($messageId === '') {
             return $hash;

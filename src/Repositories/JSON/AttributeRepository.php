@@ -113,7 +113,7 @@ class AttributeRepository implements \SIVI\AFD\Repositories\Contracts\AttributeR
             throw new FileNotFoundException(sprintf('Could not find attributes.json file'));
         }
 
-        $json = json_decode(file_get_contents($this->file), true);
+        $json                 = json_decode(file_get_contents($this->file), true);
         $this->attributesData = [];
 
         if (is_array($json)) {
