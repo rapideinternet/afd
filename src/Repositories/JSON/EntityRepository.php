@@ -22,6 +22,11 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
     }
 
     /**
+     * @var array<string, array>|null
+     */
+    protected $entitiesData;
+
+    /**
      * @param $label
      */
     public function instantiateObject($label): Entity
@@ -62,18 +67,13 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
      */
     protected function getObjectData($key)
     {
-        if (file_exists($this->file)) {
-            $json = json_decode(file_get_contents($this->file), true);
+        $data = $this->loadEntitiesData();
 
-            //TODO optimize n-problem
-            foreach ($json as $item) {
-                if (isset($item['Label']) && $item['Label'] == $key) {
-                    return $item;
-                }
-            }
+        if (!isset($data[$key])) {
+            throw new FileNotFoundException(sprintf('Could not find entities.json file'));
         }
 
-        throw new FileNotFoundException(sprintf('Could not find entities.json file'));
+        return $data[$key];
     }
 
     protected function mapDataToObject(Entity $entity, array $data): Entity
@@ -87,5 +87,34 @@ class EntityRepository implements \SIVI\AFD\Repositories\Contracts\EntityReposit
         }
 
         return $entity;
+    }
+
+    /**
+     * @throws FileNotFoundException
+     *
+     * @return array<string, array>
+     */
+    protected function loadEntitiesData(): array
+    {
+        if ($this->entitiesData !== null) {
+            return $this->entitiesData;
+        }
+
+        if (!file_exists($this->file)) {
+            throw new FileNotFoundException(sprintf('Could not find entities.json file'));
+        }
+
+        $json               = json_decode(file_get_contents($this->file), true);
+        $this->entitiesData = [];
+
+        if (is_array($json)) {
+            foreach ($json as $item) {
+                if (isset($item['Label'])) {
+                    $this->entitiesData[$item['Label']] = $item;
+                }
+            }
+        }
+
+        return $this->entitiesData;
     }
 }

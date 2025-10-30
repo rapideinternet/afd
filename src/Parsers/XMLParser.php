@@ -66,6 +66,12 @@ class XMLParser extends Parser implements XMLParserContract
     {
         $message = $this->messageRepository->getByLabel($name);
 
+        $messageContent = $this->serialiseNode($nodes);
+
+        if ($messageContent !== null) {
+            $message->setMessageContentHash(md5($messageContent));
+        }
+
         //Loop over nodes
         foreach ($nodes as $key => $node) {
             $this->processNode($message, $key, $node);
@@ -84,7 +90,15 @@ class XMLParser extends Parser implements XMLParserContract
         if ($this->isEntity($key) && ($entity = $this->processEntity($key, $node)) instanceof Entity) {
             $message->addEntity($entity);
         } elseif ($this->isSubmessage($key)) {
-            $message->addSubmessage($this->processMessage($key, $node));
+            $submessage        = $this->processMessage($key, $node);
+            $submessageContent = $this->serialiseNode($node);
+
+            if ($submessageContent !== null) {
+                $hash = md5($submessageContent);
+                $submessage->setMessageContentHash($hash);
+                $submessage->setMessageId($this->appendHashToMessageId($submessage->getMessageId(), $hash));
+            }
+            $message->addSubmessage($submessage);
         }
     }
 
@@ -141,5 +155,33 @@ class XMLParser extends Parser implements XMLParserContract
     {
         //TODO: Is in list of possible sub messages
         return true;
+    }
+
+    protected function serialiseNode($node): ?string
+    {
+        if ($node instanceof \SimpleXMLElement) {
+            $xml = $node->asXML();
+
+            if ($xml !== false) {
+                return $xml;
+            }
+        }
+
+        if (is_scalar($node) || (is_object($node) && method_exists($node, '__toString'))) {
+            return (string)$node;
+        }
+
+        return null;
+    }
+
+    protected function appendHashToMessageId(?string $messageId, string $hash): string
+    {
+        $messageId ??= '';
+
+        if ($messageId === '') {
+            return $hash;
+        }
+
+        return sprintf('%s-%s', $messageId, $hash);
     }
 }

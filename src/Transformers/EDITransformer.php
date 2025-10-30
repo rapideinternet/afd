@@ -87,17 +87,11 @@ class EDITransformer implements \SIVI\AFD\Transformers\Contracts\EDITransformer
             case Messages::CONTRACT_MESSAGE:
                 return EDIParser::MESSAGE_TYPE_CONTRACT;
 
-                break;
-
             case Messages::PROLONGATION:
                 return EDIParser::MESSAGE_TYPE_PROLONGATION;
 
-                break;
-
             case Messages::MUTATION:
                 return EDIParser::MESSAGE_TYPE_MUTATION;
-
-                break;
 
             default:
                 throw new EDIException('Could not determine message type by label');

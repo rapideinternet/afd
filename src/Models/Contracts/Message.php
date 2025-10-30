@@ -43,4 +43,8 @@ interface Message
     public function getReceiver(): ?string;
 
     public function setReceiver(string $receiver): void;
+
+    public function setMessageContentHash(string $messageHash): void;
+
+    public function getMessageContentHash(): string;
 }
